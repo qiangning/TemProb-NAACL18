@@ -1,3 +1,12 @@
+*.iml
+.idea/
+target/
+*.pyc
+logs/progress.txt
+logs/SaturationProgress.txt
+logs/error.txt
+*-normalized/
+
 # Compiled class file
 *.class
 

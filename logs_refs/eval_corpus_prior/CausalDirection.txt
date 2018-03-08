@@ -1,0 +1,77 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building TemProb-NAACL18 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for edu.illinois.cs.cogcomp:illinois-prepsrl-model:jar:3.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ TemProb-NAACL18 ---
+23:44:09 INFO  DepAnnotator:66 - Loading struct-perceptron-auto-20iter.model into temp file: tmp345673.model
+23:44:10 INFO  SLModel:88 - Load trained Models.....
+23:44:14 INFO  SLModel:97 - Load Model complete!
+23:44:14 INFO  LabeledChuLiuEdmondsDecoder:72 - Loading cached PoS-to-dep dictionary from deprels.dict
+Data type: TIMEML
+TimeMLReader created successfully.
+Serialization of 2010.01.01.iran.moussavi exist. Loading from serialized_data/textannotation/2010.01.01.iran.moussavi_ta.ser
+Serialization of 2010.01.02.pakistan.attacks exist. Loading from serialized_data/textannotation/2010.01.02.pakistan.attacks_ta.ser
+Serialization of 2010.01.03.japan.jal.airlines.ft exist. Loading from serialized_data/textannotation/2010.01.03.japan.jal.airlines.ft_ta.ser
+Serialization of 2010.01.06.tennis.qatar.federer.nadal exist. Loading from serialized_data/textannotation/2010.01.06.tennis.qatar.federer.nadal_ta.ser
+Serialization of 2010.01.07.water.justice exist. Loading from serialized_data/textannotation/2010.01.07.water.justice_ta.ser
+Serialization of 2010.01.07.winter.weather exist. Loading from serialized_data/textannotation/2010.01.07.winter.weather_ta.ser
+Serialization of 2010.01.08.facebook.bra.color exist. Loading from serialized_data/textannotation/2010.01.08.facebook.bra.color_ta.ser
+Serialization of 2010.01.12.haiti.earthquake exist. Loading from serialized_data/textannotation/2010.01.12.haiti.earthquake_ta.ser
+Serialization of 2010.01.12.turkey.israel exist. Loading from serialized_data/textannotation/2010.01.12.turkey.israel_ta.ser
+Serialization of 2010.01.12.uk.islamist.group.ban exist. Loading from serialized_data/textannotation/2010.01.12.uk.islamist.group.ban_ta.ser
+Serialization of 2010.01.13.google.china.exit exist. Loading from serialized_data/textannotation/2010.01.13.google.china.exit_ta.ser
+Serialization of 2010.01.13.haiti.un.mission exist. Loading from serialized_data/textannotation/2010.01.13.haiti.un.mission_ta.ser
+Serialization of 2010.01.13.mexico.human.traffic.drug exist. Loading from serialized_data/textannotation/2010.01.13.mexico.human.traffic.drug_ta.ser
+Serialization of 2010.01.18.sherlock.holmes.tourism.london exist. Loading from serialized_data/textannotation/2010.01.18.sherlock.holmes.tourism.london_ta.ser
+Serialization of 2010.01.18.uk.israel.livni exist. Loading from serialized_data/textannotation/2010.01.18.uk.israel.livni_ta.ser
+Serialization of 2010.02.03.cross.quake.resistant.housing exist. Loading from serialized_data/textannotation/2010.02.03.cross.quake.resistant.housing_ta.ser
+Serialization of 2010.02.05.sotu.crowley.column exist. Loading from serialized_data/textannotation/2010.02.05.sotu.crowley.column_ta.ser
+Serialization of 2010.02.06.iran.nuclear exist. Loading from serialized_data/textannotation/2010.02.06.iran.nuclear_ta.ser
+Serialization of 2010.02.07.japan.prius.recall.ft exist. Loading from serialized_data/textannotation/2010.02.07.japan.prius.recall.ft_ta.ser
+Serialization of 2010.02.26.census.redistricting exist. Loading from serialized_data/textannotation/2010.02.26.census.redistricting_ta.ser
+Serialization of 2010.03.02.health.care exist. Loading from serialized_data/textannotation/2010.03.02.health.care_ta.ser
+Serialization of 2010.03.02.japan.unemployment.ft exist. Loading from serialized_data/textannotation/2010.03.02.japan.unemployment.ft_ta.ser
+Serialization of 2010.03.17.france.eta.policeman exist. Loading from serialized_data/textannotation/2010.03.17.france.eta.policeman_ta.ser
+Serialization of 2010.03.22.africa.elephants.ivory.trade exist. Loading from serialized_data/textannotation/2010.03.22.africa.elephants.ivory.trade_ta.ser
+Serialization of 2010.03.23.how.get.headhunted exist. Loading from serialized_data/textannotation/2010.03.23.how.get.headhunted_ta.ser
+
+Loading WordNet data and index...
+	# of noun synset: 82116
+	# of verb synset: 13768
+	# of adj synset: 18157
+	# of adv synset: 3622
+	# of noun: 117798
+	# of verb: 11529
+	# of adj: 21479
+	# of adv: 4481
+Done.
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| caused_by | 74 | 121 | 106 | 0.6115702479338843 | 0.6981132075471698 | 0.6519823788546256 |
+| causes | 81 | 113 | 128 | 0.7168141592920354 | 0.6328125 | 0.6721991701244813 |
+Average F1: 0.6620907744895534
+
+Prec = 155/234 = 0.6623931623931624
+Rec = 155/234 = 0.6623931623931624
+F-score = 0.6623931623931624
+
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| caused_by | 0 | 0 | 106 | 0.0 | 0.0 | 0.0 |
+| causes | 128 | 234 | 128 | 0.5470085470085471 | 1.0 | 0.707182320441989 |
+Average F1: 0.3535911602209945
+
+Prec = 128/234 = 0.5470085470085471
+Rec = 128/234 = 0.5470085470085471
+F-score = 0.5470085470085471
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 31.178 s
+[INFO] Finished at: 2018-03-07T23:44:21-06:00
+[INFO] Final Memory: 2846M/5510M
+[INFO] ------------------------------------------------------------------------

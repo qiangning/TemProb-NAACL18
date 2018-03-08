@@ -1,0 +1,44 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building TemProb-NAACL18 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for edu.illinois.cs.cogcomp:illinois-prepsrl-model:jar:3.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ TemProb-NAACL18 ---
+
+Loading WordNet data and index...
+	# of noun synset: 82116
+	# of verb synset: 13768
+	# of adj synset: 18157
+	# of adv synset: 3622
+	# of noun: 117798
+	# of verb: 11529
+	# of adj: 21479
+	# of adv: 4481
+Done.
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 0 | 1 | 14 | 0.0 | 0.0 | 0.0 |
+| before | 132 | 286 | 201 | 0.46153846153846156 | 0.6567164179104478 | 0.542094455852156 |
+| undef | 109 | 229 | 308 | 0.4759825327510917 | 0.3538961038961039 | 0.4059590316573557 |
+| includes | 4 | 14 | 39 | 0.2857142857142857 | 0.10256410256410256 | 0.1509433962264151 |
+| after | 92 | 171 | 138 | 0.5380116959064327 | 0.6666666666666666 | 0.5954692556634303 |
+| included | 10 | 30 | 31 | 0.3333333333333333 | 0.3225806451612903 | 0.32786885245901637 |
+Average F1: 0.3370558319763956
+
+Prec = 238/502 = 0.47410358565737054
+Rec = 238/423 = 0.5626477541371159
+F-score = 0.5145945945945946
+
+
+To evaluate. Run this
+
+sh scripts/evaluate_general_dir.sh output/Awareness/gold output/Awareness/CompareStateoftheArt_PartialTBDense/emnlp emnlp Awareness/CompareStateoftheArt_PartialTBDense
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 22.549 s
+[INFO] Finished at: 2018-03-07T23:49:59-06:00
+[INFO] Final Memory: 356M/1223M
+[INFO] ------------------------------------------------------------------------

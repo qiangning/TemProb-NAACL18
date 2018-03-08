@@ -1,0 +1,50 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building TemProb-NAACL18 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for edu.illinois.cs.cogcomp:illinois-prepsrl-model:jar:3.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ TemProb-NAACL18 ---
+
+Loading WordNet data and index...
+	# of noun synset: 82116
+	# of verb synset: 13768
+	# of adj synset: 18157
+	# of adv synset: 3622
+	# of noun: 117798
+	# of verb: 11529
+	# of adj: 21479
+	# of adv: 4481
+Done.
+23:50:53 INFO  DepAnnotator:66 - Loading struct-perceptron-auto-20iter.model into temp file: tmp345673.model
+23:50:53 INFO  SLModel:88 - Load trained Models.....
+23:50:54 INFO  SLModel:97 - Load Model complete!
+23:50:54 INFO  LabeledChuLiuEdmondsDecoder:72 - Loading cached PoS-to-dep dictionary from deprels.dict
+Data type: TIMEML
+TimeMLReader created successfully.
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 2 | 5 | 38 | 0.4 | 0.05263157894736842 | 0.09302325581395349 |
+| before | 215 | 426 | 520 | 0.5046948356807511 | 0.41346153846153844 | 0.45454545454545453 |
+| undef | 588 | 1332 | 837 | 0.44144144144144143 | 0.7025089605734767 | 0.5421853388658369 |
+| includes | 14 | 33 | 101 | 0.42424242424242425 | 0.13861386138613863 | 0.20895522388059706 |
+| after | 148 | 271 | 480 | 0.5461254612546126 | 0.30833333333333335 | 0.39414114513981363 |
+| included | 56 | 104 | 195 | 0.5384615384615384 | 0.28717948717948716 | 0.3745819397993311 |
+Average F1: 0.34457205967416443
+
+Prec = 435/839 = 0.5184743742550656
+Rec = 435/1334 = 0.32608695652173914
+F-score = 0.40036815462494246
+
+
+To evaluate. Run this
+
+sh scripts/evaluate_general_dir.sh data/TBDense_gold output/CAEVO_on_TBDense caevo Awareness/CompareStateoftheArt_AllEventTimex
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 28.954 s
+[INFO] Finished at: 2018-03-07T23:50:56-06:00
+[INFO] Final Memory: 1517M/3682M
+[INFO] ------------------------------------------------------------------------

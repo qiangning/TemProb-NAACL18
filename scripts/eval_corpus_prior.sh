@@ -1,0 +1,1 @@
+mvn exec:java -Dexec.mainClass=test.eval_corpus_prior -Dexec.args="$1" > logs/eval_corpus_prior/th$1_sentsplit.txt

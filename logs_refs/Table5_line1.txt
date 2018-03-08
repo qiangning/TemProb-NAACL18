@@ -1,0 +1,85 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building TemProb-NAACL18 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for edu.illinois.cs.cogcomp:illinois-prepsrl-model:jar:3.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ TemProb-NAACL18 ---
+Model file read from /home/qning2/Research/TemProb-NAACL18/models/noClustering/perceptron_CV_dist0_mod14_met0.lc
+Model file read from /home/qning2/Research/TemProb-NAACL18/models/local_ee_perceptron_bestCV_1.lc
+
+Loading WordNet data and index...
+	# of noun synset: 82116
+	# of verb synset: 13768
+	# of adj synset: 18157
+	# of adv synset: 3622
+	# of noun: 117798
+	# of verb: 11529
+	# of adj: 21479
+	# of adv: 4481
+Done.
+
+
+**Sent dist=0**
+
+
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 1 | 7 | 7 | 0.14285714285714285 | 0.14285714285714285 | 0.14285714285714285 |
+| before | 64 | 123 | 91 | 0.5203252032520326 | 0.7032967032967034 | 0.5981308411214954 |
+| undef | 25 | 52 | 98 | 0.4807692307692308 | 0.25510204081632654 | 0.33333333333333337 |
+| includes | 1 | 1 | 14 | 1.0 | 0.07142857142857142 | 0.13333333333333333 |
+| after | 24 | 69 | 36 | 0.34782608695652173 | 0.6666666666666666 | 0.4571428571428571 |
+| included | 3 | 9 | 15 | 0.3333333333333333 | 0.2 | 0.25 |
+Average F1: 0.3191329179646937
+
+Prec = 93/209 = 0.4449760765550239
+Rec = 93/163 = 0.5705521472392638
+F-score = 0.5
+
+
+
+**Sent dist=1**
+
+
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 0 | 1 | 7 | 0.0 | 0.0 | 0.0 |
+| before | 47 | 99 | 110 | 0.47474747474747475 | 0.42727272727272725 | 0.44976076555023925 |
+| undef | 141 | 274 | 210 | 0.5145985401459854 | 0.6714285714285714 | 0.5826446280991735 |
+| includes | 0 | 0 | 25 | 0.0 | 0.0 | 0.0 |
+| after | 49 | 89 | 102 | 0.550561797752809 | 0.4803921568627451 | 0.5130890052356021 |
+| included | 0 | 7 | 16 | 0.0 | 0.0 | 0.0 |
+Average F1: 0.25758239981416914
+
+Prec = 96/196 = 0.4897959183673469
+Rec = 96/260 = 0.36923076923076925
+F-score = 0.4210526315789474
+
+
+
+**Overall**
+
+
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 1 | 8 | 14 | 0.125 | 0.07142857142857142 | 0.09090909090909091 |
+| before | 111 | 222 | 201 | 0.5 | 0.5522388059701493 | 0.524822695035461 |
+| undef | 166 | 326 | 308 | 0.50920245398773 | 0.538961038961039 | 0.5236593059936907 |
+| includes | 1 | 1 | 39 | 1.0 | 0.02564102564102564 | 0.05 |
+| after | 73 | 158 | 138 | 0.4620253164556962 | 0.5289855072463768 | 0.49324324324324326 |
+| included | 3 | 16 | 31 | 0.1875 | 0.0967741935483871 | 0.12765957446808507 |
+Average F1: 0.3017156516082618
+
+Prec = 189/405 = 0.4666666666666667
+Rec = 189/423 = 0.44680851063829785
+F-score = 0.45652173913043476
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 34.417 s
+[INFO] Finished at: 2018-03-07T23:44:59-06:00
+[INFO] Final Memory: 1928M/3675M
+[INFO] ------------------------------------------------------------------------

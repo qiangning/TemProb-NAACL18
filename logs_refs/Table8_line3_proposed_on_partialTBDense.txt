@@ -1,0 +1,44 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building TemProb-NAACL18 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for edu.illinois.cs.cogcomp:illinois-prepsrl-model:jar:3.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ TemProb-NAACL18 ---
+
+Loading WordNet data and index...
+	# of noun synset: 82116
+	# of verb synset: 13768
+	# of adj synset: 18157
+	# of adv synset: 3622
+	# of noun: 117798
+	# of verb: 11529
+	# of adj: 21479
+	# of adv: 4481
+Done.
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 0 | 3 | 14 | 0.0 | 0.0 | 0.0 |
+| before | 163 | 319 | 201 | 0.5109717868338558 | 0.8109452736318408 | 0.6269230769230769 |
+| undef | 122 | 203 | 308 | 0.6009852216748769 | 0.3961038961038961 | 0.4774951076320939 |
+| includes | 2 | 7 | 39 | 0.2857142857142857 | 0.05128205128205128 | 0.08695652173913043 |
+| after | 94 | 179 | 138 | 0.5251396648044693 | 0.6811594202898551 | 0.5930599369085173 |
+| included | 5 | 20 | 31 | 0.25 | 0.16129032258064516 | 0.19607843137254902 |
+Average F1: 0.33008551242922796
+
+Prec = 264/528 = 0.5
+Rec = 264/423 = 0.624113475177305
+F-score = 0.555205047318612
+
+
+To evaluate. Run this
+
+sh scripts/evaluate_general_dir.sh output/Awareness/gold output/Awareness/CompareStateoftheArt_PartialTBDense/naacl naacl Awareness/CompareStateoftheArt_PartialTBDense
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 21.754 s
+[INFO] Finished at: 2018-03-07T23:50:23-06:00
+[INFO] Final Memory: 356M/1386M
+[INFO] ------------------------------------------------------------------------

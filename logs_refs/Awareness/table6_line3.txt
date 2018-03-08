@@ -1,0 +1,4097 @@
+NORMALIZATION BEGINS:
+
+Normalizing APW19980227.0489.tml...:
+
+java -jar ./data/TempEval3/Tools/tools/TimeML-Normalizer/TimeML-Normalizer.jar -d -a "output/Awareness/gold/APW19980227.0489.tml;output/Awareness/global/table6_line3/APW19980227.0489.tml"
+
+
+Normalizing APW19980227.0494.tml...:
+
+java -jar ./data/TempEval3/Tools/tools/TimeML-Normalizer/TimeML-Normalizer.jar -d -a "output/Awareness/gold/APW19980227.0494.tml;output/Awareness/global/table6_line3/APW19980227.0494.tml"
+
+
+Normalizing APW19980308.0201.tml...:
+
+java -jar ./data/TempEval3/Tools/tools/TimeML-Normalizer/TimeML-Normalizer.jar -d -a "output/Awareness/gold/APW19980308.0201.tml;output/Awareness/global/table6_line3/APW19980308.0201.tml"
+
+
+Normalizing APW19980418.0210.tml...:
+
+java -jar ./data/TempEval3/Tools/tools/TimeML-Normalizer/TimeML-Normalizer.jar -d -a "output/Awareness/gold/APW19980418.0210.tml;output/Awareness/global/table6_line3/APW19980418.0210.tml"
+
+
+Normalizing CNN19980126.1600.1104.tml...:
+
+java -jar ./data/TempEval3/Tools/tools/TimeML-Normalizer/TimeML-Normalizer.jar -d -a "output/Awareness/gold/CNN19980126.1600.1104.tml;output/Awareness/global/table6_line3/CNN19980126.1600.1104.tml"
+
+
+Normalizing CNN19980213.2130.0155.tml...:
+
+java -jar ./data/TempEval3/Tools/tools/TimeML-Normalizer/TimeML-Normalizer.jar -d -a "output/Awareness/gold/CNN19980213.2130.0155.tml;output/Awareness/global/table6_line3/CNN19980213.2130.0155.tml"
+
+
+Normalizing NYT19980402.0453.tml...:
+
+java -jar ./data/TempEval3/Tools/tools/TimeML-Normalizer/TimeML-Normalizer.jar -d -a "output/Awareness/gold/NYT19980402.0453.tml;output/Awareness/global/table6_line3/NYT19980402.0453.tml"
+
+
+Normalizing PRI19980115.2000.0186.tml...:
+
+java -jar ./data/TempEval3/Tools/tools/TimeML-Normalizer/TimeML-Normalizer.jar -d -a "output/Awareness/gold/PRI19980115.2000.0186.tml;output/Awareness/global/table6_line3/PRI19980115.2000.0186.tml"
+
+
+Normalizing PRI19980306.2000.1675.tml...:
+
+java -jar ./data/TempEval3/Tools/tools/TimeML-Normalizer/TimeML-Normalizer.jar -d -a "output/Awareness/gold/PRI19980306.2000.1675.tml;output/Awareness/global/table6_line3/PRI19980306.2000.1675.tml"
+
+
+EVALUATION BEGINS:
+
+python ./data/TempEval3/Tools/tools/evaluation-relations/temporal_evaluation.py output/Awareness/gold-normalized output/Awareness/global/table6_line3-normalized 3
+compare files in two folders
+output/Awareness/gold-normalized/CNN19980126.1600.1104.tml output/Awareness/global/table6_line3-normalized/CNN19980126.1600.1104.tml
+
+
+Evaluate output/Awareness/gold-normalized/CNN19980126.1600.1104.tml output/Awareness/global/table6_line3-normalized/CNN19980126.1600.1104.tml
+<TLINK eventInstanceID="ei4" lid="l0" relType="AFTER" relatedToEventInstance="ei5" />
+CNN19980126.1600.1104.tml	ei4	ei5	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l1" relType="BEFORE" relatedToEventInstance="ei7" />
+CNN19980126.1600.1104.tml	ei5	ei7	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l2" relType="IS_INCLUDED" relatedToEventInstance="ei8" />
+CNN19980126.1600.1104.tml	ei7	ei8	IS_INCLUDED
+
+<TLINK eventInstanceID="ei8" lid="l3" relType="INCLUDES" relatedToEventInstance="ei9" />
+CNN19980126.1600.1104.tml	ei8	ei9	INCLUDES
+
+<TLINK eventInstanceID="ei11" lid="l4" relType="BEFORE" relatedToEventInstance="ei12" />
+CNN19980126.1600.1104.tml	ei11	ei12	BEFORE
+
+<TLINK eventInstanceID="ei11" lid="l5" relType="BEFORE" relatedToEventInstance="ei14" />
+CNN19980126.1600.1104.tml	ei11	ei14	BEFORE
+
+<TLINK eventInstanceID="ei12" lid="l6" relType="SIMULTANEOUS" relatedToEventInstance="ei14" />
+CNN19980126.1600.1104.tml	ei12	ei14	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei1" lid="l0" relType="SIMULTANEOUS" relatedToEventInstance="ei2" />
+CNN19980126.1600.1104.tml	ei1	ei2	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei4" lid="l1" relType="AFTER" relatedToEventInstance="ei5" />
+CNN19980126.1600.1104.tml	ei4	ei5	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l2" relType="BEFORE" relatedToEventInstance="ei7" />
+CNN19980126.1600.1104.tml	ei5	ei7	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l3" relType="AFTER" relatedToEventInstance="ei8" />
+CNN19980126.1600.1104.tml	ei7	ei8	AFTER
+
+<TLINK eventInstanceID="ei11" lid="l4" relType="SIMULTANEOUS" relatedToEventInstance="ei12" />
+CNN19980126.1600.1104.tml	ei11	ei12	SIMULTANEOUS
+
+
+checking precision
+	ei1	ei2	SIMULTANEOUS	
+ei1 ei2 SIMULTANEOUS UNKNOWN
+	ei4	ei5	AFTER	
+True
+	ei5	ei7	BEFORE	
+True
+	ei7	ei8	AFTER	
+ei7 ei8 AFTER false
+	ei11	ei12	SIMULTANEOUS	
+ei11 ei12 SIMULTANEOUS false
+
+checking recall
+	ei4	ei5	AFTER	
+True
+	ei5	ei7	BEFORE	
+True
+	ei7	ei8	IS_INCLUDED	
+ei7 ei8 IS_INCLUDED false
+	ei8	ei9	INCLUDES	
+ei8 ei9 INCLUDES UNKNOWN
+	ei11	ei12	BEFORE	
+ei11 ei12 BEFORE false
+	ei11	ei14	BEFORE	
+ei11 ei14 BEFORE UNKNOWN
+	ei12	ei14	SIMULTANEOUS	
+ei12 ei14 SIMULTANEOUS UNKNOWN
+precision 2 5
+recall 2 7
+0.4 0.285714285714
+0.00406885147095 , 5 , 16 , 7
+output/Awareness/gold-normalized/NYT19980402.0453.tml output/Awareness/global/table6_line3-normalized/NYT19980402.0453.tml
+
+
+Evaluate output/Awareness/gold-normalized/NYT19980402.0453.tml output/Awareness/global/table6_line3-normalized/NYT19980402.0453.tml
+<TLINK eventInstanceID="ei1" lid="l0" relType="BEFORE" relatedToEventInstance="ei7" />
+NYT19980402.0453.tml	ei1	ei7	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l1" relType="AFTER" relatedToEventInstance="ei9" />
+NYT19980402.0453.tml	ei1	ei9	AFTER
+
+<TLINK eventInstanceID="ei1" lid="l2" relType="BEFORE" relatedToEventInstance="ei10" />
+NYT19980402.0453.tml	ei1	ei10	BEFORE
+
+<TLINK eventInstanceID="ei4" lid="l3" relType="BEFORE" relatedToEventInstance="ei7" />
+NYT19980402.0453.tml	ei4	ei7	BEFORE
+
+<TLINK eventInstanceID="ei4" lid="l4" relType="AFTER" relatedToEventInstance="ei9" />
+NYT19980402.0453.tml	ei4	ei9	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l5" relType="BEFORE" relatedToEventInstance="ei7" />
+NYT19980402.0453.tml	ei5	ei7	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l6" relType="BEFORE" relatedToEventInstance="ei10" />
+NYT19980402.0453.tml	ei5	ei10	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l7" relType="BEFORE" relatedToEventInstance="ei7" />
+NYT19980402.0453.tml	ei6	ei7	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l8" relType="AFTER" relatedToEventInstance="ei9" />
+NYT19980402.0453.tml	ei6	ei9	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l9" relType="AFTER" relatedToEventInstance="ei8" />
+NYT19980402.0453.tml	ei7	ei8	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l10" relType="AFTER" relatedToEventInstance="ei9" />
+NYT19980402.0453.tml	ei7	ei9	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l11" relType="AFTER" relatedToEventInstance="ei10" />
+NYT19980402.0453.tml	ei7	ei10	AFTER
+
+<TLINK eventInstanceID="ei8" lid="l12" relType="AFTER" relatedToEventInstance="ei9" />
+NYT19980402.0453.tml	ei8	ei9	AFTER
+
+<TLINK eventInstanceID="ei8" lid="l13" relType="INCLUDES" relatedToEventInstance="ei10" />
+NYT19980402.0453.tml	ei8	ei10	INCLUDES
+
+<TLINK eventInstanceID="ei8" lid="l14" relType="INCLUDES" relatedToEventInstance="ei12" />
+NYT19980402.0453.tml	ei8	ei12	INCLUDES
+
+<TLINK eventInstanceID="ei8" lid="l15" relType="AFTER" relatedToEventInstance="ei13" />
+NYT19980402.0453.tml	ei8	ei13	AFTER
+
+<TLINK eventInstanceID="ei9" lid="l16" relType="BEFORE" relatedToEventInstance="ei10" />
+NYT19980402.0453.tml	ei9	ei10	BEFORE
+
+<TLINK eventInstanceID="ei10" lid="l17" relType="AFTER" relatedToEventInstance="ei13" />
+NYT19980402.0453.tml	ei10	ei13	AFTER
+
+<TLINK eventInstanceID="ei13" lid="l18" relType="AFTER" relatedToEventInstance="ei16" />
+NYT19980402.0453.tml	ei13	ei16	AFTER
+
+<TLINK eventInstanceID="ei13" lid="l19" relType="AFTER" relatedToEventInstance="ei17" />
+NYT19980402.0453.tml	ei13	ei17	AFTER
+
+<TLINK eventInstanceID="ei14" lid="l20" relType="SIMULTANEOUS" relatedToEventInstance="ei15" />
+NYT19980402.0453.tml	ei14	ei15	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei14" lid="l21" relType="AFTER" relatedToEventInstance="ei16" />
+NYT19980402.0453.tml	ei14	ei16	AFTER
+
+<TLINK eventInstanceID="ei14" lid="l22" relType="AFTER" relatedToEventInstance="ei17" />
+NYT19980402.0453.tml	ei14	ei17	AFTER
+
+<TLINK eventInstanceID="ei14" lid="l23" relType="AFTER" relatedToEventInstance="ei19" />
+NYT19980402.0453.tml	ei14	ei19	AFTER
+
+<TLINK eventInstanceID="ei14" lid="l24" relType="SIMULTANEOUS" relatedToEventInstance="ei20" />
+NYT19980402.0453.tml	ei14	ei20	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei15" lid="l25" relType="AFTER" relatedToEventInstance="ei16" />
+NYT19980402.0453.tml	ei15	ei16	AFTER
+
+<TLINK eventInstanceID="ei15" lid="l26" relType="AFTER" relatedToEventInstance="ei17" />
+NYT19980402.0453.tml	ei15	ei17	AFTER
+
+<TLINK eventInstanceID="ei15" lid="l27" relType="AFTER" relatedToEventInstance="ei19" />
+NYT19980402.0453.tml	ei15	ei19	AFTER
+
+<TLINK eventInstanceID="ei15" lid="l28" relType="SIMULTANEOUS" relatedToEventInstance="ei20" />
+NYT19980402.0453.tml	ei15	ei20	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei16" lid="l29" relType="BEFORE" relatedToEventInstance="ei17" />
+NYT19980402.0453.tml	ei16	ei17	BEFORE
+
+<TLINK eventInstanceID="ei16" lid="l30" relType="BEFORE" relatedToEventInstance="ei20" />
+NYT19980402.0453.tml	ei16	ei20	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l31" relType="BEFORE" relatedToEventInstance="ei20" />
+NYT19980402.0453.tml	ei17	ei20	BEFORE
+
+<TLINK eventInstanceID="ei19" lid="l32" relType="BEFORE" relatedToEventInstance="ei20" />
+NYT19980402.0453.tml	ei19	ei20	BEFORE
+
+<TLINK eventInstanceID="ei19" lid="l33" relType="BEFORE" relatedToEventInstance="ei23" />
+NYT19980402.0453.tml	ei19	ei23	BEFORE
+
+<TLINK eventInstanceID="ei23" lid="l34" relType="AFTER" relatedToEventInstance="ei24" />
+NYT19980402.0453.tml	ei23	ei24	AFTER
+
+<TLINK eventInstanceID="ei23" lid="l35" relType="AFTER" relatedToEventInstance="ei25" />
+NYT19980402.0453.tml	ei23	ei25	AFTER
+
+<TLINK eventInstanceID="ei23" lid="l36" relType="AFTER" relatedToEventInstance="ei26" />
+NYT19980402.0453.tml	ei23	ei26	AFTER
+
+<TLINK eventInstanceID="ei23" lid="l37" relType="AFTER" relatedToEventInstance="ei27" />
+NYT19980402.0453.tml	ei23	ei27	AFTER
+
+<TLINK eventInstanceID="ei23" lid="l38" relType="SIMULTANEOUS" relatedToEventInstance="ei28" />
+NYT19980402.0453.tml	ei23	ei28	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei23" lid="l39" relType="INCLUDES" relatedToEventInstance="ei29" />
+NYT19980402.0453.tml	ei23	ei29	INCLUDES
+
+<TLINK eventInstanceID="ei23" lid="l40" relType="IS_INCLUDED" relatedToEventInstance="ei31" />
+NYT19980402.0453.tml	ei23	ei31	IS_INCLUDED
+
+<TLINK eventInstanceID="ei24" lid="l41" relType="BEFORE" relatedToEventInstance="ei28" />
+NYT19980402.0453.tml	ei24	ei28	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l42" relType="BEFORE" relatedToEventInstance="ei33" />
+NYT19980402.0453.tml	ei24	ei33	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l43" relType="BEFORE" relatedToEventInstance="ei35" />
+NYT19980402.0453.tml	ei24	ei35	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l44" relType="BEFORE" relatedToEventInstance="ei36" />
+NYT19980402.0453.tml	ei24	ei36	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l45" relType="BEFORE" relatedToEventInstance="ei28" />
+NYT19980402.0453.tml	ei25	ei28	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l46" relType="BEFORE" relatedToEventInstance="ei33" />
+NYT19980402.0453.tml	ei25	ei33	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l47" relType="BEFORE" relatedToEventInstance="ei35" />
+NYT19980402.0453.tml	ei25	ei35	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l48" relType="BEFORE" relatedToEventInstance="ei36" />
+NYT19980402.0453.tml	ei25	ei36	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l49" relType="BEFORE" relatedToEventInstance="ei28" />
+NYT19980402.0453.tml	ei26	ei28	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l50" relType="BEFORE" relatedToEventInstance="ei33" />
+NYT19980402.0453.tml	ei26	ei33	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l51" relType="BEFORE" relatedToEventInstance="ei35" />
+NYT19980402.0453.tml	ei26	ei35	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l52" relType="BEFORE" relatedToEventInstance="ei36" />
+NYT19980402.0453.tml	ei26	ei36	BEFORE
+
+<TLINK eventInstanceID="ei27" lid="l53" relType="BEFORE" relatedToEventInstance="ei28" />
+NYT19980402.0453.tml	ei27	ei28	BEFORE
+
+<TLINK eventInstanceID="ei27" lid="l54" relType="BEFORE" relatedToEventInstance="ei33" />
+NYT19980402.0453.tml	ei27	ei33	BEFORE
+
+<TLINK eventInstanceID="ei27" lid="l55" relType="BEFORE" relatedToEventInstance="ei35" />
+NYT19980402.0453.tml	ei27	ei35	BEFORE
+
+<TLINK eventInstanceID="ei27" lid="l56" relType="BEFORE" relatedToEventInstance="ei36" />
+NYT19980402.0453.tml	ei27	ei36	BEFORE
+
+<TLINK eventInstanceID="ei28" lid="l57" relType="INCLUDES" relatedToEventInstance="ei29" />
+NYT19980402.0453.tml	ei28	ei29	INCLUDES
+
+<TLINK eventInstanceID="ei28" lid="l58" relType="IS_INCLUDED" relatedToEventInstance="ei31" />
+NYT19980402.0453.tml	ei28	ei31	IS_INCLUDED
+
+<TLINK eventInstanceID="ei28" lid="l59" relType="IS_INCLUDED" relatedToEventInstance="ei33" />
+NYT19980402.0453.tml	ei28	ei33	IS_INCLUDED
+
+<TLINK eventInstanceID="ei29" lid="l60" relType="IS_INCLUDED" relatedToEventInstance="ei31" />
+NYT19980402.0453.tml	ei29	ei31	IS_INCLUDED
+
+<TLINK eventInstanceID="ei31" lid="l61" relType="INCLUDES" relatedToEventInstance="ei33" />
+NYT19980402.0453.tml	ei31	ei33	INCLUDES
+
+<TLINK eventInstanceID="ei31" lid="l62" relType="INCLUDES" relatedToEventInstance="ei35" />
+NYT19980402.0453.tml	ei31	ei35	INCLUDES
+
+<TLINK eventInstanceID="ei31" lid="l63" relType="INCLUDES" relatedToEventInstance="ei36" />
+NYT19980402.0453.tml	ei31	ei36	INCLUDES
+
+<TLINK eventInstanceID="ei39" lid="l64" relType="BEFORE" relatedToEventInstance="ei40" />
+NYT19980402.0453.tml	ei39	ei40	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l65" relType="BEFORE" relatedToEventInstance="ei43" />
+NYT19980402.0453.tml	ei39	ei43	BEFORE
+
+<TLINK eventInstanceID="ei40" lid="l66" relType="AFTER" relatedToEventInstance="ei41" />
+NYT19980402.0453.tml	ei40	ei41	AFTER
+
+<TLINK eventInstanceID="ei40" lid="l67" relType="SIMULTANEOUS" relatedToEventInstance="ei43" />
+NYT19980402.0453.tml	ei40	ei43	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei41" lid="l68" relType="BEFORE" relatedToEventInstance="ei43" />
+NYT19980402.0453.tml	ei41	ei43	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l0" relType="BEFORE" relatedToEventInstance="ei4" />
+NYT19980402.0453.tml	ei1	ei4	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l1" relType="BEFORE" relatedToEventInstance="ei6" />
+NYT19980402.0453.tml	ei1	ei6	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l2" relType="BEFORE" relatedToEventInstance="ei7" />
+NYT19980402.0453.tml	ei1	ei7	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l3" relType="BEFORE" relatedToEventInstance="ei10" />
+NYT19980402.0453.tml	ei1	ei10	BEFORE
+
+<TLINK eventInstanceID="ei4" lid="l4" relType="AFTER" relatedToEventInstance="ei5" />
+NYT19980402.0453.tml	ei4	ei5	AFTER
+
+<TLINK eventInstanceID="ei4" lid="l5" relType="BEFORE" relatedToEventInstance="ei7" />
+NYT19980402.0453.tml	ei4	ei7	BEFORE
+
+<TLINK eventInstanceID="ei4" lid="l6" relType="AFTER" relatedToEventInstance="ei9" />
+NYT19980402.0453.tml	ei4	ei9	AFTER
+
+<TLINK eventInstanceID="ei4" lid="l7" relType="BEFORE" relatedToEventInstance="ei10" />
+NYT19980402.0453.tml	ei4	ei10	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l8" relType="BEFORE" relatedToEventInstance="ei6" />
+NYT19980402.0453.tml	ei5	ei6	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l9" relType="BEFORE" relatedToEventInstance="ei7" />
+NYT19980402.0453.tml	ei5	ei7	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l10" relType="BEFORE" relatedToEventInstance="ei10" />
+NYT19980402.0453.tml	ei5	ei10	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l11" relType="BEFORE" relatedToEventInstance="ei7" />
+NYT19980402.0453.tml	ei6	ei7	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l12" relType="AFTER" relatedToEventInstance="ei8" />
+NYT19980402.0453.tml	ei6	ei8	AFTER
+
+<TLINK eventInstanceID="ei6" lid="l13" relType="AFTER" relatedToEventInstance="ei9" />
+NYT19980402.0453.tml	ei6	ei9	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l14" relType="AFTER" relatedToEventInstance="ei8" />
+NYT19980402.0453.tml	ei7	ei8	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l15" relType="AFTER" relatedToEventInstance="ei9" />
+NYT19980402.0453.tml	ei7	ei9	AFTER
+
+<TLINK eventInstanceID="ei8" lid="l16" relType="AFTER" relatedToEventInstance="ei9" />
+NYT19980402.0453.tml	ei8	ei9	AFTER
+
+<TLINK eventInstanceID="ei8" lid="l17" relType="BEFORE" relatedToEventInstance="ei10" />
+NYT19980402.0453.tml	ei8	ei10	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l18" relType="IS_INCLUDED" relatedToEventInstance="ei12" />
+NYT19980402.0453.tml	ei8	ei12	IS_INCLUDED
+
+<TLINK eventInstanceID="ei9" lid="l19" relType="BEFORE" relatedToEventInstance="ei10" />
+NYT19980402.0453.tml	ei9	ei10	BEFORE
+
+<TLINK eventInstanceID="ei10" lid="l20" relType="AFTER" relatedToEventInstance="ei12" />
+NYT19980402.0453.tml	ei10	ei12	AFTER
+
+<TLINK eventInstanceID="ei10" lid="l21" relType="AFTER" relatedToEventInstance="ei13" />
+NYT19980402.0453.tml	ei10	ei13	AFTER
+
+<TLINK eventInstanceID="ei12" lid="l22" relType="BEFORE" relatedToEventInstance="ei13" />
+NYT19980402.0453.tml	ei12	ei13	BEFORE
+
+<TLINK eventInstanceID="ei13" lid="l23" relType="BEFORE" relatedToEventInstance="ei14" />
+NYT19980402.0453.tml	ei13	ei14	BEFORE
+
+<TLINK eventInstanceID="ei13" lid="l24" relType="BEFORE" relatedToEventInstance="ei15" />
+NYT19980402.0453.tml	ei13	ei15	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l25" relType="AFTER" relatedToEventInstance="ei16" />
+NYT19980402.0453.tml	ei14	ei16	AFTER
+
+<TLINK eventInstanceID="ei15" lid="l26" relType="AFTER" relatedToEventInstance="ei16" />
+NYT19980402.0453.tml	ei15	ei16	AFTER
+
+<TLINK eventInstanceID="ei15" lid="l27" relType="AFTER" relatedToEventInstance="ei17" />
+NYT19980402.0453.tml	ei15	ei17	AFTER
+
+<TLINK eventInstanceID="ei15" lid="l28" relType="AFTER" relatedToEventInstance="ei19" />
+NYT19980402.0453.tml	ei15	ei19	AFTER
+
+<TLINK eventInstanceID="ei16" lid="l29" relType="BEFORE" relatedToEventInstance="ei19" />
+NYT19980402.0453.tml	ei16	ei19	BEFORE
+
+<TLINK eventInstanceID="ei16" lid="l30" relType="BEFORE" relatedToEventInstance="ei20" />
+NYT19980402.0453.tml	ei16	ei20	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l31" relType="BEFORE" relatedToEventInstance="ei19" />
+NYT19980402.0453.tml	ei17	ei19	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l32" relType="BEFORE" relatedToEventInstance="ei20" />
+NYT19980402.0453.tml	ei17	ei20	BEFORE
+
+<TLINK eventInstanceID="ei19" lid="l33" relType="BEFORE" relatedToEventInstance="ei20" />
+NYT19980402.0453.tml	ei19	ei20	BEFORE
+
+<TLINK eventInstanceID="ei19" lid="l34" relType="BEFORE" relatedToEventInstance="ei23" />
+NYT19980402.0453.tml	ei19	ei23	BEFORE
+
+<TLINK eventInstanceID="ei23" lid="l35" relType="AFTER" relatedToEventInstance="ei24" />
+NYT19980402.0453.tml	ei23	ei24	AFTER
+
+<TLINK eventInstanceID="ei23" lid="l36" relType="AFTER" relatedToEventInstance="ei25" />
+NYT19980402.0453.tml	ei23	ei25	AFTER
+
+<TLINK eventInstanceID="ei23" lid="l37" relType="AFTER" relatedToEventInstance="ei26" />
+NYT19980402.0453.tml	ei23	ei26	AFTER
+
+<TLINK eventInstanceID="ei23" lid="l38" relType="AFTER" relatedToEventInstance="ei27" />
+NYT19980402.0453.tml	ei23	ei27	AFTER
+
+<TLINK eventInstanceID="ei23" lid="l39" relType="BEFORE" relatedToEventInstance="ei30" />
+NYT19980402.0453.tml	ei23	ei30	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l40" relType="BEFORE" relatedToEventInstance="ei25" />
+NYT19980402.0453.tml	ei24	ei25	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l41" relType="BEFORE" relatedToEventInstance="ei26" />
+NYT19980402.0453.tml	ei24	ei26	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l42" relType="BEFORE" relatedToEventInstance="ei28" />
+NYT19980402.0453.tml	ei24	ei28	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l43" relType="BEFORE" relatedToEventInstance="ei30" />
+NYT19980402.0453.tml	ei24	ei30	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l44" relType="BEFORE" relatedToEventInstance="ei33" />
+NYT19980402.0453.tml	ei24	ei33	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l45" relType="BEFORE" relatedToEventInstance="ei35" />
+NYT19980402.0453.tml	ei24	ei35	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l46" relType="BEFORE" relatedToEventInstance="ei36" />
+NYT19980402.0453.tml	ei24	ei36	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l47" relType="BEFORE" relatedToEventInstance="ei26" />
+NYT19980402.0453.tml	ei25	ei26	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l48" relType="BEFORE" relatedToEventInstance="ei28" />
+NYT19980402.0453.tml	ei25	ei28	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l49" relType="BEFORE" relatedToEventInstance="ei30" />
+NYT19980402.0453.tml	ei25	ei30	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l50" relType="BEFORE" relatedToEventInstance="ei33" />
+NYT19980402.0453.tml	ei25	ei33	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l51" relType="BEFORE" relatedToEventInstance="ei35" />
+NYT19980402.0453.tml	ei25	ei35	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l52" relType="BEFORE" relatedToEventInstance="ei36" />
+NYT19980402.0453.tml	ei25	ei36	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l53" relType="BEFORE" relatedToEventInstance="ei30" />
+NYT19980402.0453.tml	ei26	ei30	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l54" relType="BEFORE" relatedToEventInstance="ei35" />
+NYT19980402.0453.tml	ei26	ei35	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l55" relType="BEFORE" relatedToEventInstance="ei36" />
+NYT19980402.0453.tml	ei26	ei36	BEFORE
+
+<TLINK eventInstanceID="ei27" lid="l56" relType="BEFORE" relatedToEventInstance="ei28" />
+NYT19980402.0453.tml	ei27	ei28	BEFORE
+
+<TLINK eventInstanceID="ei27" lid="l57" relType="BEFORE" relatedToEventInstance="ei30" />
+NYT19980402.0453.tml	ei27	ei30	BEFORE
+
+<TLINK eventInstanceID="ei27" lid="l58" relType="BEFORE" relatedToEventInstance="ei33" />
+NYT19980402.0453.tml	ei27	ei33	BEFORE
+
+<TLINK eventInstanceID="ei27" lid="l59" relType="BEFORE" relatedToEventInstance="ei35" />
+NYT19980402.0453.tml	ei27	ei35	BEFORE
+
+<TLINK eventInstanceID="ei27" lid="l60" relType="BEFORE" relatedToEventInstance="ei36" />
+NYT19980402.0453.tml	ei27	ei36	BEFORE
+
+<TLINK eventInstanceID="ei28" lid="l61" relType="BEFORE" relatedToEventInstance="ei30" />
+NYT19980402.0453.tml	ei28	ei30	BEFORE
+
+<TLINK eventInstanceID="ei28" lid="l62" relType="BEFORE" relatedToEventInstance="ei33" />
+NYT19980402.0453.tml	ei28	ei33	BEFORE
+
+<TLINK eventInstanceID="ei28" lid="l63" relType="BEFORE" relatedToEventInstance="ei35" />
+NYT19980402.0453.tml	ei28	ei35	BEFORE
+
+<TLINK eventInstanceID="ei29" lid="l64" relType="BEFORE" relatedToEventInstance="ei30" />
+NYT19980402.0453.tml	ei29	ei30	BEFORE
+
+<TLINK eventInstanceID="ei29" lid="l65" relType="AFTER" relatedToEventInstance="ei31" />
+NYT19980402.0453.tml	ei29	ei31	AFTER
+
+<TLINK eventInstanceID="ei30" lid="l66" relType="AFTER" relatedToEventInstance="ei31" />
+NYT19980402.0453.tml	ei30	ei31	AFTER
+
+<TLINK eventInstanceID="ei31" lid="l67" relType="BEFORE" relatedToEventInstance="ei33" />
+NYT19980402.0453.tml	ei31	ei33	BEFORE
+
+<TLINK eventInstanceID="ei31" lid="l68" relType="BEFORE" relatedToEventInstance="ei35" />
+NYT19980402.0453.tml	ei31	ei35	BEFORE
+
+<TLINK eventInstanceID="ei31" lid="l69" relType="BEFORE" relatedToEventInstance="ei36" />
+NYT19980402.0453.tml	ei31	ei36	BEFORE
+
+<TLINK eventInstanceID="ei33" lid="l70" relType="BEFORE" relatedToEventInstance="ei35" />
+NYT19980402.0453.tml	ei33	ei35	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l71" relType="BEFORE" relatedToEventInstance="ei40" />
+NYT19980402.0453.tml	ei39	ei40	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l72" relType="AFTER" relatedToEventInstance="ei41" />
+NYT19980402.0453.tml	ei39	ei41	AFTER
+
+<TLINK eventInstanceID="ei39" lid="l73" relType="BEFORE" relatedToEventInstance="ei43" />
+NYT19980402.0453.tml	ei39	ei43	BEFORE
+
+<TLINK eventInstanceID="ei40" lid="l74" relType="AFTER" relatedToEventInstance="ei41" />
+NYT19980402.0453.tml	ei40	ei41	AFTER
+
+<TLINK eventInstanceID="ei41" lid="l75" relType="BEFORE" relatedToEventInstance="ei43" />
+NYT19980402.0453.tml	ei41	ei43	BEFORE
+
+
+checking precision
+	ei1	ei4	BEFORE	
+ei1 ei4 BEFORE UNKNOWN
+	ei1	ei6	BEFORE	
+ei1 ei6 BEFORE UNKNOWN
+	ei1	ei7	BEFORE	
+True
+	ei1	ei10	BEFORE	
+True
+	ei4	ei5	AFTER	
+ei4 ei5 AFTER UNKNOWN
+	ei4	ei7	BEFORE	
+True
+	ei4	ei9	AFTER	
+True
+	ei4	ei10	BEFORE	
+ei4 ei10 BEFORE UNKNOWN
+	ei5	ei6	BEFORE	
+ei5 ei6 BEFORE UNKNOWN
+	ei6	ei7	BEFORE	
+True
+	ei6	ei8	AFTER	
+ei6 ei8 AFTER UNKNOWN
+	ei6	ei9	AFTER	
+True
+	ei8	ei9	AFTER	
+True
+	ei8	ei10	BEFORE	
+ei8 ei10 BEFORE false
+	ei8	ei12	IS_INCLUDED	
+ei8 ei12 IS_INCLUDED false
+	ei10	ei12	AFTER	
+ei10 ei12 AFTER UNKNOWN
+	ei10	ei13	AFTER	
+True
+	ei12	ei13	BEFORE	
+ei12 ei13 BEFORE false
+	ei13	ei14	BEFORE	
+ei13 ei14 BEFORE true
+	ei13	ei15	BEFORE	
+ei13 ei15 BEFORE true
+	ei14	ei16	AFTER	
+True
+	ei15	ei16	AFTER	
+True
+	ei15	ei17	AFTER	
+True
+	ei15	ei19	AFTER	
+True
+	ei16	ei19	BEFORE	
+ei16 ei19 BEFORE UNKNOWN
+	ei16	ei20	BEFORE	
+True
+	ei17	ei19	BEFORE	
+ei17 ei19 BEFORE UNKNOWN
+	ei17	ei20	BEFORE	
+True
+	ei19	ei20	BEFORE	
+True
+	ei19	ei23	BEFORE	
+True
+	ei23	ei24	AFTER	
+True
+	ei23	ei25	AFTER	
+True
+	ei23	ei26	AFTER	
+True
+	ei23	ei27	AFTER	
+True
+	ei23	ei30	BEFORE	
+ei23 ei30 BEFORE UNKNOWN
+	ei24	ei25	BEFORE	
+ei24 ei25 BEFORE UNKNOWN
+	ei24	ei26	BEFORE	
+ei24 ei26 BEFORE UNKNOWN
+	ei24	ei28	BEFORE	
+True
+	ei24	ei33	BEFORE	
+True
+	ei24	ei35	BEFORE	
+True
+	ei24	ei36	BEFORE	
+True
+	ei25	ei26	BEFORE	
+ei25 ei26 BEFORE UNKNOWN
+	ei25	ei28	BEFORE	
+True
+	ei25	ei33	BEFORE	
+True
+	ei25	ei35	BEFORE	
+True
+	ei25	ei36	BEFORE	
+True
+	ei26	ei35	BEFORE	
+True
+	ei26	ei36	BEFORE	
+True
+	ei27	ei28	BEFORE	
+True
+	ei27	ei33	BEFORE	
+True
+	ei27	ei35	BEFORE	
+True
+	ei27	ei36	BEFORE	
+True
+	ei28	ei30	BEFORE	
+ei28 ei30 BEFORE UNKNOWN
+	ei28	ei33	BEFORE	
+ei28 ei33 BEFORE false
+	ei28	ei35	BEFORE	
+ei28 ei35 BEFORE UNKNOWN
+	ei29	ei30	BEFORE	
+ei29 ei30 BEFORE UNKNOWN
+	ei29	ei31	AFTER	
+ei29 ei31 AFTER false
+	ei31	ei33	BEFORE	
+ei31 ei33 BEFORE false
+	ei31	ei35	BEFORE	
+ei31 ei35 BEFORE false
+	ei31	ei36	BEFORE	
+ei31 ei36 BEFORE false
+	ei33	ei35	BEFORE	
+ei33 ei35 BEFORE UNKNOWN
+	ei39	ei40	BEFORE	
+True
+	ei39	ei41	AFTER	
+ei39 ei41 AFTER UNKNOWN
+	ei39	ei43	BEFORE	
+True
+
+checking recall
+	ei1	ei7	BEFORE	
+True
+	ei1	ei9	AFTER	
+ei1 ei9 AFTER UNKNOWN
+	ei1	ei10	BEFORE	
+True
+	ei4	ei7	BEFORE	
+True
+	ei4	ei9	AFTER	
+True
+	ei5	ei7	BEFORE	
+True
+	ei5	ei10	BEFORE	
+True
+	ei6	ei7	BEFORE	
+True
+	ei6	ei9	AFTER	
+True
+	ei7	ei8	AFTER	
+True
+	ei7	ei10	AFTER	
+ei7 ei10 AFTER UNKNOWN
+	ei8	ei9	AFTER	
+True
+	ei8	ei10	INCLUDES	
+ei8 ei10 INCLUDES false
+	ei8	ei12	INCLUDES	
+ei8 ei12 INCLUDES false
+	ei8	ei13	AFTER	
+ei8 ei13 AFTER false
+	ei13	ei16	AFTER	
+ei13 ei16 AFTER UNKNOWN
+	ei13	ei17	AFTER	
+ei13 ei17 AFTER UNKNOWN
+	ei14	ei15	SIMULTANEOUS	
+ei14 ei15 SIMULTANEOUS false
+	ei14	ei16	AFTER	
+True
+	ei14	ei17	AFTER	
+ei14 ei17 AFTER UNKNOWN
+	ei14	ei19	AFTER	
+ei14 ei19 AFTER UNKNOWN
+	ei14	ei20	SIMULTANEOUS	
+ei14 ei20 SIMULTANEOUS false
+	ei16	ei17	BEFORE	
+ei16 ei17 BEFORE UNKNOWN
+	ei19	ei23	BEFORE	
+True
+	ei23	ei24	AFTER	
+True
+	ei23	ei25	AFTER	
+True
+	ei23	ei26	AFTER	
+True
+	ei23	ei27	AFTER	
+True
+	ei23	ei28	SIMULTANEOUS	
+ei23 ei28 SIMULTANEOUS false
+	ei23	ei29	INCLUDES	
+ei23 ei29 INCLUDES false
+	ei23	ei31	IS_INCLUDED	
+ei23 ei31 IS_INCLUDED false
+	ei24	ei33	BEFORE	
+True
+	ei24	ei35	BEFORE	
+True
+	ei24	ei36	BEFORE	
+True
+	ei25	ei33	BEFORE	
+True
+	ei25	ei35	BEFORE	
+True
+	ei25	ei36	BEFORE	
+True
+	ei26	ei33	BEFORE	
+ei26 ei33 BEFORE UNKNOWN
+	ei26	ei35	BEFORE	
+True
+	ei26	ei36	BEFORE	
+True
+	ei27	ei33	BEFORE	
+True
+	ei27	ei35	BEFORE	
+True
+	ei27	ei36	BEFORE	
+True
+	ei28	ei33	IS_INCLUDED	
+ei28 ei33 IS_INCLUDED false
+	ei31	ei33	INCLUDES	
+ei31 ei33 INCLUDES false
+	ei31	ei35	INCLUDES	
+ei31 ei35 INCLUDES false
+	ei31	ei36	INCLUDES	
+ei31 ei36 INCLUDES false
+	ei39	ei40	BEFORE	
+True
+	ei39	ei43	BEFORE	
+True
+	ei40	ei41	AFTER	
+True
+	ei40	ei43	SIMULTANEOUS	
+ei40 ei43 SIMULTANEOUS false
+precision 38 64
+recall 30 51
+0.59375 0.588235294118
+0.0441508293152 , 76 , 64 , 87
+output/Awareness/gold-normalized/APW19980227.0489.tml output/Awareness/global/table6_line3-normalized/APW19980227.0489.tml
+
+
+Evaluate output/Awareness/gold-normalized/APW19980227.0489.tml output/Awareness/global/table6_line3-normalized/APW19980227.0489.tml
+<TLINK eventInstanceID="ei1" lid="l0" relType="BEFORE" relatedToEventInstance="ei2" />
+APW19980227.0489.tml	ei1	ei2	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l1" relType="BEFORE" relatedToEventInstance="ei6" />
+APW19980227.0489.tml	ei1	ei6	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l2" relType="BEFORE" relatedToEventInstance="ei7" />
+APW19980227.0489.tml	ei1	ei7	BEFORE
+
+<TLINK eventInstanceID="ei2" lid="l3" relType="AFTER" relatedToEventInstance="ei5" />
+APW19980227.0489.tml	ei2	ei5	AFTER
+
+<TLINK eventInstanceID="ei2" lid="l4" relType="AFTER" relatedToEventInstance="ei6" />
+APW19980227.0489.tml	ei2	ei6	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l5" relType="BEFORE" relatedToEventInstance="ei6" />
+APW19980227.0489.tml	ei5	ei6	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l6" relType="BEFORE" relatedToEventInstance="ei7" />
+APW19980227.0489.tml	ei5	ei7	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l7" relType="AFTER" relatedToEventInstance="ei10" />
+APW19980227.0489.tml	ei5	ei10	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l8" relType="AFTER" relatedToEventInstance="ei12" />
+APW19980227.0489.tml	ei5	ei12	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l9" relType="AFTER" relatedToEventInstance="ei13" />
+APW19980227.0489.tml	ei5	ei13	AFTER
+
+<TLINK eventInstanceID="ei6" lid="l10" relType="BEFORE" relatedToEventInstance="ei7" />
+APW19980227.0489.tml	ei6	ei7	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l11" relType="AFTER" relatedToEventInstance="ei10" />
+APW19980227.0489.tml	ei6	ei10	AFTER
+
+<TLINK eventInstanceID="ei6" lid="l12" relType="AFTER" relatedToEventInstance="ei12" />
+APW19980227.0489.tml	ei6	ei12	AFTER
+
+<TLINK eventInstanceID="ei6" lid="l13" relType="AFTER" relatedToEventInstance="ei13" />
+APW19980227.0489.tml	ei6	ei13	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l14" relType="AFTER" relatedToEventInstance="ei10" />
+APW19980227.0489.tml	ei7	ei10	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l15" relType="AFTER" relatedToEventInstance="ei12" />
+APW19980227.0489.tml	ei7	ei12	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l16" relType="AFTER" relatedToEventInstance="ei13" />
+APW19980227.0489.tml	ei7	ei13	AFTER
+
+<TLINK eventInstanceID="ei10" lid="l17" relType="BEFORE" relatedToEventInstance="ei12" />
+APW19980227.0489.tml	ei10	ei12	BEFORE
+
+<TLINK eventInstanceID="ei10" lid="l18" relType="IS_INCLUDED" relatedToEventInstance="ei13" />
+APW19980227.0489.tml	ei10	ei13	IS_INCLUDED
+
+<TLINK eventInstanceID="ei12" lid="l19" relType="IS_INCLUDED" relatedToEventInstance="ei13" />
+APW19980227.0489.tml	ei12	ei13	IS_INCLUDED
+
+<TLINK eventInstanceID="ei15" lid="l20" relType="BEFORE" relatedToEventInstance="ei17" />
+APW19980227.0489.tml	ei15	ei17	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l21" relType="AFTER" relatedToEventInstance="ei19" />
+APW19980227.0489.tml	ei17	ei19	AFTER
+
+<TLINK eventInstanceID="ei17" lid="l22" relType="AFTER" relatedToEventInstance="ei24" />
+APW19980227.0489.tml	ei17	ei24	AFTER
+
+<TLINK eventInstanceID="ei19" lid="l23" relType="BEFORE" relatedToEventInstance="ei21" />
+APW19980227.0489.tml	ei19	ei21	BEFORE
+
+<TLINK eventInstanceID="ei19" lid="l24" relType="BEFORE" relatedToEventInstance="ei24" />
+APW19980227.0489.tml	ei19	ei24	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l25" relType="AFTER" relatedToEventInstance="ei24" />
+APW19980227.0489.tml	ei21	ei24	AFTER
+
+<TLINK eventInstanceID="ei21" lid="l26" relType="IS_INCLUDED" relatedToEventInstance="ei25" />
+APW19980227.0489.tml	ei21	ei25	IS_INCLUDED
+
+<TLINK eventInstanceID="ei21" lid="l27" relType="AFTER" relatedToEventInstance="ei28" />
+APW19980227.0489.tml	ei21	ei28	AFTER
+
+<TLINK eventInstanceID="ei24" lid="l28" relType="BEFORE" relatedToEventInstance="ei25" />
+APW19980227.0489.tml	ei24	ei25	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l29" relType="BEFORE" relatedToEventInstance="ei26" />
+APW19980227.0489.tml	ei24	ei26	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l30" relType="INCLUDES" relatedToEventInstance="ei26" />
+APW19980227.0489.tml	ei25	ei26	INCLUDES
+
+<TLINK eventInstanceID="ei25" lid="l31" relType="AFTER" relatedToEventInstance="ei28" />
+APW19980227.0489.tml	ei25	ei28	AFTER
+
+<TLINK eventInstanceID="ei26" lid="l32" relType="AFTER" relatedToEventInstance="ei28" />
+APW19980227.0489.tml	ei26	ei28	AFTER
+
+<TLINK eventInstanceID="ei28" lid="l33" relType="BEFORE" relatedToEventInstance="ei29" />
+APW19980227.0489.tml	ei28	ei29	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l0" relType="BEFORE" relatedToEventInstance="ei2" />
+APW19980227.0489.tml	ei1	ei2	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l1" relType="BEFORE" relatedToEventInstance="ei6" />
+APW19980227.0489.tml	ei1	ei6	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l2" relType="BEFORE" relatedToEventInstance="ei7" />
+APW19980227.0489.tml	ei1	ei7	BEFORE
+
+<TLINK eventInstanceID="ei2" lid="l3" relType="AFTER" relatedToEventInstance="ei5" />
+APW19980227.0489.tml	ei2	ei5	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l4" relType="BEFORE" relatedToEventInstance="ei6" />
+APW19980227.0489.tml	ei5	ei6	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l5" relType="BEFORE" relatedToEventInstance="ei7" />
+APW19980227.0489.tml	ei5	ei7	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l6" relType="BEFORE" relatedToEventInstance="ei10" />
+APW19980227.0489.tml	ei5	ei10	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l7" relType="AFTER" relatedToEventInstance="ei12" />
+APW19980227.0489.tml	ei5	ei12	AFTER
+
+<TLINK eventInstanceID="ei6" lid="l8" relType="BEFORE" relatedToEventInstance="ei7" />
+APW19980227.0489.tml	ei6	ei7	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l9" relType="AFTER" relatedToEventInstance="ei10" />
+APW19980227.0489.tml	ei6	ei10	AFTER
+
+<TLINK eventInstanceID="ei6" lid="l10" relType="AFTER" relatedToEventInstance="ei12" />
+APW19980227.0489.tml	ei6	ei12	AFTER
+
+<TLINK eventInstanceID="ei6" lid="l11" relType="AFTER" relatedToEventInstance="ei13" />
+APW19980227.0489.tml	ei6	ei13	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l12" relType="AFTER" relatedToEventInstance="ei10" />
+APW19980227.0489.tml	ei7	ei10	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l13" relType="AFTER" relatedToEventInstance="ei12" />
+APW19980227.0489.tml	ei7	ei12	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l14" relType="AFTER" relatedToEventInstance="ei13" />
+APW19980227.0489.tml	ei7	ei13	AFTER
+
+<TLINK eventInstanceID="ei10" lid="l15" relType="AFTER" relatedToEventInstance="ei12" />
+APW19980227.0489.tml	ei10	ei12	AFTER
+
+<TLINK eventInstanceID="ei10" lid="l16" relType="AFTER" relatedToEventInstance="ei13" />
+APW19980227.0489.tml	ei10	ei13	AFTER
+
+<TLINK eventInstanceID="ei12" lid="l17" relType="BEFORE" relatedToEventInstance="ei15" />
+APW19980227.0489.tml	ei12	ei15	BEFORE
+
+<TLINK eventInstanceID="ei13" lid="l18" relType="BEFORE" relatedToEventInstance="ei15" />
+APW19980227.0489.tml	ei13	ei15	BEFORE
+
+<TLINK eventInstanceID="ei15" lid="l19" relType="BEFORE" relatedToEventInstance="ei17" />
+APW19980227.0489.tml	ei15	ei17	BEFORE
+
+<TLINK eventInstanceID="ei15" lid="l20" relType="BEFORE" relatedToEventInstance="ei19" />
+APW19980227.0489.tml	ei15	ei19	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l21" relType="AFTER" relatedToEventInstance="ei19" />
+APW19980227.0489.tml	ei17	ei19	AFTER
+
+<TLINK eventInstanceID="ei17" lid="l22" relType="AFTER" relatedToEventInstance="ei24" />
+APW19980227.0489.tml	ei17	ei24	AFTER
+
+<TLINK eventInstanceID="ei19" lid="l23" relType="BEFORE" relatedToEventInstance="ei21" />
+APW19980227.0489.tml	ei19	ei21	BEFORE
+
+<TLINK eventInstanceID="ei19" lid="l24" relType="BEFORE" relatedToEventInstance="ei24" />
+APW19980227.0489.tml	ei19	ei24	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l25" relType="AFTER" relatedToEventInstance="ei24" />
+APW19980227.0489.tml	ei21	ei24	AFTER
+
+<TLINK eventInstanceID="ei21" lid="l26" relType="AFTER" relatedToEventInstance="ei25" />
+APW19980227.0489.tml	ei21	ei25	AFTER
+
+<TLINK eventInstanceID="ei21" lid="l27" relType="AFTER" relatedToEventInstance="ei28" />
+APW19980227.0489.tml	ei21	ei28	AFTER
+
+<TLINK eventInstanceID="ei24" lid="l28" relType="BEFORE" relatedToEventInstance="ei25" />
+APW19980227.0489.tml	ei24	ei25	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l29" relType="BEFORE" relatedToEventInstance="ei26" />
+APW19980227.0489.tml	ei24	ei26	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l30" relType="BEFORE" relatedToEventInstance="ei28" />
+APW19980227.0489.tml	ei24	ei28	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l31" relType="BEFORE" relatedToEventInstance="ei26" />
+APW19980227.0489.tml	ei25	ei26	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l32" relType="BEFORE" relatedToEventInstance="ei28" />
+APW19980227.0489.tml	ei25	ei28	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l33" relType="BEFORE" relatedToEventInstance="ei29" />
+APW19980227.0489.tml	ei25	ei29	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l34" relType="AFTER" relatedToEventInstance="ei29" />
+APW19980227.0489.tml	ei26	ei29	AFTER
+
+<TLINK eventInstanceID="ei28" lid="l35" relType="AFTER" relatedToEventInstance="ei29" />
+APW19980227.0489.tml	ei28	ei29	AFTER
+
+
+checking precision
+	ei1	ei2	BEFORE	
+True
+	ei1	ei6	BEFORE	
+True
+	ei1	ei7	BEFORE	
+True
+	ei2	ei5	AFTER	
+True
+	ei5	ei6	BEFORE	
+True
+	ei5	ei7	BEFORE	
+True
+	ei5	ei10	BEFORE	
+ei5 ei10 BEFORE false
+	ei5	ei12	AFTER	
+True
+	ei6	ei7	BEFORE	
+True
+	ei6	ei10	AFTER	
+True
+	ei6	ei13	AFTER	
+True
+	ei10	ei13	AFTER	
+ei10 ei13 AFTER true
+	ei12	ei15	BEFORE	
+ei12 ei15 BEFORE UNKNOWN
+	ei13	ei15	BEFORE	
+ei13 ei15 BEFORE UNKNOWN
+	ei15	ei17	BEFORE	
+True
+	ei15	ei19	BEFORE	
+ei15 ei19 BEFORE UNKNOWN
+	ei17	ei19	AFTER	
+True
+	ei17	ei24	AFTER	
+True
+	ei19	ei21	BEFORE	
+True
+	ei19	ei24	BEFORE	
+True
+	ei21	ei24	AFTER	
+True
+	ei21	ei25	AFTER	
+ei21 ei25 AFTER false
+	ei21	ei28	AFTER	
+True
+	ei24	ei25	BEFORE	
+True
+	ei24	ei26	BEFORE	
+True
+	ei24	ei28	BEFORE	
+ei24 ei28 BEFORE UNKNOWN
+	ei25	ei26	BEFORE	
+ei25 ei26 BEFORE false
+	ei25	ei28	BEFORE	
+ei25 ei28 BEFORE false
+	ei25	ei29	BEFORE	
+ei25 ei29 BEFORE UNKNOWN
+	ei26	ei29	AFTER	
+ei26 ei29 AFTER UNKNOWN
+	ei28	ei29	AFTER	
+ei28 ei29 AFTER false
+
+checking recall
+	ei1	ei2	BEFORE	
+True
+	ei1	ei6	BEFORE	
+True
+	ei1	ei7	BEFORE	
+True
+	ei2	ei5	AFTER	
+True
+	ei2	ei6	AFTER	
+ei2 ei6 AFTER UNKNOWN
+	ei5	ei6	BEFORE	
+True
+	ei5	ei7	BEFORE	
+True
+	ei5	ei10	AFTER	
+ei5 ei10 AFTER false
+	ei5	ei12	AFTER	
+True
+	ei5	ei13	AFTER	
+ei5 ei13 AFTER UNKNOWN
+	ei6	ei7	BEFORE	
+True
+	ei10	ei12	BEFORE	
+ei10 ei12 BEFORE false
+	ei10	ei13	IS_INCLUDED	
+ei10 ei13 IS_INCLUDED false
+	ei12	ei13	IS_INCLUDED	
+ei12 ei13 IS_INCLUDED false
+	ei15	ei17	BEFORE	
+True
+	ei17	ei19	AFTER	
+True
+	ei17	ei24	AFTER	
+True
+	ei19	ei21	BEFORE	
+True
+	ei19	ei24	BEFORE	
+True
+	ei21	ei24	AFTER	
+True
+	ei21	ei25	IS_INCLUDED	
+ei21 ei25 IS_INCLUDED false
+	ei21	ei28	AFTER	
+True
+	ei24	ei25	BEFORE	
+True
+	ei24	ei26	BEFORE	
+True
+	ei25	ei26	INCLUDES	
+ei25 ei26 INCLUDES false
+	ei25	ei28	AFTER	
+ei25 ei28 AFTER false
+	ei28	ei29	BEFORE	
+ei28 ei29 BEFORE false
+precision 20 31
+recall 17 27
+0.645161290323 0.62962962963
+0.0213270187378 , 36 , 34 , 40
+output/Awareness/gold-normalized/PRI19980115.2000.0186.tml output/Awareness/global/table6_line3-normalized/PRI19980115.2000.0186.tml
+
+
+Evaluate output/Awareness/gold-normalized/PRI19980115.2000.0186.tml output/Awareness/global/table6_line3-normalized/PRI19980115.2000.0186.tml
+<TLINK eventInstanceID="ei5" lid="l0" relType="AFTER" relatedToEventInstance="ei6" />
+PRI19980115.2000.0186.tml	ei5	ei6	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l1" relType="AFTER" relatedToEventInstance="ei7" />
+PRI19980115.2000.0186.tml	ei5	ei7	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l2" relType="AFTER" relatedToEventInstance="ei8" />
+PRI19980115.2000.0186.tml	ei5	ei8	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l3" relType="AFTER" relatedToEventInstance="ei9" />
+PRI19980115.2000.0186.tml	ei5	ei9	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l4" relType="AFTER" relatedToEventInstance="ei10" />
+PRI19980115.2000.0186.tml	ei5	ei10	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l5" relType="AFTER" relatedToEventInstance="ei11" />
+PRI19980115.2000.0186.tml	ei5	ei11	AFTER
+
+<TLINK eventInstanceID="ei6" lid="l6" relType="IS_INCLUDED" relatedToEventInstance="ei7" />
+PRI19980115.2000.0186.tml	ei6	ei7	IS_INCLUDED
+
+<TLINK eventInstanceID="ei8" lid="l7" relType="SIMULTANEOUS" relatedToEventInstance="ei9" />
+PRI19980115.2000.0186.tml	ei8	ei9	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei8" lid="l8" relType="BEFORE" relatedToEventInstance="ei10" />
+PRI19980115.2000.0186.tml	ei8	ei10	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l9" relType="BEFORE" relatedToEventInstance="ei11" />
+PRI19980115.2000.0186.tml	ei8	ei11	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l10" relType="BEFORE" relatedToEventInstance="ei10" />
+PRI19980115.2000.0186.tml	ei9	ei10	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l11" relType="BEFORE" relatedToEventInstance="ei11" />
+PRI19980115.2000.0186.tml	ei9	ei11	BEFORE
+
+<TLINK eventInstanceID="ei10" lid="l12" relType="SIMULTANEOUS" relatedToEventInstance="ei11" />
+PRI19980115.2000.0186.tml	ei10	ei11	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei10" lid="l13" relType="BEFORE" relatedToEventInstance="ei13" />
+PRI19980115.2000.0186.tml	ei10	ei13	BEFORE
+
+<TLINK eventInstanceID="ei11" lid="l14" relType="BEFORE" relatedToEventInstance="ei13" />
+PRI19980115.2000.0186.tml	ei11	ei13	BEFORE
+
+<TLINK eventInstanceID="ei13" lid="l15" relType="BEFORE" relatedToEventInstance="ei14" />
+PRI19980115.2000.0186.tml	ei13	ei14	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l16" relType="BEFORE" relatedToEventInstance="ei17" />
+PRI19980115.2000.0186.tml	ei14	ei17	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l17" relType="AFTER" relatedToEventInstance="ei20" />
+PRI19980115.2000.0186.tml	ei14	ei20	AFTER
+
+<TLINK eventInstanceID="ei14" lid="l18" relType="AFTER" relatedToEventInstance="ei21" />
+PRI19980115.2000.0186.tml	ei14	ei21	AFTER
+
+<TLINK eventInstanceID="ei17" lid="l19" relType="AFTER" relatedToEventInstance="ei20" />
+PRI19980115.2000.0186.tml	ei17	ei20	AFTER
+
+<TLINK eventInstanceID="ei17" lid="l20" relType="AFTER" relatedToEventInstance="ei21" />
+PRI19980115.2000.0186.tml	ei17	ei21	AFTER
+
+<TLINK eventInstanceID="ei17" lid="l21" relType="BEFORE" relatedToEventInstance="ei25" />
+PRI19980115.2000.0186.tml	ei17	ei25	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l22" relType="BEFORE" relatedToEventInstance="ei26" />
+PRI19980115.2000.0186.tml	ei17	ei26	BEFORE
+
+<TLINK eventInstanceID="ei19" lid="l23" relType="AFTER" relatedToEventInstance="ei21" />
+PRI19980115.2000.0186.tml	ei19	ei21	AFTER
+
+<TLINK eventInstanceID="ei20" lid="l24" relType="AFTER" relatedToEventInstance="ei21" />
+PRI19980115.2000.0186.tml	ei20	ei21	AFTER
+
+<TLINK eventInstanceID="ei20" lid="l25" relType="BEFORE" relatedToEventInstance="ei22" />
+PRI19980115.2000.0186.tml	ei20	ei22	BEFORE
+
+<TLINK eventInstanceID="ei20" lid="l26" relType="BEFORE" relatedToEventInstance="ei23" />
+PRI19980115.2000.0186.tml	ei20	ei23	BEFORE
+
+<TLINK eventInstanceID="ei20" lid="l27" relType="BEFORE" relatedToEventInstance="ei25" />
+PRI19980115.2000.0186.tml	ei20	ei25	BEFORE
+
+<TLINK eventInstanceID="ei20" lid="l28" relType="BEFORE" relatedToEventInstance="ei26" />
+PRI19980115.2000.0186.tml	ei20	ei26	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l29" relType="BEFORE" relatedToEventInstance="ei22" />
+PRI19980115.2000.0186.tml	ei21	ei22	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l30" relType="BEFORE" relatedToEventInstance="ei23" />
+PRI19980115.2000.0186.tml	ei21	ei23	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l31" relType="BEFORE" relatedToEventInstance="ei25" />
+PRI19980115.2000.0186.tml	ei21	ei25	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l32" relType="BEFORE" relatedToEventInstance="ei26" />
+PRI19980115.2000.0186.tml	ei21	ei26	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l33" relType="BEFORE" relatedToEventInstance="ei26" />
+PRI19980115.2000.0186.tml	ei25	ei26	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l0" relType="AFTER" relatedToEventInstance="ei6" />
+PRI19980115.2000.0186.tml	ei5	ei6	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l1" relType="BEFORE" relatedToEventInstance="ei7" />
+PRI19980115.2000.0186.tml	ei5	ei7	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l2" relType="AFTER" relatedToEventInstance="ei8" />
+PRI19980115.2000.0186.tml	ei5	ei8	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l3" relType="AFTER" relatedToEventInstance="ei9" />
+PRI19980115.2000.0186.tml	ei5	ei9	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l4" relType="BEFORE" relatedToEventInstance="ei10" />
+PRI19980115.2000.0186.tml	ei5	ei10	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l5" relType="BEFORE" relatedToEventInstance="ei7" />
+PRI19980115.2000.0186.tml	ei6	ei7	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l6" relType="AFTER" relatedToEventInstance="ei8" />
+PRI19980115.2000.0186.tml	ei6	ei8	AFTER
+
+<TLINK eventInstanceID="ei6" lid="l7" relType="AFTER" relatedToEventInstance="ei9" />
+PRI19980115.2000.0186.tml	ei6	ei9	AFTER
+
+<TLINK eventInstanceID="ei6" lid="l8" relType="BEFORE" relatedToEventInstance="ei10" />
+PRI19980115.2000.0186.tml	ei6	ei10	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l9" relType="AFTER" relatedToEventInstance="ei8" />
+PRI19980115.2000.0186.tml	ei7	ei8	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l10" relType="AFTER" relatedToEventInstance="ei9" />
+PRI19980115.2000.0186.tml	ei7	ei9	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l11" relType="AFTER" relatedToEventInstance="ei10" />
+PRI19980115.2000.0186.tml	ei7	ei10	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l12" relType="AFTER" relatedToEventInstance="ei11" />
+PRI19980115.2000.0186.tml	ei7	ei11	AFTER
+
+<TLINK eventInstanceID="ei8" lid="l13" relType="AFTER" relatedToEventInstance="ei9" />
+PRI19980115.2000.0186.tml	ei8	ei9	AFTER
+
+<TLINK eventInstanceID="ei8" lid="l14" relType="BEFORE" relatedToEventInstance="ei10" />
+PRI19980115.2000.0186.tml	ei8	ei10	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l15" relType="BEFORE" relatedToEventInstance="ei10" />
+PRI19980115.2000.0186.tml	ei9	ei10	BEFORE
+
+<TLINK eventInstanceID="ei10" lid="l16" relType="AFTER" relatedToEventInstance="ei11" />
+PRI19980115.2000.0186.tml	ei10	ei11	AFTER
+
+<TLINK eventInstanceID="ei10" lid="l17" relType="BEFORE" relatedToEventInstance="ei13" />
+PRI19980115.2000.0186.tml	ei10	ei13	BEFORE
+
+<TLINK eventInstanceID="ei11" lid="l18" relType="BEFORE" relatedToEventInstance="ei13" />
+PRI19980115.2000.0186.tml	ei11	ei13	BEFORE
+
+<TLINK eventInstanceID="ei13" lid="l19" relType="BEFORE" relatedToEventInstance="ei14" />
+PRI19980115.2000.0186.tml	ei13	ei14	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l20" relType="BEFORE" relatedToEventInstance="ei17" />
+PRI19980115.2000.0186.tml	ei14	ei17	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l21" relType="BEFORE" relatedToEventInstance="ei19" />
+PRI19980115.2000.0186.tml	ei14	ei19	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l22" relType="BEFORE" relatedToEventInstance="ei20" />
+PRI19980115.2000.0186.tml	ei14	ei20	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l23" relType="INCLUDES" relatedToEventInstance="ei19" />
+PRI19980115.2000.0186.tml	ei17	ei19	INCLUDES
+
+<TLINK eventInstanceID="ei17" lid="l24" relType="AFTER" relatedToEventInstance="ei20" />
+PRI19980115.2000.0186.tml	ei17	ei20	AFTER
+
+<TLINK eventInstanceID="ei17" lid="l25" relType="AFTER" relatedToEventInstance="ei21" />
+PRI19980115.2000.0186.tml	ei17	ei21	AFTER
+
+<TLINK eventInstanceID="ei17" lid="l26" relType="BEFORE" relatedToEventInstance="ei22" />
+PRI19980115.2000.0186.tml	ei17	ei22	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l27" relType="BEFORE" relatedToEventInstance="ei25" />
+PRI19980115.2000.0186.tml	ei17	ei25	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l28" relType="BEFORE" relatedToEventInstance="ei26" />
+PRI19980115.2000.0186.tml	ei17	ei26	BEFORE
+
+<TLINK eventInstanceID="ei19" lid="l29" relType="AFTER" relatedToEventInstance="ei20" />
+PRI19980115.2000.0186.tml	ei19	ei20	AFTER
+
+<TLINK eventInstanceID="ei19" lid="l30" relType="AFTER" relatedToEventInstance="ei21" />
+PRI19980115.2000.0186.tml	ei19	ei21	AFTER
+
+<TLINK eventInstanceID="ei19" lid="l31" relType="BEFORE" relatedToEventInstance="ei22" />
+PRI19980115.2000.0186.tml	ei19	ei22	BEFORE
+
+<TLINK eventInstanceID="ei19" lid="l32" relType="BEFORE" relatedToEventInstance="ei25" />
+PRI19980115.2000.0186.tml	ei19	ei25	BEFORE
+
+<TLINK eventInstanceID="ei19" lid="l33" relType="BEFORE" relatedToEventInstance="ei26" />
+PRI19980115.2000.0186.tml	ei19	ei26	BEFORE
+
+<TLINK eventInstanceID="ei20" lid="l34" relType="AFTER" relatedToEventInstance="ei21" />
+PRI19980115.2000.0186.tml	ei20	ei21	AFTER
+
+<TLINK eventInstanceID="ei20" lid="l35" relType="BEFORE" relatedToEventInstance="ei22" />
+PRI19980115.2000.0186.tml	ei20	ei22	BEFORE
+
+<TLINK eventInstanceID="ei20" lid="l36" relType="BEFORE" relatedToEventInstance="ei25" />
+PRI19980115.2000.0186.tml	ei20	ei25	BEFORE
+
+<TLINK eventInstanceID="ei20" lid="l37" relType="BEFORE" relatedToEventInstance="ei26" />
+PRI19980115.2000.0186.tml	ei20	ei26	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l38" relType="BEFORE" relatedToEventInstance="ei22" />
+PRI19980115.2000.0186.tml	ei21	ei22	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l39" relType="BEFORE" relatedToEventInstance="ei23" />
+PRI19980115.2000.0186.tml	ei21	ei23	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l40" relType="BEFORE" relatedToEventInstance="ei25" />
+PRI19980115.2000.0186.tml	ei21	ei25	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l41" relType="BEFORE" relatedToEventInstance="ei26" />
+PRI19980115.2000.0186.tml	ei21	ei26	BEFORE
+
+<TLINK eventInstanceID="ei23" lid="l42" relType="BEFORE" relatedToEventInstance="ei25" />
+PRI19980115.2000.0186.tml	ei23	ei25	BEFORE
+
+<TLINK eventInstanceID="ei23" lid="l43" relType="BEFORE" relatedToEventInstance="ei26" />
+PRI19980115.2000.0186.tml	ei23	ei26	BEFORE
+
+
+checking precision
+	ei5	ei6	AFTER	
+True
+	ei5	ei7	BEFORE	
+ei5 ei7 BEFORE false
+	ei5	ei8	AFTER	
+True
+	ei5	ei9	AFTER	
+True
+	ei5	ei10	BEFORE	
+ei5 ei10 BEFORE false
+	ei6	ei8	AFTER	
+ei6 ei8 AFTER UNKNOWN
+	ei6	ei9	AFTER	
+ei6 ei9 AFTER UNKNOWN
+	ei7	ei10	AFTER	
+ei7 ei10 AFTER UNKNOWN
+	ei7	ei11	AFTER	
+ei7 ei11 AFTER UNKNOWN
+	ei8	ei9	AFTER	
+ei8 ei9 AFTER false
+	ei10	ei11	AFTER	
+ei10 ei11 AFTER false
+	ei10	ei13	BEFORE	
+True
+	ei13	ei14	BEFORE	
+True
+	ei14	ei17	BEFORE	
+True
+	ei14	ei19	BEFORE	
+ei14 ei19 BEFORE UNKNOWN
+	ei14	ei20	BEFORE	
+ei14 ei20 BEFORE false
+	ei17	ei19	INCLUDES	
+ei17 ei19 INCLUDES false
+	ei17	ei20	AFTER	
+True
+	ei17	ei21	AFTER	
+True
+	ei17	ei22	BEFORE	
+ei17 ei22 BEFORE UNKNOWN
+	ei17	ei25	BEFORE	
+True
+	ei17	ei26	BEFORE	
+True
+	ei20	ei21	AFTER	
+True
+	ei21	ei23	BEFORE	
+True
+	ei23	ei25	BEFORE	
+ei23 ei25 BEFORE UNKNOWN
+	ei23	ei26	BEFORE	
+ei23 ei26 BEFORE UNKNOWN
+
+checking recall
+	ei5	ei6	AFTER	
+True
+	ei5	ei7	AFTER	
+ei5 ei7 AFTER false
+	ei5	ei8	AFTER	
+True
+	ei5	ei9	AFTER	
+True
+	ei5	ei10	AFTER	
+ei5 ei10 AFTER false
+	ei5	ei11	AFTER	
+ei5 ei11 AFTER UNKNOWN
+	ei6	ei7	IS_INCLUDED	
+ei6 ei7 IS_INCLUDED false
+	ei8	ei9	SIMULTANEOUS	
+ei8 ei9 SIMULTANEOUS false
+	ei8	ei10	BEFORE	
+True
+	ei8	ei11	BEFORE	
+ei8 ei11 BEFORE UNKNOWN
+	ei10	ei11	SIMULTANEOUS	
+ei10 ei11 SIMULTANEOUS false
+	ei10	ei13	BEFORE	
+True
+	ei13	ei14	BEFORE	
+True
+	ei14	ei17	BEFORE	
+True
+	ei14	ei20	AFTER	
+ei14 ei20 AFTER false
+	ei14	ei21	AFTER	
+ei14 ei21 AFTER UNKNOWN
+	ei17	ei25	BEFORE	
+True
+	ei17	ei26	BEFORE	
+True
+	ei19	ei21	AFTER	
+True
+	ei20	ei21	AFTER	
+True
+	ei20	ei22	BEFORE	
+True
+	ei20	ei23	BEFORE	
+ei20 ei23 BEFORE UNKNOWN
+	ei25	ei26	BEFORE	
+ei25 ei26 BEFORE UNKNOWN
+precision 12 26
+recall 12 23
+0.461538461538 0.521739130435
+0.0234801769257 , 44 , 34 , 32
+output/Awareness/gold-normalized/CNN19980213.2130.0155.tml output/Awareness/global/table6_line3-normalized/CNN19980213.2130.0155.tml
+
+
+Evaluate output/Awareness/gold-normalized/CNN19980213.2130.0155.tml output/Awareness/global/table6_line3-normalized/CNN19980213.2130.0155.tml
+<TLINK eventInstanceID="ei1" lid="l0" relType="IS_INCLUDED" relatedToEventInstance="ei2" />
+CNN19980213.2130.0155.tml	ei1	ei2	IS_INCLUDED
+
+<TLINK eventInstanceID="ei6" lid="l1" relType="INCLUDES" relatedToEventInstance="ei7" />
+CNN19980213.2130.0155.tml	ei6	ei7	INCLUDES
+
+<TLINK eventInstanceID="ei6" lid="l2" relType="INCLUDES" relatedToEventInstance="ei8" />
+CNN19980213.2130.0155.tml	ei6	ei8	INCLUDES
+
+<TLINK eventInstanceID="ei6" lid="l3" relType="BEFORE" relatedToEventInstance="ei11" />
+CNN19980213.2130.0155.tml	ei6	ei11	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l4" relType="BEFORE" relatedToEventInstance="ei12" />
+CNN19980213.2130.0155.tml	ei6	ei12	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l5" relType="INCLUDES" relatedToEventInstance="ei8" />
+CNN19980213.2130.0155.tml	ei7	ei8	INCLUDES
+
+<TLINK eventInstanceID="ei7" lid="l6" relType="BEFORE" relatedToEventInstance="ei11" />
+CNN19980213.2130.0155.tml	ei7	ei11	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l7" relType="BEFORE" relatedToEventInstance="ei12" />
+CNN19980213.2130.0155.tml	ei7	ei12	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l8" relType="BEFORE" relatedToEventInstance="ei11" />
+CNN19980213.2130.0155.tml	ei8	ei11	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l9" relType="BEFORE" relatedToEventInstance="ei12" />
+CNN19980213.2130.0155.tml	ei8	ei12	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l10" relType="BEFORE" relatedToEventInstance="ei18" />
+CNN19980213.2130.0155.tml	ei8	ei18	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l11" relType="BEFORE" relatedToEventInstance="ei11" />
+CNN19980213.2130.0155.tml	ei9	ei11	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l12" relType="BEFORE" relatedToEventInstance="ei12" />
+CNN19980213.2130.0155.tml	ei9	ei12	BEFORE
+
+<TLINK eventInstanceID="ei11" lid="l13" relType="AFTER" relatedToEventInstance="ei12" />
+CNN19980213.2130.0155.tml	ei11	ei12	AFTER
+
+<TLINK eventInstanceID="ei13" lid="l14" relType="INCLUDES" relatedToEventInstance="ei18" />
+CNN19980213.2130.0155.tml	ei13	ei18	INCLUDES
+
+<TLINK eventInstanceID="ei13" lid="l15" relType="INCLUDES" relatedToEventInstance="ei19" />
+CNN19980213.2130.0155.tml	ei13	ei19	INCLUDES
+
+<TLINK eventInstanceID="ei13" lid="l16" relType="SIMULTANEOUS" relatedToEventInstance="ei20" />
+CNN19980213.2130.0155.tml	ei13	ei20	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei17" lid="l17" relType="BEFORE" relatedToEventInstance="ei18" />
+CNN19980213.2130.0155.tml	ei17	ei18	BEFORE
+
+<TLINK eventInstanceID="ei18" lid="l18" relType="IS_INCLUDED" relatedToEventInstance="ei19" />
+CNN19980213.2130.0155.tml	ei18	ei19	IS_INCLUDED
+
+<TLINK eventInstanceID="ei18" lid="l19" relType="IS_INCLUDED" relatedToEventInstance="ei20" />
+CNN19980213.2130.0155.tml	ei18	ei20	IS_INCLUDED
+
+<TLINK eventInstanceID="ei18" lid="l20" relType="AFTER" relatedToEventInstance="ei21" />
+CNN19980213.2130.0155.tml	ei18	ei21	AFTER
+
+<TLINK eventInstanceID="ei18" lid="l21" relType="AFTER" relatedToEventInstance="ei22" />
+CNN19980213.2130.0155.tml	ei18	ei22	AFTER
+
+<TLINK eventInstanceID="ei18" lid="l22" relType="INCLUDES" relatedToEventInstance="ei23" />
+CNN19980213.2130.0155.tml	ei18	ei23	INCLUDES
+
+<TLINK eventInstanceID="ei18" lid="l23" relType="INCLUDES" relatedToEventInstance="ei24" />
+CNN19980213.2130.0155.tml	ei18	ei24	INCLUDES
+
+<TLINK eventInstanceID="ei19" lid="l24" relType="IS_INCLUDED" relatedToEventInstance="ei20" />
+CNN19980213.2130.0155.tml	ei19	ei20	IS_INCLUDED
+
+<TLINK eventInstanceID="ei21" lid="l25" relType="INCLUDES" relatedToEventInstance="ei22" />
+CNN19980213.2130.0155.tml	ei21	ei22	INCLUDES
+
+<TLINK eventInstanceID="ei21" lid="l26" relType="BEFORE" relatedToEventInstance="ei23" />
+CNN19980213.2130.0155.tml	ei21	ei23	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l27" relType="BEFORE" relatedToEventInstance="ei24" />
+CNN19980213.2130.0155.tml	ei21	ei24	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l28" relType="IS_INCLUDED" relatedToEventInstance="ei26" />
+CNN19980213.2130.0155.tml	ei21	ei26	IS_INCLUDED
+
+<TLINK eventInstanceID="ei22" lid="l29" relType="BEFORE" relatedToEventInstance="ei23" />
+CNN19980213.2130.0155.tml	ei22	ei23	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l30" relType="BEFORE" relatedToEventInstance="ei24" />
+CNN19980213.2130.0155.tml	ei22	ei24	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l31" relType="IS_INCLUDED" relatedToEventInstance="ei26" />
+CNN19980213.2130.0155.tml	ei22	ei26	IS_INCLUDED
+
+<TLINK eventInstanceID="ei23" lid="l32" relType="SIMULTANEOUS" relatedToEventInstance="ei24" />
+CNN19980213.2130.0155.tml	ei23	ei24	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei23" lid="l33" relType="IS_INCLUDED" relatedToEventInstance="ei26" />
+CNN19980213.2130.0155.tml	ei23	ei26	IS_INCLUDED
+
+<TLINK eventInstanceID="ei24" lid="l34" relType="IS_INCLUDED" relatedToEventInstance="ei26" />
+CNN19980213.2130.0155.tml	ei24	ei26	IS_INCLUDED
+
+<TLINK eventInstanceID="ei26" lid="l35" relType="INCLUDES" relatedToEventInstance="ei29" />
+CNN19980213.2130.0155.tml	ei26	ei29	INCLUDES
+
+<TLINK eventInstanceID="ei27" lid="l36" relType="BEFORE" relatedToEventInstance="ei28" />
+CNN19980213.2130.0155.tml	ei27	ei28	BEFORE
+
+<TLINK eventInstanceID="ei33" lid="l37" relType="BEFORE" relatedToEventInstance="ei34" />
+CNN19980213.2130.0155.tml	ei33	ei34	BEFORE
+
+<TLINK eventInstanceID="ei33" lid="l38" relType="INCLUDES" relatedToEventInstance="ei36" />
+CNN19980213.2130.0155.tml	ei33	ei36	INCLUDES
+
+<TLINK eventInstanceID="ei34" lid="l39" relType="AFTER" relatedToEventInstance="ei36" />
+CNN19980213.2130.0155.tml	ei34	ei36	AFTER
+
+<TLINK eventInstanceID="ei36" lid="l40" relType="BEFORE" relatedToEventInstance="ei37" />
+CNN19980213.2130.0155.tml	ei36	ei37	BEFORE
+
+<TLINK eventInstanceID="ei38" lid="l41" relType="SIMULTANEOUS" relatedToEventInstance="ei39" />
+CNN19980213.2130.0155.tml	ei38	ei39	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei38" lid="l42" relType="BEFORE" relatedToEventInstance="ei40" />
+CNN19980213.2130.0155.tml	ei38	ei40	BEFORE
+
+<TLINK eventInstanceID="ei38" lid="l43" relType="BEFORE" relatedToEventInstance="ei41" />
+CNN19980213.2130.0155.tml	ei38	ei41	BEFORE
+
+<TLINK eventInstanceID="ei38" lid="l44" relType="BEFORE" relatedToEventInstance="ei42" />
+CNN19980213.2130.0155.tml	ei38	ei42	BEFORE
+
+<TLINK eventInstanceID="ei38" lid="l45" relType="BEFORE" relatedToEventInstance="ei43" />
+CNN19980213.2130.0155.tml	ei38	ei43	BEFORE
+
+<TLINK eventInstanceID="ei38" lid="l46" relType="BEFORE" relatedToEventInstance="ei44" />
+CNN19980213.2130.0155.tml	ei38	ei44	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l47" relType="BEFORE" relatedToEventInstance="ei40" />
+CNN19980213.2130.0155.tml	ei39	ei40	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l48" relType="BEFORE" relatedToEventInstance="ei41" />
+CNN19980213.2130.0155.tml	ei39	ei41	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l49" relType="BEFORE" relatedToEventInstance="ei42" />
+CNN19980213.2130.0155.tml	ei39	ei42	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l50" relType="BEFORE" relatedToEventInstance="ei43" />
+CNN19980213.2130.0155.tml	ei39	ei43	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l51" relType="BEFORE" relatedToEventInstance="ei44" />
+CNN19980213.2130.0155.tml	ei39	ei44	BEFORE
+
+<TLINK eventInstanceID="ei40" lid="l52" relType="BEFORE" relatedToEventInstance="ei41" />
+CNN19980213.2130.0155.tml	ei40	ei41	BEFORE
+
+<TLINK eventInstanceID="ei40" lid="l53" relType="BEFORE" relatedToEventInstance="ei42" />
+CNN19980213.2130.0155.tml	ei40	ei42	BEFORE
+
+<TLINK eventInstanceID="ei40" lid="l54" relType="BEFORE" relatedToEventInstance="ei43" />
+CNN19980213.2130.0155.tml	ei40	ei43	BEFORE
+
+<TLINK eventInstanceID="ei40" lid="l55" relType="BEFORE" relatedToEventInstance="ei44" />
+CNN19980213.2130.0155.tml	ei40	ei44	BEFORE
+
+<TLINK eventInstanceID="ei40" lid="l56" relType="SIMULTANEOUS" relatedToEventInstance="ei45" />
+CNN19980213.2130.0155.tml	ei40	ei45	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei40" lid="l57" relType="INCLUDES" relatedToEventInstance="ei47" />
+CNN19980213.2130.0155.tml	ei40	ei47	INCLUDES
+
+<TLINK eventInstanceID="ei40" lid="l58" relType="IS_INCLUDED" relatedToEventInstance="ei48" />
+CNN19980213.2130.0155.tml	ei40	ei48	IS_INCLUDED
+
+<TLINK eventInstanceID="ei41" lid="l59" relType="AFTER" relatedToEventInstance="ei42" />
+CNN19980213.2130.0155.tml	ei41	ei42	AFTER
+
+<TLINK eventInstanceID="ei41" lid="l60" relType="AFTER" relatedToEventInstance="ei45" />
+CNN19980213.2130.0155.tml	ei41	ei45	AFTER
+
+<TLINK eventInstanceID="ei41" lid="l61" relType="AFTER" relatedToEventInstance="ei46" />
+CNN19980213.2130.0155.tml	ei41	ei46	AFTER
+
+<TLINK eventInstanceID="ei41" lid="l62" relType="AFTER" relatedToEventInstance="ei47" />
+CNN19980213.2130.0155.tml	ei41	ei47	AFTER
+
+<TLINK eventInstanceID="ei41" lid="l63" relType="AFTER" relatedToEventInstance="ei49" />
+CNN19980213.2130.0155.tml	ei41	ei49	AFTER
+
+<TLINK eventInstanceID="ei42" lid="l64" relType="AFTER" relatedToEventInstance="ei45" />
+CNN19980213.2130.0155.tml	ei42	ei45	AFTER
+
+<TLINK eventInstanceID="ei42" lid="l65" relType="AFTER" relatedToEventInstance="ei46" />
+CNN19980213.2130.0155.tml	ei42	ei46	AFTER
+
+<TLINK eventInstanceID="ei42" lid="l66" relType="AFTER" relatedToEventInstance="ei47" />
+CNN19980213.2130.0155.tml	ei42	ei47	AFTER
+
+<TLINK eventInstanceID="ei43" lid="l67" relType="AFTER" relatedToEventInstance="ei45" />
+CNN19980213.2130.0155.tml	ei43	ei45	AFTER
+
+<TLINK eventInstanceID="ei43" lid="l68" relType="AFTER" relatedToEventInstance="ei46" />
+CNN19980213.2130.0155.tml	ei43	ei46	AFTER
+
+<TLINK eventInstanceID="ei43" lid="l69" relType="AFTER" relatedToEventInstance="ei47" />
+CNN19980213.2130.0155.tml	ei43	ei47	AFTER
+
+<TLINK eventInstanceID="ei44" lid="l70" relType="AFTER" relatedToEventInstance="ei45" />
+CNN19980213.2130.0155.tml	ei44	ei45	AFTER
+
+<TLINK eventInstanceID="ei44" lid="l71" relType="AFTER" relatedToEventInstance="ei46" />
+CNN19980213.2130.0155.tml	ei44	ei46	AFTER
+
+<TLINK eventInstanceID="ei44" lid="l72" relType="AFTER" relatedToEventInstance="ei47" />
+CNN19980213.2130.0155.tml	ei44	ei47	AFTER
+
+<TLINK eventInstanceID="ei44" lid="l73" relType="AFTER" relatedToEventInstance="ei49" />
+CNN19980213.2130.0155.tml	ei44	ei49	AFTER
+
+<TLINK eventInstanceID="ei45" lid="l74" relType="INCLUDES" relatedToEventInstance="ei47" />
+CNN19980213.2130.0155.tml	ei45	ei47	INCLUDES
+
+<TLINK eventInstanceID="ei45" lid="l75" relType="IS_INCLUDED" relatedToEventInstance="ei48" />
+CNN19980213.2130.0155.tml	ei45	ei48	IS_INCLUDED
+
+<TLINK eventInstanceID="ei45" lid="l76" relType="BEFORE" relatedToEventInstance="ei52" />
+CNN19980213.2130.0155.tml	ei45	ei52	BEFORE
+
+<TLINK eventInstanceID="ei46" lid="l77" relType="IS_INCLUDED" relatedToEventInstance="ei48" />
+CNN19980213.2130.0155.tml	ei46	ei48	IS_INCLUDED
+
+<TLINK eventInstanceID="ei46" lid="l78" relType="BEFORE" relatedToEventInstance="ei52" />
+CNN19980213.2130.0155.tml	ei46	ei52	BEFORE
+
+<TLINK eventInstanceID="ei47" lid="l79" relType="IS_INCLUDED" relatedToEventInstance="ei48" />
+CNN19980213.2130.0155.tml	ei47	ei48	IS_INCLUDED
+
+<TLINK eventInstanceID="ei47" lid="l80" relType="BEFORE" relatedToEventInstance="ei52" />
+CNN19980213.2130.0155.tml	ei47	ei52	BEFORE
+
+<TLINK eventInstanceID="ei52" lid="l81" relType="AFTER" relatedToEventInstance="ei53" />
+CNN19980213.2130.0155.tml	ei52	ei53	AFTER
+
+<TLINK eventInstanceID="ei53" lid="l82" relType="BEFORE" relatedToEventInstance="ei55" />
+CNN19980213.2130.0155.tml	ei53	ei55	BEFORE
+
+<TLINK eventInstanceID="ei53" lid="l83" relType="BEFORE" relatedToEventInstance="ei56" />
+CNN19980213.2130.0155.tml	ei53	ei56	BEFORE
+
+<TLINK eventInstanceID="ei53" lid="l84" relType="BEFORE" relatedToEventInstance="ei58" />
+CNN19980213.2130.0155.tml	ei53	ei58	BEFORE
+
+<TLINK eventInstanceID="ei55" lid="l85" relType="BEFORE" relatedToEventInstance="ei56" />
+CNN19980213.2130.0155.tml	ei55	ei56	BEFORE
+
+<TLINK eventInstanceID="ei55" lid="l86" relType="BEFORE" relatedToEventInstance="ei58" />
+CNN19980213.2130.0155.tml	ei55	ei58	BEFORE
+
+<TLINK eventInstanceID="ei56" lid="l87" relType="BEFORE" relatedToEventInstance="ei58" />
+CNN19980213.2130.0155.tml	ei56	ei58	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l0" relType="AFTER" relatedToEventInstance="ei2" />
+CNN19980213.2130.0155.tml	ei1	ei2	AFTER
+
+<TLINK eventInstanceID="ei6" lid="l1" relType="BEFORE" relatedToEventInstance="ei9" />
+CNN19980213.2130.0155.tml	ei6	ei9	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l2" relType="BEFORE" relatedToEventInstance="ei11" />
+CNN19980213.2130.0155.tml	ei6	ei11	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l3" relType="BEFORE" relatedToEventInstance="ei12" />
+CNN19980213.2130.0155.tml	ei6	ei12	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l4" relType="BEFORE" relatedToEventInstance="ei8" />
+CNN19980213.2130.0155.tml	ei7	ei8	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l5" relType="BEFORE" relatedToEventInstance="ei9" />
+CNN19980213.2130.0155.tml	ei7	ei9	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l6" relType="BEFORE" relatedToEventInstance="ei11" />
+CNN19980213.2130.0155.tml	ei7	ei11	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l7" relType="BEFORE" relatedToEventInstance="ei12" />
+CNN19980213.2130.0155.tml	ei7	ei12	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l8" relType="BEFORE" relatedToEventInstance="ei13" />
+CNN19980213.2130.0155.tml	ei7	ei13	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l9" relType="BEFORE" relatedToEventInstance="ei14" />
+CNN19980213.2130.0155.tml	ei7	ei14	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l10" relType="BEFORE" relatedToEventInstance="ei18" />
+CNN19980213.2130.0155.tml	ei7	ei18	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l11" relType="BEFORE" relatedToEventInstance="ei20" />
+CNN19980213.2130.0155.tml	ei7	ei20	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l12" relType="BEFORE" relatedToEventInstance="ei9" />
+CNN19980213.2130.0155.tml	ei8	ei9	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l13" relType="BEFORE" relatedToEventInstance="ei11" />
+CNN19980213.2130.0155.tml	ei8	ei11	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l14" relType="BEFORE" relatedToEventInstance="ei12" />
+CNN19980213.2130.0155.tml	ei8	ei12	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l15" relType="BEFORE" relatedToEventInstance="ei11" />
+CNN19980213.2130.0155.tml	ei9	ei11	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l16" relType="BEFORE" relatedToEventInstance="ei12" />
+CNN19980213.2130.0155.tml	ei9	ei12	BEFORE
+
+<TLINK eventInstanceID="ei12" lid="l17" relType="IS_INCLUDED" relatedToEventInstance="ei13" />
+CNN19980213.2130.0155.tml	ei12	ei13	IS_INCLUDED
+
+<TLINK eventInstanceID="ei12" lid="l18" relType="AFTER" relatedToEventInstance="ei17" />
+CNN19980213.2130.0155.tml	ei12	ei17	AFTER
+
+<TLINK eventInstanceID="ei13" lid="l19" relType="BEFORE" relatedToEventInstance="ei14" />
+CNN19980213.2130.0155.tml	ei13	ei14	BEFORE
+
+<TLINK eventInstanceID="ei13" lid="l20" relType="BEFORE" relatedToEventInstance="ei18" />
+CNN19980213.2130.0155.tml	ei13	ei18	BEFORE
+
+<TLINK eventInstanceID="ei13" lid="l21" relType="BEFORE" relatedToEventInstance="ei20" />
+CNN19980213.2130.0155.tml	ei13	ei20	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l22" relType="AFTER" relatedToEventInstance="ei17" />
+CNN19980213.2130.0155.tml	ei14	ei17	AFTER
+
+<TLINK eventInstanceID="ei14" lid="l23" relType="BEFORE" relatedToEventInstance="ei18" />
+CNN19980213.2130.0155.tml	ei14	ei18	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l24" relType="BEFORE" relatedToEventInstance="ei20" />
+CNN19980213.2130.0155.tml	ei14	ei20	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l25" relType="BEFORE" relatedToEventInstance="ei18" />
+CNN19980213.2130.0155.tml	ei17	ei18	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l26" relType="BEFORE" relatedToEventInstance="ei20" />
+CNN19980213.2130.0155.tml	ei17	ei20	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l27" relType="BEFORE" relatedToEventInstance="ei21" />
+CNN19980213.2130.0155.tml	ei17	ei21	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l28" relType="BEFORE" relatedToEventInstance="ei22" />
+CNN19980213.2130.0155.tml	ei17	ei22	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l29" relType="BEFORE" relatedToEventInstance="ei23" />
+CNN19980213.2130.0155.tml	ei17	ei23	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l30" relType="BEFORE" relatedToEventInstance="ei24" />
+CNN19980213.2130.0155.tml	ei17	ei24	BEFORE
+
+<TLINK eventInstanceID="ei19" lid="l31" relType="BEFORE" relatedToEventInstance="ei20" />
+CNN19980213.2130.0155.tml	ei19	ei20	BEFORE
+
+<TLINK eventInstanceID="ei20" lid="l32" relType="AFTER" relatedToEventInstance="ei21" />
+CNN19980213.2130.0155.tml	ei20	ei21	AFTER
+
+<TLINK eventInstanceID="ei21" lid="l33" relType="INCLUDES" relatedToEventInstance="ei22" />
+CNN19980213.2130.0155.tml	ei21	ei22	INCLUDES
+
+<TLINK eventInstanceID="ei21" lid="l34" relType="BEFORE" relatedToEventInstance="ei23" />
+CNN19980213.2130.0155.tml	ei21	ei23	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l35" relType="BEFORE" relatedToEventInstance="ei24" />
+CNN19980213.2130.0155.tml	ei21	ei24	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l36" relType="AFTER" relatedToEventInstance="ei26" />
+CNN19980213.2130.0155.tml	ei21	ei26	AFTER
+
+<TLINK eventInstanceID="ei21" lid="l37" relType="BEFORE" relatedToEventInstance="ei27" />
+CNN19980213.2130.0155.tml	ei21	ei27	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l38" relType="BEFORE" relatedToEventInstance="ei23" />
+CNN19980213.2130.0155.tml	ei22	ei23	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l39" relType="BEFORE" relatedToEventInstance="ei24" />
+CNN19980213.2130.0155.tml	ei22	ei24	BEFORE
+
+<TLINK eventInstanceID="ei23" lid="l40" relType="SIMULTANEOUS" relatedToEventInstance="ei24" />
+CNN19980213.2130.0155.tml	ei23	ei24	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei23" lid="l41" relType="AFTER" relatedToEventInstance="ei26" />
+CNN19980213.2130.0155.tml	ei23	ei26	AFTER
+
+<TLINK eventInstanceID="ei24" lid="l42" relType="AFTER" relatedToEventInstance="ei26" />
+CNN19980213.2130.0155.tml	ei24	ei26	AFTER
+
+<TLINK eventInstanceID="ei26" lid="l43" relType="BEFORE" relatedToEventInstance="ei27" />
+CNN19980213.2130.0155.tml	ei26	ei27	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l44" relType="BEFORE" relatedToEventInstance="ei28" />
+CNN19980213.2130.0155.tml	ei26	ei28	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l45" relType="BEFORE" relatedToEventInstance="ei29" />
+CNN19980213.2130.0155.tml	ei26	ei29	BEFORE
+
+<TLINK eventInstanceID="ei27" lid="l46" relType="AFTER" relatedToEventInstance="ei28" />
+CNN19980213.2130.0155.tml	ei27	ei28	AFTER
+
+<TLINK eventInstanceID="ei27" lid="l47" relType="AFTER" relatedToEventInstance="ei29" />
+CNN19980213.2130.0155.tml	ei27	ei29	AFTER
+
+<TLINK eventInstanceID="ei29" lid="l48" relType="BEFORE" relatedToEventInstance="ei33" />
+CNN19980213.2130.0155.tml	ei29	ei33	BEFORE
+
+<TLINK eventInstanceID="ei29" lid="l49" relType="BEFORE" relatedToEventInstance="ei34" />
+CNN19980213.2130.0155.tml	ei29	ei34	BEFORE
+
+<TLINK eventInstanceID="ei33" lid="l50" relType="BEFORE" relatedToEventInstance="ei34" />
+CNN19980213.2130.0155.tml	ei33	ei34	BEFORE
+
+<TLINK eventInstanceID="ei33" lid="l51" relType="BEFORE" relatedToEventInstance="ei37" />
+CNN19980213.2130.0155.tml	ei33	ei37	BEFORE
+
+<TLINK eventInstanceID="ei35" lid="l52" relType="BEFORE" relatedToEventInstance="ei36" />
+CNN19980213.2130.0155.tml	ei35	ei36	BEFORE
+
+<TLINK eventInstanceID="ei35" lid="l53" relType="BEFORE" relatedToEventInstance="ei37" />
+CNN19980213.2130.0155.tml	ei35	ei37	BEFORE
+
+<TLINK eventInstanceID="ei36" lid="l54" relType="BEFORE" relatedToEventInstance="ei37" />
+CNN19980213.2130.0155.tml	ei36	ei37	BEFORE
+
+<TLINK eventInstanceID="ei37" lid="l55" relType="AFTER" relatedToEventInstance="ei38" />
+CNN19980213.2130.0155.tml	ei37	ei38	AFTER
+
+<TLINK eventInstanceID="ei37" lid="l56" relType="AFTER" relatedToEventInstance="ei39" />
+CNN19980213.2130.0155.tml	ei37	ei39	AFTER
+
+<TLINK eventInstanceID="ei38" lid="l57" relType="AFTER" relatedToEventInstance="ei39" />
+CNN19980213.2130.0155.tml	ei38	ei39	AFTER
+
+<TLINK eventInstanceID="ei38" lid="l58" relType="BEFORE" relatedToEventInstance="ei40" />
+CNN19980213.2130.0155.tml	ei38	ei40	BEFORE
+
+<TLINK eventInstanceID="ei38" lid="l59" relType="BEFORE" relatedToEventInstance="ei41" />
+CNN19980213.2130.0155.tml	ei38	ei41	BEFORE
+
+<TLINK eventInstanceID="ei38" lid="l60" relType="BEFORE" relatedToEventInstance="ei42" />
+CNN19980213.2130.0155.tml	ei38	ei42	BEFORE
+
+<TLINK eventInstanceID="ei38" lid="l61" relType="BEFORE" relatedToEventInstance="ei43" />
+CNN19980213.2130.0155.tml	ei38	ei43	BEFORE
+
+<TLINK eventInstanceID="ei38" lid="l62" relType="BEFORE" relatedToEventInstance="ei44" />
+CNN19980213.2130.0155.tml	ei38	ei44	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l63" relType="BEFORE" relatedToEventInstance="ei40" />
+CNN19980213.2130.0155.tml	ei39	ei40	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l64" relType="BEFORE" relatedToEventInstance="ei41" />
+CNN19980213.2130.0155.tml	ei39	ei41	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l65" relType="BEFORE" relatedToEventInstance="ei42" />
+CNN19980213.2130.0155.tml	ei39	ei42	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l66" relType="BEFORE" relatedToEventInstance="ei43" />
+CNN19980213.2130.0155.tml	ei39	ei43	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l67" relType="BEFORE" relatedToEventInstance="ei44" />
+CNN19980213.2130.0155.tml	ei39	ei44	BEFORE
+
+<TLINK eventInstanceID="ei40" lid="l68" relType="BEFORE" relatedToEventInstance="ei41" />
+CNN19980213.2130.0155.tml	ei40	ei41	BEFORE
+
+<TLINK eventInstanceID="ei40" lid="l69" relType="BEFORE" relatedToEventInstance="ei42" />
+CNN19980213.2130.0155.tml	ei40	ei42	BEFORE
+
+<TLINK eventInstanceID="ei40" lid="l70" relType="BEFORE" relatedToEventInstance="ei43" />
+CNN19980213.2130.0155.tml	ei40	ei43	BEFORE
+
+<TLINK eventInstanceID="ei40" lid="l71" relType="BEFORE" relatedToEventInstance="ei44" />
+CNN19980213.2130.0155.tml	ei40	ei44	BEFORE
+
+<TLINK eventInstanceID="ei41" lid="l72" relType="AFTER" relatedToEventInstance="ei42" />
+CNN19980213.2130.0155.tml	ei41	ei42	AFTER
+
+<TLINK eventInstanceID="ei41" lid="l73" relType="BEFORE" relatedToEventInstance="ei43" />
+CNN19980213.2130.0155.tml	ei41	ei43	BEFORE
+
+<TLINK eventInstanceID="ei41" lid="l74" relType="BEFORE" relatedToEventInstance="ei44" />
+CNN19980213.2130.0155.tml	ei41	ei44	BEFORE
+
+<TLINK eventInstanceID="ei42" lid="l75" relType="BEFORE" relatedToEventInstance="ei43" />
+CNN19980213.2130.0155.tml	ei42	ei43	BEFORE
+
+<TLINK eventInstanceID="ei42" lid="l76" relType="BEFORE" relatedToEventInstance="ei44" />
+CNN19980213.2130.0155.tml	ei42	ei44	BEFORE
+
+<TLINK eventInstanceID="ei43" lid="l77" relType="BEFORE" relatedToEventInstance="ei44" />
+CNN19980213.2130.0155.tml	ei43	ei44	BEFORE
+
+<TLINK eventInstanceID="ei43" lid="l78" relType="AFTER" relatedToEventInstance="ei45" />
+CNN19980213.2130.0155.tml	ei43	ei45	AFTER
+
+<TLINK eventInstanceID="ei44" lid="l79" relType="AFTER" relatedToEventInstance="ei45" />
+CNN19980213.2130.0155.tml	ei44	ei45	AFTER
+
+<TLINK eventInstanceID="ei45" lid="l80" relType="BEFORE" relatedToEventInstance="ei46" />
+CNN19980213.2130.0155.tml	ei45	ei46	BEFORE
+
+<TLINK eventInstanceID="ei45" lid="l81" relType="IS_INCLUDED" relatedToEventInstance="ei47" />
+CNN19980213.2130.0155.tml	ei45	ei47	IS_INCLUDED
+
+<TLINK eventInstanceID="ei45" lid="l82" relType="IS_INCLUDED" relatedToEventInstance="ei48" />
+CNN19980213.2130.0155.tml	ei45	ei48	IS_INCLUDED
+
+<TLINK eventInstanceID="ei45" lid="l83" relType="BEFORE" relatedToEventInstance="ei49" />
+CNN19980213.2130.0155.tml	ei45	ei49	BEFORE
+
+<TLINK eventInstanceID="ei46" lid="l84" relType="AFTER" relatedToEventInstance="ei52" />
+CNN19980213.2130.0155.tml	ei46	ei52	AFTER
+
+<TLINK eventInstanceID="ei47" lid="l85" relType="BEFORE" relatedToEventInstance="ei49" />
+CNN19980213.2130.0155.tml	ei47	ei49	BEFORE
+
+<TLINK eventInstanceID="ei47" lid="l86" relType="AFTER" relatedToEventInstance="ei52" />
+CNN19980213.2130.0155.tml	ei47	ei52	AFTER
+
+<TLINK eventInstanceID="ei48" lid="l87" relType="BEFORE" relatedToEventInstance="ei49" />
+CNN19980213.2130.0155.tml	ei48	ei49	BEFORE
+
+<TLINK eventInstanceID="ei49" lid="l88" relType="AFTER" relatedToEventInstance="ei52" />
+CNN19980213.2130.0155.tml	ei49	ei52	AFTER
+
+<TLINK eventInstanceID="ei52" lid="l89" relType="BEFORE" relatedToEventInstance="ei55" />
+CNN19980213.2130.0155.tml	ei52	ei55	BEFORE
+
+<TLINK eventInstanceID="ei52" lid="l90" relType="BEFORE" relatedToEventInstance="ei56" />
+CNN19980213.2130.0155.tml	ei52	ei56	BEFORE
+
+<TLINK eventInstanceID="ei53" lid="l91" relType="BEFORE" relatedToEventInstance="ei55" />
+CNN19980213.2130.0155.tml	ei53	ei55	BEFORE
+
+<TLINK eventInstanceID="ei53" lid="l92" relType="BEFORE" relatedToEventInstance="ei56" />
+CNN19980213.2130.0155.tml	ei53	ei56	BEFORE
+
+<TLINK eventInstanceID="ei53" lid="l93" relType="BEFORE" relatedToEventInstance="ei58" />
+CNN19980213.2130.0155.tml	ei53	ei58	BEFORE
+
+<TLINK eventInstanceID="ei55" lid="l94" relType="BEFORE" relatedToEventInstance="ei56" />
+CNN19980213.2130.0155.tml	ei55	ei56	BEFORE
+
+<TLINK eventInstanceID="ei55" lid="l95" relType="IS_INCLUDED" relatedToEventInstance="ei58" />
+CNN19980213.2130.0155.tml	ei55	ei58	IS_INCLUDED
+
+<TLINK eventInstanceID="ei56" lid="l96" relType="IS_INCLUDED" relatedToEventInstance="ei58" />
+CNN19980213.2130.0155.tml	ei56	ei58	IS_INCLUDED
+
+
+checking precision
+	ei1	ei2	AFTER	
+ei1 ei2 AFTER false
+	ei6	ei9	BEFORE	
+ei6 ei9 BEFORE UNKNOWN
+	ei6	ei11	BEFORE	
+True
+	ei6	ei12	BEFORE	
+True
+	ei7	ei8	BEFORE	
+ei7 ei8 BEFORE false
+	ei7	ei9	BEFORE	
+ei7 ei9 BEFORE UNKNOWN
+	ei7	ei11	BEFORE	
+True
+	ei7	ei12	BEFORE	
+True
+	ei7	ei13	BEFORE	
+ei7 ei13 BEFORE UNKNOWN
+	ei7	ei14	BEFORE	
+ei7 ei14 BEFORE UNKNOWN
+	ei7	ei18	BEFORE	
+ei7 ei18 BEFORE UNKNOWN
+	ei7	ei20	BEFORE	
+ei7 ei20 BEFORE UNKNOWN
+	ei8	ei9	BEFORE	
+ei8 ei9 BEFORE UNKNOWN
+	ei8	ei11	BEFORE	
+True
+	ei8	ei12	BEFORE	
+True
+	ei9	ei11	BEFORE	
+True
+	ei9	ei12	BEFORE	
+True
+	ei12	ei13	IS_INCLUDED	
+ei12 ei13 IS_INCLUDED false
+	ei12	ei17	AFTER	
+ei12 ei17 AFTER UNKNOWN
+	ei13	ei14	BEFORE	
+ei13 ei14 BEFORE UNKNOWN
+	ei13	ei18	BEFORE	
+ei13 ei18 BEFORE false
+	ei13	ei20	BEFORE	
+ei13 ei20 BEFORE false
+	ei14	ei18	BEFORE	
+ei14 ei18 BEFORE UNKNOWN
+	ei14	ei20	BEFORE	
+ei14 ei20 BEFORE UNKNOWN
+	ei17	ei21	BEFORE	
+ei17 ei21 BEFORE UNKNOWN
+	ei17	ei22	BEFORE	
+ei17 ei22 BEFORE UNKNOWN
+	ei17	ei23	BEFORE	
+ei17 ei23 BEFORE true
+	ei17	ei24	BEFORE	
+ei17 ei24 BEFORE true
+	ei19	ei20	BEFORE	
+ei19 ei20 BEFORE false
+	ei20	ei21	AFTER	
+ei20 ei21 AFTER UNKNOWN
+	ei21	ei22	INCLUDES	
+True
+	ei21	ei23	BEFORE	
+True
+	ei21	ei24	BEFORE	
+True
+	ei21	ei26	AFTER	
+ei21 ei26 AFTER false
+	ei21	ei27	BEFORE	
+ei21 ei27 BEFORE UNKNOWN
+	ei23	ei24	SIMULTANEOUS	
+True
+	ei26	ei28	BEFORE	
+ei26 ei28 BEFORE UNKNOWN
+	ei26	ei29	BEFORE	
+ei26 ei29 BEFORE false
+	ei27	ei28	AFTER	
+ei27 ei28 AFTER false
+	ei27	ei29	AFTER	
+ei27 ei29 AFTER UNKNOWN
+	ei29	ei33	BEFORE	
+ei29 ei33 BEFORE UNKNOWN
+	ei29	ei34	BEFORE	
+ei29 ei34 BEFORE UNKNOWN
+	ei33	ei34	BEFORE	
+True
+	ei33	ei37	BEFORE	
+ei33 ei37 BEFORE UNKNOWN
+	ei35	ei36	BEFORE	
+ei35 ei36 BEFORE UNKNOWN
+	ei35	ei37	BEFORE	
+ei35 ei37 BEFORE UNKNOWN
+	ei36	ei37	BEFORE	
+True
+	ei37	ei38	AFTER	
+ei37 ei38 AFTER UNKNOWN
+	ei37	ei39	AFTER	
+ei37 ei39 AFTER UNKNOWN
+	ei38	ei39	AFTER	
+ei38 ei39 AFTER false
+	ei38	ei40	BEFORE	
+True
+	ei38	ei41	BEFORE	
+True
+	ei38	ei42	BEFORE	
+True
+	ei38	ei43	BEFORE	
+True
+	ei38	ei44	BEFORE	
+True
+	ei40	ei41	BEFORE	
+True
+	ei40	ei42	BEFORE	
+True
+	ei40	ei43	BEFORE	
+True
+	ei40	ei44	BEFORE	
+True
+	ei41	ei42	AFTER	
+True
+	ei41	ei43	BEFORE	
+ei41 ei43 BEFORE UNKNOWN
+	ei41	ei44	BEFORE	
+ei41 ei44 BEFORE UNKNOWN
+	ei43	ei44	BEFORE	
+ei43 ei44 BEFORE UNKNOWN
+	ei43	ei45	AFTER	
+True
+	ei45	ei46	BEFORE	
+ei45 ei46 BEFORE UNKNOWN
+	ei45	ei47	IS_INCLUDED	
+ei45 ei47 IS_INCLUDED false
+	ei45	ei48	IS_INCLUDED	
+True
+	ei45	ei49	BEFORE	
+ei45 ei49 BEFORE UNKNOWN
+	ei46	ei52	AFTER	
+ei46 ei52 AFTER false
+	ei47	ei49	BEFORE	
+ei47 ei49 BEFORE UNKNOWN
+	ei47	ei52	AFTER	
+ei47 ei52 AFTER false
+	ei48	ei49	BEFORE	
+ei48 ei49 BEFORE UNKNOWN
+	ei52	ei55	BEFORE	
+ei52 ei55 BEFORE UNKNOWN
+	ei52	ei56	BEFORE	
+ei52 ei56 BEFORE UNKNOWN
+	ei53	ei55	BEFORE	
+True
+	ei53	ei56	BEFORE	
+True
+	ei53	ei58	BEFORE	
+True
+	ei55	ei56	BEFORE	
+True
+	ei55	ei58	IS_INCLUDED	
+ei55 ei58 IS_INCLUDED false
+	ei56	ei58	IS_INCLUDED	
+ei56 ei58 IS_INCLUDED false
+
+checking recall
+	ei1	ei2	IS_INCLUDED	
+ei1 ei2 IS_INCLUDED false
+	ei6	ei7	INCLUDES	
+ei6 ei7 INCLUDES false
+	ei6	ei8	INCLUDES	
+ei6 ei8 INCLUDES false
+	ei6	ei11	BEFORE	
+True
+	ei6	ei12	BEFORE	
+True
+	ei7	ei8	INCLUDES	
+ei7 ei8 INCLUDES false
+	ei8	ei18	BEFORE	
+ei8 ei18 BEFORE true
+	ei9	ei11	BEFORE	
+True
+	ei9	ei12	BEFORE	
+True
+	ei11	ei12	AFTER	
+ei11 ei12 AFTER UNKNOWN
+	ei13	ei18	INCLUDES	
+ei13 ei18 INCLUDES false
+	ei13	ei19	INCLUDES	
+ei13 ei19 INCLUDES false
+	ei13	ei20	SIMULTANEOUS	
+ei13 ei20 SIMULTANEOUS false
+	ei17	ei18	BEFORE	
+True
+	ei18	ei19	IS_INCLUDED	
+ei18 ei19 IS_INCLUDED false
+	ei18	ei21	AFTER	
+ei18 ei21 AFTER UNKNOWN
+	ei18	ei22	AFTER	
+ei18 ei22 AFTER UNKNOWN
+	ei18	ei23	INCLUDES	
+ei18 ei23 INCLUDES false
+	ei18	ei24	INCLUDES	
+ei18 ei24 INCLUDES false
+	ei21	ei22	INCLUDES	
+True
+	ei21	ei26	IS_INCLUDED	
+ei21 ei26 IS_INCLUDED false
+	ei23	ei24	SIMULTANEOUS	
+True
+	ei23	ei26	IS_INCLUDED	
+ei23 ei26 IS_INCLUDED false
+	ei26	ei29	INCLUDES	
+ei26 ei29 INCLUDES false
+	ei27	ei28	BEFORE	
+ei27 ei28 BEFORE false
+	ei33	ei34	BEFORE	
+True
+	ei33	ei36	INCLUDES	
+ei33 ei36 INCLUDES false
+	ei36	ei37	BEFORE	
+True
+	ei38	ei39	SIMULTANEOUS	
+ei38 ei39 SIMULTANEOUS false
+	ei38	ei40	BEFORE	
+True
+	ei38	ei41	BEFORE	
+True
+	ei38	ei42	BEFORE	
+True
+	ei38	ei43	BEFORE	
+True
+	ei38	ei44	BEFORE	
+True
+	ei40	ei41	BEFORE	
+True
+	ei40	ei42	BEFORE	
+True
+	ei40	ei43	BEFORE	
+True
+	ei40	ei44	BEFORE	
+True
+	ei40	ei45	SIMULTANEOUS	
+ei40 ei45 SIMULTANEOUS false
+	ei40	ei47	INCLUDES	
+ei40 ei47 INCLUDES false
+	ei40	ei48	IS_INCLUDED	
+ei40 ei48 IS_INCLUDED false
+	ei41	ei42	AFTER	
+True
+	ei41	ei46	AFTER	
+ei41 ei46 AFTER UNKNOWN
+	ei41	ei49	AFTER	
+ei41 ei49 AFTER UNKNOWN
+	ei42	ei46	AFTER	
+ei42 ei46 AFTER UNKNOWN
+	ei43	ei46	AFTER	
+ei43 ei46 AFTER UNKNOWN
+	ei44	ei46	AFTER	
+ei44 ei46 AFTER UNKNOWN
+	ei44	ei49	AFTER	
+ei44 ei49 AFTER UNKNOWN
+	ei45	ei52	BEFORE	
+ei45 ei52 BEFORE false
+	ei46	ei48	IS_INCLUDED	
+ei46 ei48 IS_INCLUDED false
+	ei46	ei52	BEFORE	
+ei46 ei52 BEFORE false
+	ei52	ei53	AFTER	
+ei52 ei53 AFTER UNKNOWN
+	ei53	ei55	BEFORE	
+True
+	ei53	ei56	BEFORE	
+True
+	ei53	ei58	BEFORE	
+True
+	ei55	ei56	BEFORE	
+True
+	ei55	ei58	BEFORE	
+ei55 ei58 BEFORE false
+	ei56	ei58	BEFORE	
+ei56 ei58 BEFORE false
+precision 32 80
+recall 24 58
+0.4 0.413793103448
+0.0651161670685 , 97 , 88 , 119
+output/Awareness/gold-normalized/APW19980308.0201.tml output/Awareness/global/table6_line3-normalized/APW19980308.0201.tml
+
+
+Evaluate output/Awareness/gold-normalized/APW19980308.0201.tml output/Awareness/global/table6_line3-normalized/APW19980308.0201.tml
+<TLINK eventInstanceID="ei1" lid="l0" relType="INCLUDES" relatedToEventInstance="ei5" />
+APW19980308.0201.tml	ei1	ei5	INCLUDES
+
+<TLINK eventInstanceID="ei1" lid="l1" relType="INCLUDES" relatedToEventInstance="ei7" />
+APW19980308.0201.tml	ei1	ei7	INCLUDES
+
+<TLINK eventInstanceID="ei3" lid="l2" relType="INCLUDES" relatedToEventInstance="ei5" />
+APW19980308.0201.tml	ei3	ei5	INCLUDES
+
+<TLINK eventInstanceID="ei3" lid="l3" relType="INCLUDES" relatedToEventInstance="ei6" />
+APW19980308.0201.tml	ei3	ei6	INCLUDES
+
+<TLINK eventInstanceID="ei3" lid="l4" relType="INCLUDES" relatedToEventInstance="ei7" />
+APW19980308.0201.tml	ei3	ei7	INCLUDES
+
+<TLINK eventInstanceID="ei5" lid="l5" relType="BEFORE" relatedToEventInstance="ei6" />
+APW19980308.0201.tml	ei5	ei6	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l6" relType="SIMULTANEOUS" relatedToEventInstance="ei7" />
+APW19980308.0201.tml	ei5	ei7	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei5" lid="l7" relType="IS_INCLUDED" relatedToEventInstance="ei10" />
+APW19980308.0201.tml	ei5	ei10	IS_INCLUDED
+
+<TLINK eventInstanceID="ei6" lid="l8" relType="IS_INCLUDED" relatedToEventInstance="ei10" />
+APW19980308.0201.tml	ei6	ei10	IS_INCLUDED
+
+<TLINK eventInstanceID="ei7" lid="l9" relType="IS_INCLUDED" relatedToEventInstance="ei10" />
+APW19980308.0201.tml	ei7	ei10	IS_INCLUDED
+
+<TLINK eventInstanceID="ei8" lid="l10" relType="IS_INCLUDED" relatedToEventInstance="ei10" />
+APW19980308.0201.tml	ei8	ei10	IS_INCLUDED
+
+<TLINK eventInstanceID="ei10" lid="l11" relType="INCLUDES" relatedToEventInstance="ei11" />
+APW19980308.0201.tml	ei10	ei11	INCLUDES
+
+<TLINK eventInstanceID="ei10" lid="l12" relType="INCLUDES" relatedToEventInstance="ei12" />
+APW19980308.0201.tml	ei10	ei12	INCLUDES
+
+<TLINK eventInstanceID="ei13" lid="l13" relType="IS_INCLUDED" relatedToEventInstance="ei14" />
+APW19980308.0201.tml	ei13	ei14	IS_INCLUDED
+
+<TLINK eventInstanceID="ei13" lid="l14" relType="BEFORE" relatedToEventInstance="ei15" />
+APW19980308.0201.tml	ei13	ei15	BEFORE
+
+<TLINK eventInstanceID="ei13" lid="l15" relType="BEFORE" relatedToEventInstance="ei16" />
+APW19980308.0201.tml	ei13	ei16	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l16" relType="BEFORE" relatedToEventInstance="ei15" />
+APW19980308.0201.tml	ei14	ei15	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l17" relType="BEFORE" relatedToEventInstance="ei16" />
+APW19980308.0201.tml	ei14	ei16	BEFORE
+
+<TLINK eventInstanceID="ei15" lid="l18" relType="SIMULTANEOUS" relatedToEventInstance="ei16" />
+APW19980308.0201.tml	ei15	ei16	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei15" lid="l19" relType="AFTER" relatedToEventInstance="ei17" />
+APW19980308.0201.tml	ei15	ei17	AFTER
+
+<TLINK eventInstanceID="ei15" lid="l20" relType="AFTER" relatedToEventInstance="ei18" />
+APW19980308.0201.tml	ei15	ei18	AFTER
+
+<TLINK eventInstanceID="ei16" lid="l21" relType="AFTER" relatedToEventInstance="ei17" />
+APW19980308.0201.tml	ei16	ei17	AFTER
+
+<TLINK eventInstanceID="ei16" lid="l22" relType="AFTER" relatedToEventInstance="ei18" />
+APW19980308.0201.tml	ei16	ei18	AFTER
+
+<TLINK eventInstanceID="ei17" lid="l23" relType="AFTER" relatedToEventInstance="ei18" />
+APW19980308.0201.tml	ei17	ei18	AFTER
+
+<TLINK eventInstanceID="ei17" lid="l24" relType="BEFORE" relatedToEventInstance="ei23" />
+APW19980308.0201.tml	ei17	ei23	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l25" relType="BEFORE" relatedToEventInstance="ei24" />
+APW19980308.0201.tml	ei17	ei24	BEFORE
+
+<TLINK eventInstanceID="ei18" lid="l26" relType="BEFORE" relatedToEventInstance="ei22" />
+APW19980308.0201.tml	ei18	ei22	BEFORE
+
+<TLINK eventInstanceID="ei18" lid="l27" relType="BEFORE" relatedToEventInstance="ei23" />
+APW19980308.0201.tml	ei18	ei23	BEFORE
+
+<TLINK eventInstanceID="ei18" lid="l28" relType="BEFORE" relatedToEventInstance="ei24" />
+APW19980308.0201.tml	ei18	ei24	BEFORE
+
+<TLINK eventInstanceID="ei20" lid="l29" relType="INCLUDES" relatedToEventInstance="ei22" />
+APW19980308.0201.tml	ei20	ei22	INCLUDES
+
+<TLINK eventInstanceID="ei20" lid="l30" relType="BEFORE" relatedToEventInstance="ei24" />
+APW19980308.0201.tml	ei20	ei24	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l31" relType="BEFORE" relatedToEventInstance="ei23" />
+APW19980308.0201.tml	ei22	ei23	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l32" relType="BEFORE" relatedToEventInstance="ei24" />
+APW19980308.0201.tml	ei22	ei24	BEFORE
+
+<TLINK eventInstanceID="ei23" lid="l33" relType="BEFORE" relatedToEventInstance="ei24" />
+APW19980308.0201.tml	ei23	ei24	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l0" relType="BEFORE" relatedToEventInstance="ei3" />
+APW19980308.0201.tml	ei1	ei3	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l1" relType="BEFORE" relatedToEventInstance="ei8" />
+APW19980308.0201.tml	ei1	ei8	BEFORE
+
+<TLINK eventInstanceID="ei3" lid="l2" relType="AFTER" relatedToEventInstance="ei5" />
+APW19980308.0201.tml	ei3	ei5	AFTER
+
+<TLINK eventInstanceID="ei3" lid="l3" relType="AFTER" relatedToEventInstance="ei7" />
+APW19980308.0201.tml	ei3	ei7	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l4" relType="AFTER" relatedToEventInstance="ei7" />
+APW19980308.0201.tml	ei5	ei7	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l5" relType="BEFORE" relatedToEventInstance="ei8" />
+APW19980308.0201.tml	ei5	ei8	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l6" relType="BEFORE" relatedToEventInstance="ei10" />
+APW19980308.0201.tml	ei5	ei10	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l7" relType="AFTER" relatedToEventInstance="ei7" />
+APW19980308.0201.tml	ei6	ei7	AFTER
+
+<TLINK eventInstanceID="ei6" lid="l8" relType="BEFORE" relatedToEventInstance="ei8" />
+APW19980308.0201.tml	ei6	ei8	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l9" relType="BEFORE" relatedToEventInstance="ei10" />
+APW19980308.0201.tml	ei6	ei10	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l10" relType="BEFORE" relatedToEventInstance="ei8" />
+APW19980308.0201.tml	ei7	ei8	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l11" relType="BEFORE" relatedToEventInstance="ei10" />
+APW19980308.0201.tml	ei7	ei10	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l12" relType="BEFORE" relatedToEventInstance="ei11" />
+APW19980308.0201.tml	ei7	ei11	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l13" relType="AFTER" relatedToEventInstance="ei10" />
+APW19980308.0201.tml	ei8	ei10	AFTER
+
+<TLINK eventInstanceID="ei8" lid="l14" relType="AFTER" relatedToEventInstance="ei11" />
+APW19980308.0201.tml	ei8	ei11	AFTER
+
+<TLINK eventInstanceID="ei10" lid="l15" relType="AFTER" relatedToEventInstance="ei11" />
+APW19980308.0201.tml	ei10	ei11	AFTER
+
+<TLINK eventInstanceID="ei13" lid="l16" relType="IS_INCLUDED" relatedToEventInstance="ei14" />
+APW19980308.0201.tml	ei13	ei14	IS_INCLUDED
+
+<TLINK eventInstanceID="ei13" lid="l17" relType="BEFORE" relatedToEventInstance="ei15" />
+APW19980308.0201.tml	ei13	ei15	BEFORE
+
+<TLINK eventInstanceID="ei13" lid="l18" relType="BEFORE" relatedToEventInstance="ei16" />
+APW19980308.0201.tml	ei13	ei16	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l19" relType="BEFORE" relatedToEventInstance="ei15" />
+APW19980308.0201.tml	ei14	ei15	BEFORE
+
+<TLINK eventInstanceID="ei15" lid="l20" relType="AFTER" relatedToEventInstance="ei17" />
+APW19980308.0201.tml	ei15	ei17	AFTER
+
+<TLINK eventInstanceID="ei15" lid="l21" relType="AFTER" relatedToEventInstance="ei18" />
+APW19980308.0201.tml	ei15	ei18	AFTER
+
+<TLINK eventInstanceID="ei16" lid="l22" relType="AFTER" relatedToEventInstance="ei17" />
+APW19980308.0201.tml	ei16	ei17	AFTER
+
+<TLINK eventInstanceID="ei16" lid="l23" relType="AFTER" relatedToEventInstance="ei18" />
+APW19980308.0201.tml	ei16	ei18	AFTER
+
+<TLINK eventInstanceID="ei17" lid="l24" relType="BEFORE" relatedToEventInstance="ei20" />
+APW19980308.0201.tml	ei17	ei20	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l25" relType="BEFORE" relatedToEventInstance="ei22" />
+APW19980308.0201.tml	ei17	ei22	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l26" relType="BEFORE" relatedToEventInstance="ei23" />
+APW19980308.0201.tml	ei17	ei23	BEFORE
+
+<TLINK eventInstanceID="ei18" lid="l27" relType="BEFORE" relatedToEventInstance="ei20" />
+APW19980308.0201.tml	ei18	ei20	BEFORE
+
+<TLINK eventInstanceID="ei18" lid="l28" relType="BEFORE" relatedToEventInstance="ei22" />
+APW19980308.0201.tml	ei18	ei22	BEFORE
+
+<TLINK eventInstanceID="ei18" lid="l29" relType="BEFORE" relatedToEventInstance="ei23" />
+APW19980308.0201.tml	ei18	ei23	BEFORE
+
+<TLINK eventInstanceID="ei20" lid="l30" relType="BEFORE" relatedToEventInstance="ei23" />
+APW19980308.0201.tml	ei20	ei23	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l31" relType="BEFORE" relatedToEventInstance="ei23" />
+APW19980308.0201.tml	ei22	ei23	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l32" relType="AFTER" relatedToEventInstance="ei24" />
+APW19980308.0201.tml	ei22	ei24	AFTER
+
+<TLINK eventInstanceID="ei23" lid="l33" relType="AFTER" relatedToEventInstance="ei24" />
+APW19980308.0201.tml	ei23	ei24	AFTER
+
+
+checking precision
+	ei1	ei3	BEFORE	
+ei1 ei3 BEFORE false
+	ei1	ei8	BEFORE	
+ei1 ei8 BEFORE UNKNOWN
+	ei3	ei5	AFTER	
+ei3 ei5 AFTER false
+	ei3	ei7	AFTER	
+ei3 ei7 AFTER false
+	ei5	ei7	AFTER	
+ei5 ei7 AFTER false
+	ei5	ei8	BEFORE	
+ei5 ei8 BEFORE UNKNOWN
+	ei5	ei10	BEFORE	
+ei5 ei10 BEFORE false
+	ei6	ei7	AFTER	
+ei6 ei7 AFTER true
+	ei6	ei8	BEFORE	
+ei6 ei8 BEFORE UNKNOWN
+	ei6	ei10	BEFORE	
+ei6 ei10 BEFORE false
+	ei7	ei11	BEFORE	
+ei7 ei11 BEFORE UNKNOWN
+	ei8	ei10	AFTER	
+ei8 ei10 AFTER false
+	ei8	ei11	AFTER	
+ei8 ei11 AFTER UNKNOWN
+	ei10	ei11	AFTER	
+ei10 ei11 AFTER false
+	ei13	ei14	IS_INCLUDED	
+True
+	ei13	ei15	BEFORE	
+True
+	ei13	ei16	BEFORE	
+True
+	ei14	ei15	BEFORE	
+True
+	ei15	ei17	AFTER	
+True
+	ei15	ei18	AFTER	
+True
+	ei16	ei17	AFTER	
+True
+	ei16	ei18	AFTER	
+True
+	ei17	ei20	BEFORE	
+ei17 ei20 BEFORE UNKNOWN
+	ei17	ei22	BEFORE	
+ei17 ei22 BEFORE UNKNOWN
+	ei17	ei23	BEFORE	
+True
+	ei18	ei20	BEFORE	
+ei18 ei20 BEFORE UNKNOWN
+	ei18	ei22	BEFORE	
+True
+	ei18	ei23	BEFORE	
+True
+	ei20	ei23	BEFORE	
+ei20 ei23 BEFORE UNKNOWN
+	ei22	ei23	BEFORE	
+True
+	ei22	ei24	AFTER	
+ei22 ei24 AFTER false
+
+checking recall
+	ei1	ei5	INCLUDES	
+ei1 ei5 INCLUDES false
+	ei1	ei7	INCLUDES	
+ei1 ei7 INCLUDES false
+	ei3	ei5	INCLUDES	
+ei3 ei5 INCLUDES false
+	ei3	ei6	INCLUDES	
+ei3 ei6 INCLUDES false
+	ei3	ei7	INCLUDES	
+ei3 ei7 INCLUDES false
+	ei5	ei6	BEFORE	
+ei5 ei6 BEFORE UNKNOWN
+	ei5	ei7	SIMULTANEOUS	
+ei5 ei7 SIMULTANEOUS false
+	ei5	ei10	IS_INCLUDED	
+ei5 ei10 IS_INCLUDED false
+	ei6	ei10	IS_INCLUDED	
+ei6 ei10 IS_INCLUDED false
+	ei8	ei10	IS_INCLUDED	
+ei8 ei10 IS_INCLUDED false
+	ei10	ei11	INCLUDES	
+ei10 ei11 INCLUDES false
+	ei10	ei12	INCLUDES	
+ei10 ei12 INCLUDES UNKNOWN
+	ei13	ei14	IS_INCLUDED	
+True
+	ei13	ei15	BEFORE	
+True
+	ei13	ei16	BEFORE	
+True
+	ei14	ei15	BEFORE	
+True
+	ei14	ei16	BEFORE	
+ei14 ei16 BEFORE UNKNOWN
+	ei15	ei16	SIMULTANEOUS	
+ei15 ei16 SIMULTANEOUS false
+	ei15	ei17	AFTER	
+True
+	ei15	ei18	AFTER	
+True
+	ei17	ei18	AFTER	
+ei17 ei18 AFTER UNKNOWN
+	ei17	ei23	BEFORE	
+True
+	ei17	ei24	BEFORE	
+ei17 ei24 BEFORE UNKNOWN
+	ei18	ei22	BEFORE	
+True
+	ei20	ei22	INCLUDES	
+ei20 ei22 INCLUDES false
+	ei20	ei24	BEFORE	
+ei20 ei24 BEFORE UNKNOWN
+	ei22	ei23	BEFORE	
+True
+	ei23	ei24	BEFORE	
+ei23 ei24 BEFORE false
+precision 13 31
+recall 9 28
+0.41935483871 0.321428571429
+0.0253469944 , 34 , 36 , 45
+output/Awareness/gold-normalized/APW19980418.0210.tml output/Awareness/global/table6_line3-normalized/APW19980418.0210.tml
+
+
+Evaluate output/Awareness/gold-normalized/APW19980418.0210.tml output/Awareness/global/table6_line3-normalized/APW19980418.0210.tml
+<TLINK eventInstanceID="ei1" lid="l0" relType="BEFORE" relatedToEventInstance="ei2" />
+APW19980418.0210.tml	ei1	ei2	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l1" relType="AFTER" relatedToEventInstance="ei3" />
+APW19980418.0210.tml	ei1	ei3	AFTER
+
+<TLINK eventInstanceID="ei2" lid="l2" relType="AFTER" relatedToEventInstance="ei3" />
+APW19980418.0210.tml	ei2	ei3	AFTER
+
+<TLINK eventInstanceID="ei2" lid="l3" relType="AFTER" relatedToEventInstance="ei4" />
+APW19980418.0210.tml	ei2	ei4	AFTER
+
+<TLINK eventInstanceID="ei4" lid="l4" relType="AFTER" relatedToEventInstance="ei5" />
+APW19980418.0210.tml	ei4	ei5	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l5" relType="BEFORE" relatedToEventInstance="ei6" />
+APW19980418.0210.tml	ei5	ei6	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l6" relType="AFTER" relatedToEventInstance="ei7" />
+APW19980418.0210.tml	ei6	ei7	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l7" relType="BEFORE" relatedToEventInstance="ei8" />
+APW19980418.0210.tml	ei7	ei8	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l8" relType="BEFORE" relatedToEventInstance="ei10" />
+APW19980418.0210.tml	ei8	ei10	BEFORE
+
+<TLINK eventInstanceID="ei10" lid="l9" relType="BEFORE" relatedToEventInstance="ei11" />
+APW19980418.0210.tml	ei10	ei11	BEFORE
+
+<TLINK eventInstanceID="ei10" lid="l10" relType="BEFORE" relatedToEventInstance="ei12" />
+APW19980418.0210.tml	ei10	ei12	BEFORE
+
+<TLINK eventInstanceID="ei10" lid="l11" relType="BEFORE" relatedToEventInstance="ei13" />
+APW19980418.0210.tml	ei10	ei13	BEFORE
+
+<TLINK eventInstanceID="ei11" lid="l12" relType="BEFORE" relatedToEventInstance="ei12" />
+APW19980418.0210.tml	ei11	ei12	BEFORE
+
+<TLINK eventInstanceID="ei11" lid="l13" relType="BEFORE" relatedToEventInstance="ei13" />
+APW19980418.0210.tml	ei11	ei13	BEFORE
+
+<TLINK eventInstanceID="ei11" lid="l14" relType="AFTER" relatedToEventInstance="ei14" />
+APW19980418.0210.tml	ei11	ei14	AFTER
+
+<TLINK eventInstanceID="ei11" lid="l15" relType="AFTER" relatedToEventInstance="ei15" />
+APW19980418.0210.tml	ei11	ei15	AFTER
+
+<TLINK eventInstanceID="ei12" lid="l16" relType="AFTER" relatedToEventInstance="ei13" />
+APW19980418.0210.tml	ei12	ei13	AFTER
+
+<TLINK eventInstanceID="ei12" lid="l17" relType="AFTER" relatedToEventInstance="ei14" />
+APW19980418.0210.tml	ei12	ei14	AFTER
+
+<TLINK eventInstanceID="ei12" lid="l18" relType="AFTER" relatedToEventInstance="ei15" />
+APW19980418.0210.tml	ei12	ei15	AFTER
+
+<TLINK eventInstanceID="ei13" lid="l19" relType="AFTER" relatedToEventInstance="ei14" />
+APW19980418.0210.tml	ei13	ei14	AFTER
+
+<TLINK eventInstanceID="ei13" lid="l20" relType="AFTER" relatedToEventInstance="ei15" />
+APW19980418.0210.tml	ei13	ei15	AFTER
+
+<TLINK eventInstanceID="ei14" lid="l21" relType="BEFORE" relatedToEventInstance="ei15" />
+APW19980418.0210.tml	ei14	ei15	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l22" relType="BEFORE" relatedToEventInstance="ei16" />
+APW19980418.0210.tml	ei14	ei16	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l23" relType="BEFORE" relatedToEventInstance="ei17" />
+APW19980418.0210.tml	ei14	ei17	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l24" relType="BEFORE" relatedToEventInstance="ei18" />
+APW19980418.0210.tml	ei14	ei18	BEFORE
+
+<TLINK eventInstanceID="ei14" lid="l25" relType="BEFORE" relatedToEventInstance="ei19" />
+APW19980418.0210.tml	ei14	ei19	BEFORE
+
+<TLINK eventInstanceID="ei15" lid="l26" relType="BEFORE" relatedToEventInstance="ei16" />
+APW19980418.0210.tml	ei15	ei16	BEFORE
+
+<TLINK eventInstanceID="ei15" lid="l27" relType="BEFORE" relatedToEventInstance="ei17" />
+APW19980418.0210.tml	ei15	ei17	BEFORE
+
+<TLINK eventInstanceID="ei15" lid="l28" relType="BEFORE" relatedToEventInstance="ei18" />
+APW19980418.0210.tml	ei15	ei18	BEFORE
+
+<TLINK eventInstanceID="ei15" lid="l29" relType="BEFORE" relatedToEventInstance="ei19" />
+APW19980418.0210.tml	ei15	ei19	BEFORE
+
+<TLINK eventInstanceID="ei16" lid="l30" relType="AFTER" relatedToEventInstance="ei17" />
+APW19980418.0210.tml	ei16	ei17	AFTER
+
+<TLINK eventInstanceID="ei16" lid="l31" relType="BEFORE" relatedToEventInstance="ei18" />
+APW19980418.0210.tml	ei16	ei18	BEFORE
+
+<TLINK eventInstanceID="ei16" lid="l32" relType="BEFORE" relatedToEventInstance="ei19" />
+APW19980418.0210.tml	ei16	ei19	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l33" relType="BEFORE" relatedToEventInstance="ei18" />
+APW19980418.0210.tml	ei17	ei18	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l34" relType="BEFORE" relatedToEventInstance="ei19" />
+APW19980418.0210.tml	ei17	ei19	BEFORE
+
+<TLINK eventInstanceID="ei18" lid="l35" relType="BEFORE" relatedToEventInstance="ei19" />
+APW19980418.0210.tml	ei18	ei19	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l0" relType="BEFORE" relatedToEventInstance="ei2" />
+APW19980418.0210.tml	ei1	ei2	BEFORE
+
+<TLINK eventInstanceID="ei1" lid="l1" relType="BEFORE" relatedToEventInstance="ei4" />
+APW19980418.0210.tml	ei1	ei4	BEFORE
+
+<TLINK eventInstanceID="ei2" lid="l2" relType="AFTER" relatedToEventInstance="ei3" />
+APW19980418.0210.tml	ei2	ei3	AFTER
+
+<TLINK eventInstanceID="ei2" lid="l3" relType="AFTER" relatedToEventInstance="ei4" />
+APW19980418.0210.tml	ei2	ei4	AFTER
+
+<TLINK eventInstanceID="ei5" lid="l4" relType="BEFORE" relatedToEventInstance="ei6" />
+APW19980418.0210.tml	ei5	ei6	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l5" relType="AFTER" relatedToEventInstance="ei7" />
+APW19980418.0210.tml	ei6	ei7	AFTER
+
+<TLINK eventInstanceID="ei10" lid="l6" relType="BEFORE" relatedToEventInstance="ei11" />
+APW19980418.0210.tml	ei10	ei11	BEFORE
+
+<TLINK eventInstanceID="ei10" lid="l7" relType="BEFORE" relatedToEventInstance="ei13" />
+APW19980418.0210.tml	ei10	ei13	BEFORE
+
+<TLINK eventInstanceID="ei11" lid="l8" relType="BEFORE" relatedToEventInstance="ei13" />
+APW19980418.0210.tml	ei11	ei13	BEFORE
+
+<TLINK eventInstanceID="ei12" lid="l9" relType="BEFORE" relatedToEventInstance="ei13" />
+APW19980418.0210.tml	ei12	ei13	BEFORE
+
+<TLINK eventInstanceID="ei13" lid="l10" relType="AFTER" relatedToEventInstance="ei14" />
+APW19980418.0210.tml	ei13	ei14	AFTER
+
+<TLINK eventInstanceID="ei13" lid="l11" relType="AFTER" relatedToEventInstance="ei15" />
+APW19980418.0210.tml	ei13	ei15	AFTER
+
+<TLINK eventInstanceID="ei14" lid="l12" relType="BEFORE" relatedToEventInstance="ei17" />
+APW19980418.0210.tml	ei14	ei17	BEFORE
+
+<TLINK eventInstanceID="ei15" lid="l13" relType="BEFORE" relatedToEventInstance="ei16" />
+APW19980418.0210.tml	ei15	ei16	BEFORE
+
+<TLINK eventInstanceID="ei15" lid="l14" relType="BEFORE" relatedToEventInstance="ei17" />
+APW19980418.0210.tml	ei15	ei17	BEFORE
+
+<TLINK eventInstanceID="ei16" lid="l15" relType="IS_INCLUDED" relatedToEventInstance="ei17" />
+APW19980418.0210.tml	ei16	ei17	IS_INCLUDED
+
+<TLINK eventInstanceID="ei17" lid="l16" relType="AFTER" relatedToEventInstance="ei18" />
+APW19980418.0210.tml	ei17	ei18	AFTER
+
+<TLINK eventInstanceID="ei17" lid="l17" relType="AFTER" relatedToEventInstance="ei19" />
+APW19980418.0210.tml	ei17	ei19	AFTER
+
+<TLINK eventInstanceID="ei18" lid="l18" relType="BEFORE" relatedToEventInstance="ei19" />
+APW19980418.0210.tml	ei18	ei19	BEFORE
+
+
+checking precision
+	ei1	ei2	BEFORE	
+True
+	ei1	ei4	BEFORE	
+ei1 ei4 BEFORE UNKNOWN
+	ei2	ei3	AFTER	
+True
+	ei2	ei4	AFTER	
+True
+	ei5	ei6	BEFORE	
+True
+	ei6	ei7	AFTER	
+True
+	ei10	ei11	BEFORE	
+True
+	ei10	ei13	BEFORE	
+True
+	ei11	ei13	BEFORE	
+True
+	ei12	ei13	BEFORE	
+ei12 ei13 BEFORE false
+	ei13	ei14	AFTER	
+True
+	ei13	ei15	AFTER	
+True
+	ei14	ei17	BEFORE	
+True
+	ei15	ei16	BEFORE	
+True
+	ei15	ei17	BEFORE	
+True
+	ei16	ei17	IS_INCLUDED	
+ei16 ei17 IS_INCLUDED false
+	ei17	ei18	AFTER	
+ei17 ei18 AFTER false
+	ei17	ei19	AFTER	
+ei17 ei19 AFTER false
+	ei18	ei19	BEFORE	
+True
+
+checking recall
+	ei1	ei2	BEFORE	
+True
+	ei1	ei3	AFTER	
+ei1 ei3 AFTER UNKNOWN
+	ei2	ei4	AFTER	
+True
+	ei4	ei5	AFTER	
+ei4 ei5 AFTER UNKNOWN
+	ei5	ei6	BEFORE	
+True
+	ei6	ei7	AFTER	
+True
+	ei7	ei8	BEFORE	
+ei7 ei8 BEFORE UNKNOWN
+	ei8	ei10	BEFORE	
+ei8 ei10 BEFORE UNKNOWN
+	ei10	ei11	BEFORE	
+True
+	ei10	ei12	BEFORE	
+ei10 ei12 BEFORE UNKNOWN
+	ei10	ei13	BEFORE	
+True
+	ei11	ei12	BEFORE	
+ei11 ei12 BEFORE UNKNOWN
+	ei11	ei13	BEFORE	
+True
+	ei11	ei14	AFTER	
+ei11 ei14 AFTER UNKNOWN
+	ei11	ei15	AFTER	
+ei11 ei15 AFTER UNKNOWN
+	ei12	ei13	AFTER	
+ei12 ei13 AFTER false
+	ei14	ei15	BEFORE	
+ei14 ei15 BEFORE UNKNOWN
+	ei14	ei16	BEFORE	
+ei14 ei16 BEFORE true
+	ei14	ei17	BEFORE	
+True
+	ei14	ei18	BEFORE	
+ei14 ei18 BEFORE UNKNOWN
+	ei14	ei19	BEFORE	
+ei14 ei19 BEFORE UNKNOWN
+	ei15	ei16	BEFORE	
+True
+	ei15	ei17	BEFORE	
+True
+	ei15	ei18	BEFORE	
+ei15 ei18 BEFORE UNKNOWN
+	ei15	ei19	BEFORE	
+ei15 ei19 BEFORE UNKNOWN
+	ei16	ei17	AFTER	
+ei16 ei17 AFTER false
+	ei16	ei18	BEFORE	
+ei16 ei18 BEFORE false
+	ei16	ei19	BEFORE	
+ei16 ei19 BEFORE false
+	ei18	ei19	BEFORE	
+True
+precision 14 19
+recall 12 29
+0.736842105263 0.413793103448
+0.0175440311432 , 19 , 34 , 31
+output/Awareness/gold-normalized/APW19980227.0494.tml output/Awareness/global/table6_line3-normalized/APW19980227.0494.tml
+
+
+Evaluate output/Awareness/gold-normalized/APW19980227.0494.tml output/Awareness/global/table6_line3-normalized/APW19980227.0494.tml
+<TLINK eventInstanceID="ei1" lid="l0" relType="AFTER" relatedToEventInstance="ei4" />
+APW19980227.0494.tml	ei1	ei4	AFTER
+
+<TLINK eventInstanceID="ei2" lid="l1" relType="AFTER" relatedToEventInstance="ei3" />
+APW19980227.0494.tml	ei2	ei3	AFTER
+
+<TLINK eventInstanceID="ei2" lid="l2" relType="AFTER" relatedToEventInstance="ei4" />
+APW19980227.0494.tml	ei2	ei4	AFTER
+
+<TLINK eventInstanceID="ei3" lid="l3" relType="AFTER" relatedToEventInstance="ei4" />
+APW19980227.0494.tml	ei3	ei4	AFTER
+
+<TLINK eventInstanceID="ei4" lid="l4" relType="BEFORE" relatedToEventInstance="ei6" />
+APW19980227.0494.tml	ei4	ei6	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l5" relType="INCLUDES" relatedToEventInstance="ei8" />
+APW19980227.0494.tml	ei6	ei8	INCLUDES
+
+<TLINK eventInstanceID="ei6" lid="l6" relType="INCLUDES" relatedToEventInstance="ei9" />
+APW19980227.0494.tml	ei6	ei9	INCLUDES
+
+<TLINK eventInstanceID="ei6" lid="l7" relType="INCLUDES" relatedToEventInstance="ei11" />
+APW19980227.0494.tml	ei6	ei11	INCLUDES
+
+<TLINK eventInstanceID="ei6" lid="l8" relType="INCLUDES" relatedToEventInstance="ei12" />
+APW19980227.0494.tml	ei6	ei12	INCLUDES
+
+<TLINK eventInstanceID="ei8" lid="l9" relType="BEFORE" relatedToEventInstance="ei10" />
+APW19980227.0494.tml	ei8	ei10	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l10" relType="BEFORE" relatedToEventInstance="ei11" />
+APW19980227.0494.tml	ei8	ei11	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l11" relType="BEFORE" relatedToEventInstance="ei12" />
+APW19980227.0494.tml	ei8	ei12	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l12" relType="BEFORE" relatedToEventInstance="ei13" />
+APW19980227.0494.tml	ei8	ei13	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l13" relType="BEFORE" relatedToEventInstance="ei10" />
+APW19980227.0494.tml	ei9	ei10	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l14" relType="BEFORE" relatedToEventInstance="ei11" />
+APW19980227.0494.tml	ei9	ei11	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l15" relType="BEFORE" relatedToEventInstance="ei12" />
+APW19980227.0494.tml	ei9	ei12	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l16" relType="BEFORE" relatedToEventInstance="ei13" />
+APW19980227.0494.tml	ei9	ei13	BEFORE
+
+<TLINK eventInstanceID="ei10" lid="l17" relType="AFTER" relatedToEventInstance="ei11" />
+APW19980227.0494.tml	ei10	ei11	AFTER
+
+<TLINK eventInstanceID="ei10" lid="l18" relType="AFTER" relatedToEventInstance="ei12" />
+APW19980227.0494.tml	ei10	ei12	AFTER
+
+<TLINK eventInstanceID="ei10" lid="l19" relType="AFTER" relatedToEventInstance="ei13" />
+APW19980227.0494.tml	ei10	ei13	AFTER
+
+<TLINK eventInstanceID="ei12" lid="l20" relType="INCLUDES" relatedToEventInstance="ei13" />
+APW19980227.0494.tml	ei12	ei13	INCLUDES
+
+<TLINK eventInstanceID="ei13" lid="l21" relType="AFTER" relatedToEventInstance="ei14" />
+APW19980227.0494.tml	ei13	ei14	AFTER
+
+<TLINK eventInstanceID="ei16" lid="l22" relType="AFTER" relatedToEventInstance="ei17" />
+APW19980227.0494.tml	ei16	ei17	AFTER
+
+<TLINK eventInstanceID="ei20" lid="l23" relType="BEFORE" relatedToEventInstance="ei21" />
+APW19980227.0494.tml	ei20	ei21	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l24" relType="BEFORE" relatedToEventInstance="ei25" />
+APW19980227.0494.tml	ei21	ei25	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l25" relType="BEFORE" relatedToEventInstance="ei26" />
+APW19980227.0494.tml	ei21	ei26	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l26" relType="BEFORE" relatedToEventInstance="ei27" />
+APW19980227.0494.tml	ei21	ei27	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l27" relType="BEFORE" relatedToEventInstance="ei25" />
+APW19980227.0494.tml	ei22	ei25	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l28" relType="BEFORE" relatedToEventInstance="ei26" />
+APW19980227.0494.tml	ei22	ei26	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l29" relType="BEFORE" relatedToEventInstance="ei27" />
+APW19980227.0494.tml	ei22	ei27	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l30" relType="BEFORE" relatedToEventInstance="ei33" />
+APW19980227.0494.tml	ei22	ei33	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l31" relType="BEFORE" relatedToEventInstance="ei34" />
+APW19980227.0494.tml	ei22	ei34	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l32" relType="BEFORE" relatedToEventInstance="ei25" />
+APW19980227.0494.tml	ei24	ei25	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l33" relType="BEFORE" relatedToEventInstance="ei26" />
+APW19980227.0494.tml	ei24	ei26	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l34" relType="BEFORE" relatedToEventInstance="ei27" />
+APW19980227.0494.tml	ei24	ei27	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l35" relType="BEFORE" relatedToEventInstance="ei33" />
+APW19980227.0494.tml	ei24	ei33	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l36" relType="BEFORE" relatedToEventInstance="ei34" />
+APW19980227.0494.tml	ei24	ei34	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l37" relType="AFTER" relatedToEventInstance="ei28" />
+APW19980227.0494.tml	ei25	ei28	AFTER
+
+<TLINK eventInstanceID="ei25" lid="l38" relType="AFTER" relatedToEventInstance="ei30" />
+APW19980227.0494.tml	ei25	ei30	AFTER
+
+<TLINK eventInstanceID="ei25" lid="l39" relType="AFTER" relatedToEventInstance="ei32" />
+APW19980227.0494.tml	ei25	ei32	AFTER
+
+<TLINK eventInstanceID="ei25" lid="l40" relType="BEFORE" relatedToEventInstance="ei33" />
+APW19980227.0494.tml	ei25	ei33	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l41" relType="BEFORE" relatedToEventInstance="ei34" />
+APW19980227.0494.tml	ei25	ei34	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l42" relType="BEFORE" relatedToEventInstance="ei27" />
+APW19980227.0494.tml	ei26	ei27	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l43" relType="AFTER" relatedToEventInstance="ei28" />
+APW19980227.0494.tml	ei26	ei28	AFTER
+
+<TLINK eventInstanceID="ei26" lid="l44" relType="AFTER" relatedToEventInstance="ei30" />
+APW19980227.0494.tml	ei26	ei30	AFTER
+
+<TLINK eventInstanceID="ei26" lid="l45" relType="AFTER" relatedToEventInstance="ei32" />
+APW19980227.0494.tml	ei26	ei32	AFTER
+
+<TLINK eventInstanceID="ei26" lid="l46" relType="BEFORE" relatedToEventInstance="ei33" />
+APW19980227.0494.tml	ei26	ei33	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l47" relType="BEFORE" relatedToEventInstance="ei34" />
+APW19980227.0494.tml	ei26	ei34	BEFORE
+
+<TLINK eventInstanceID="ei27" lid="l48" relType="AFTER" relatedToEventInstance="ei28" />
+APW19980227.0494.tml	ei27	ei28	AFTER
+
+<TLINK eventInstanceID="ei27" lid="l49" relType="AFTER" relatedToEventInstance="ei30" />
+APW19980227.0494.tml	ei27	ei30	AFTER
+
+<TLINK eventInstanceID="ei27" lid="l50" relType="AFTER" relatedToEventInstance="ei32" />
+APW19980227.0494.tml	ei27	ei32	AFTER
+
+<TLINK eventInstanceID="ei28" lid="l51" relType="INCLUDES" relatedToEventInstance="ei30" />
+APW19980227.0494.tml	ei28	ei30	INCLUDES
+
+<TLINK eventInstanceID="ei28" lid="l52" relType="INCLUDES" relatedToEventInstance="ei32" />
+APW19980227.0494.tml	ei28	ei32	INCLUDES
+
+<TLINK eventInstanceID="ei28" lid="l53" relType="BEFORE" relatedToEventInstance="ei33" />
+APW19980227.0494.tml	ei28	ei33	BEFORE
+
+<TLINK eventInstanceID="ei28" lid="l54" relType="BEFORE" relatedToEventInstance="ei34" />
+APW19980227.0494.tml	ei28	ei34	BEFORE
+
+<TLINK eventInstanceID="ei28" lid="l55" relType="BEFORE" relatedToEventInstance="ei36" />
+APW19980227.0494.tml	ei28	ei36	BEFORE
+
+<TLINK eventInstanceID="ei30" lid="l56" relType="BEFORE" relatedToEventInstance="ei33" />
+APW19980227.0494.tml	ei30	ei33	BEFORE
+
+<TLINK eventInstanceID="ei30" lid="l57" relType="BEFORE" relatedToEventInstance="ei34" />
+APW19980227.0494.tml	ei30	ei34	BEFORE
+
+<TLINK eventInstanceID="ei30" lid="l58" relType="AFTER" relatedToEventInstance="ei35" />
+APW19980227.0494.tml	ei30	ei35	AFTER
+
+<TLINK eventInstanceID="ei30" lid="l59" relType="BEFORE" relatedToEventInstance="ei36" />
+APW19980227.0494.tml	ei30	ei36	BEFORE
+
+<TLINK eventInstanceID="ei32" lid="l60" relType="BEFORE" relatedToEventInstance="ei33" />
+APW19980227.0494.tml	ei32	ei33	BEFORE
+
+<TLINK eventInstanceID="ei32" lid="l61" relType="BEFORE" relatedToEventInstance="ei34" />
+APW19980227.0494.tml	ei32	ei34	BEFORE
+
+<TLINK eventInstanceID="ei32" lid="l62" relType="AFTER" relatedToEventInstance="ei35" />
+APW19980227.0494.tml	ei32	ei35	AFTER
+
+<TLINK eventInstanceID="ei32" lid="l63" relType="BEFORE" relatedToEventInstance="ei36" />
+APW19980227.0494.tml	ei32	ei36	BEFORE
+
+<TLINK eventInstanceID="ei33" lid="l64" relType="AFTER" relatedToEventInstance="ei35" />
+APW19980227.0494.tml	ei33	ei35	AFTER
+
+<TLINK eventInstanceID="ei33" lid="l65" relType="AFTER" relatedToEventInstance="ei37" />
+APW19980227.0494.tml	ei33	ei37	AFTER
+
+<TLINK eventInstanceID="ei34" lid="l66" relType="AFTER" relatedToEventInstance="ei35" />
+APW19980227.0494.tml	ei34	ei35	AFTER
+
+<TLINK eventInstanceID="ei34" lid="l67" relType="AFTER" relatedToEventInstance="ei37" />
+APW19980227.0494.tml	ei34	ei37	AFTER
+
+<TLINK eventInstanceID="ei35" lid="l68" relType="BEFORE" relatedToEventInstance="ei36" />
+APW19980227.0494.tml	ei35	ei36	BEFORE
+
+<TLINK eventInstanceID="ei35" lid="l69" relType="BEFORE" relatedToEventInstance="ei37" />
+APW19980227.0494.tml	ei35	ei37	BEFORE
+
+<TLINK eventInstanceID="ei36" lid="l70" relType="AFTER" relatedToEventInstance="ei37" />
+APW19980227.0494.tml	ei36	ei37	AFTER
+
+<TLINK eventInstanceID="ei36" lid="l71" relType="AFTER" relatedToEventInstance="ei39" />
+APW19980227.0494.tml	ei36	ei39	AFTER
+
+<TLINK eventInstanceID="ei41" lid="l72" relType="AFTER" relatedToEventInstance="ei42" />
+APW19980227.0494.tml	ei41	ei42	AFTER
+
+<TLINK eventInstanceID="ei41" lid="l73" relType="BEFORE" relatedToEventInstance="ei43" />
+APW19980227.0494.tml	ei41	ei43	BEFORE
+
+<TLINK eventInstanceID="ei41" lid="l74" relType="AFTER" relatedToEventInstance="ei44" />
+APW19980227.0494.tml	ei41	ei44	AFTER
+
+<TLINK eventInstanceID="ei41" lid="l75" relType="AFTER" relatedToEventInstance="ei45" />
+APW19980227.0494.tml	ei41	ei45	AFTER
+
+<TLINK eventInstanceID="ei42" lid="l76" relType="BEFORE" relatedToEventInstance="ei43" />
+APW19980227.0494.tml	ei42	ei43	BEFORE
+
+<TLINK eventInstanceID="ei42" lid="l77" relType="AFTER" relatedToEventInstance="ei44" />
+APW19980227.0494.tml	ei42	ei44	AFTER
+
+<TLINK eventInstanceID="ei42" lid="l78" relType="AFTER" relatedToEventInstance="ei45" />
+APW19980227.0494.tml	ei42	ei45	AFTER
+
+<TLINK eventInstanceID="ei43" lid="l79" relType="AFTER" relatedToEventInstance="ei44" />
+APW19980227.0494.tml	ei43	ei44	AFTER
+
+<TLINK eventInstanceID="ei43" lid="l80" relType="AFTER" relatedToEventInstance="ei45" />
+APW19980227.0494.tml	ei43	ei45	AFTER
+
+<TLINK eventInstanceID="ei44" lid="l81" relType="AFTER" relatedToEventInstance="ei45" />
+APW19980227.0494.tml	ei44	ei45	AFTER
+
+<TLINK eventInstanceID="ei47" lid="l82" relType="IS_INCLUDED" relatedToEventInstance="ei48" />
+APW19980227.0494.tml	ei47	ei48	IS_INCLUDED
+
+<TLINK eventInstanceID="ei48" lid="l83" relType="INCLUDES" relatedToEventInstance="ei49" />
+APW19980227.0494.tml	ei48	ei49	INCLUDES
+
+<TLINK eventInstanceID="ei49" lid="l84" relType="BEFORE" relatedToEventInstance="ei50" />
+APW19980227.0494.tml	ei49	ei50	BEFORE
+
+<TLINK eventInstanceID="ei49" lid="l85" relType="AFTER" relatedToEventInstance="ei51" />
+APW19980227.0494.tml	ei49	ei51	AFTER
+
+<TLINK eventInstanceID="ei50" lid="l86" relType="AFTER" relatedToEventInstance="ei51" />
+APW19980227.0494.tml	ei50	ei51	AFTER
+
+<TLINK eventInstanceID="ei50" lid="l87" relType="AFTER" relatedToEventInstance="ei52" />
+APW19980227.0494.tml	ei50	ei52	AFTER
+
+<TLINK eventInstanceID="ei51" lid="l88" relType="IS_INCLUDED" relatedToEventInstance="ei52" />
+APW19980227.0494.tml	ei51	ei52	IS_INCLUDED
+
+<TLINK eventInstanceID="ei51" lid="l89" relType="BEFORE" relatedToEventInstance="ei55" />
+APW19980227.0494.tml	ei51	ei55	BEFORE
+
+<TLINK eventInstanceID="ei51" lid="l90" relType="BEFORE" relatedToEventInstance="ei56" />
+APW19980227.0494.tml	ei51	ei56	BEFORE
+
+<TLINK eventInstanceID="ei52" lid="l91" relType="BEFORE" relatedToEventInstance="ei55" />
+APW19980227.0494.tml	ei52	ei55	BEFORE
+
+<TLINK eventInstanceID="ei52" lid="l92" relType="BEFORE" relatedToEventInstance="ei56" />
+APW19980227.0494.tml	ei52	ei56	BEFORE
+
+<TLINK eventInstanceID="ei55" lid="l93" relType="BEFORE" relatedToEventInstance="ei56" />
+APW19980227.0494.tml	ei55	ei56	BEFORE
+
+<TLINK eventInstanceID="ei55" lid="l94" relType="AFTER" relatedToEventInstance="ei57" />
+APW19980227.0494.tml	ei55	ei57	AFTER
+
+<TLINK eventInstanceID="ei55" lid="l95" relType="AFTER" relatedToEventInstance="ei58" />
+APW19980227.0494.tml	ei55	ei58	AFTER
+
+<TLINK eventInstanceID="ei56" lid="l96" relType="AFTER" relatedToEventInstance="ei57" />
+APW19980227.0494.tml	ei56	ei57	AFTER
+
+<TLINK eventInstanceID="ei56" lid="l97" relType="AFTER" relatedToEventInstance="ei58" />
+APW19980227.0494.tml	ei56	ei58	AFTER
+
+<TLINK eventInstanceID="ei56" lid="l98" relType="AFTER" relatedToEventInstance="ei59" />
+APW19980227.0494.tml	ei56	ei59	AFTER
+
+<TLINK eventInstanceID="ei57" lid="l99" relType="BEFORE" relatedToEventInstance="ei58" />
+APW19980227.0494.tml	ei57	ei58	BEFORE
+
+<TLINK eventInstanceID="ei57" lid="l100" relType="BEFORE" relatedToEventInstance="ei59" />
+APW19980227.0494.tml	ei57	ei59	BEFORE
+
+<TLINK eventInstanceID="ei58" lid="l101" relType="BEFORE" relatedToEventInstance="ei62" />
+APW19980227.0494.tml	ei58	ei62	BEFORE
+
+<TLINK eventInstanceID="ei63" lid="l102" relType="BEFORE" relatedToEventInstance="ei69" />
+APW19980227.0494.tml	ei63	ei69	BEFORE
+
+<TLINK eventInstanceID="ei63" lid="l103" relType="BEFORE" relatedToEventInstance="ei70" />
+APW19980227.0494.tml	ei63	ei70	BEFORE
+
+<TLINK eventInstanceID="ei68" lid="l104" relType="BEFORE" relatedToEventInstance="ei69" />
+APW19980227.0494.tml	ei68	ei69	BEFORE
+
+<TLINK eventInstanceID="ei68" lid="l105" relType="BEFORE" relatedToEventInstance="ei70" />
+APW19980227.0494.tml	ei68	ei70	BEFORE
+
+<TLINK eventInstanceID="ei69" lid="l106" relType="INCLUDES" relatedToEventInstance="ei70" />
+APW19980227.0494.tml	ei69	ei70	INCLUDES
+
+<TLINK eventInstanceID="ei1" lid="l0" relType="AFTER" relatedToEventInstance="ei2" />
+APW19980227.0494.tml	ei1	ei2	AFTER
+
+<TLINK eventInstanceID="ei1" lid="l1" relType="AFTER" relatedToEventInstance="ei3" />
+APW19980227.0494.tml	ei1	ei3	AFTER
+
+<TLINK eventInstanceID="ei1" lid="l2" relType="AFTER" relatedToEventInstance="ei4" />
+APW19980227.0494.tml	ei1	ei4	AFTER
+
+<TLINK eventInstanceID="ei2" lid="l3" relType="AFTER" relatedToEventInstance="ei3" />
+APW19980227.0494.tml	ei2	ei3	AFTER
+
+<TLINK eventInstanceID="ei2" lid="l4" relType="AFTER" relatedToEventInstance="ei4" />
+APW19980227.0494.tml	ei2	ei4	AFTER
+
+<TLINK eventInstanceID="ei3" lid="l5" relType="AFTER" relatedToEventInstance="ei4" />
+APW19980227.0494.tml	ei3	ei4	AFTER
+
+<TLINK eventInstanceID="ei6" lid="l6" relType="BEFORE" relatedToEventInstance="ei10" />
+APW19980227.0494.tml	ei6	ei10	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l7" relType="BEFORE" relatedToEventInstance="ei11" />
+APW19980227.0494.tml	ei6	ei11	BEFORE
+
+<TLINK eventInstanceID="ei6" lid="l8" relType="BEFORE" relatedToEventInstance="ei12" />
+APW19980227.0494.tml	ei6	ei12	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l9" relType="AFTER" relatedToEventInstance="ei9" />
+APW19980227.0494.tml	ei8	ei9	AFTER
+
+<TLINK eventInstanceID="ei8" lid="l10" relType="BEFORE" relatedToEventInstance="ei10" />
+APW19980227.0494.tml	ei8	ei10	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l11" relType="BEFORE" relatedToEventInstance="ei13" />
+APW19980227.0494.tml	ei8	ei13	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l12" relType="BEFORE" relatedToEventInstance="ei10" />
+APW19980227.0494.tml	ei9	ei10	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l13" relType="BEFORE" relatedToEventInstance="ei11" />
+APW19980227.0494.tml	ei9	ei11	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l14" relType="IS_INCLUDED" relatedToEventInstance="ei12" />
+APW19980227.0494.tml	ei9	ei12	IS_INCLUDED
+
+<TLINK eventInstanceID="ei9" lid="l15" relType="BEFORE" relatedToEventInstance="ei13" />
+APW19980227.0494.tml	ei9	ei13	BEFORE
+
+<TLINK eventInstanceID="ei10" lid="l16" relType="AFTER" relatedToEventInstance="ei11" />
+APW19980227.0494.tml	ei10	ei11	AFTER
+
+<TLINK eventInstanceID="ei11" lid="l17" relType="IS_INCLUDED" relatedToEventInstance="ei12" />
+APW19980227.0494.tml	ei11	ei12	IS_INCLUDED
+
+<TLINK eventInstanceID="ei11" lid="l18" relType="BEFORE" relatedToEventInstance="ei13" />
+APW19980227.0494.tml	ei11	ei13	BEFORE
+
+<TLINK eventInstanceID="ei13" lid="l19" relType="AFTER" relatedToEventInstance="ei14" />
+APW19980227.0494.tml	ei13	ei14	AFTER
+
+<TLINK eventInstanceID="ei16" lid="l20" relType="BEFORE" relatedToEventInstance="ei17" />
+APW19980227.0494.tml	ei16	ei17	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l21" relType="AFTER" relatedToEventInstance="ei20" />
+APW19980227.0494.tml	ei17	ei20	AFTER
+
+<TLINK eventInstanceID="ei21" lid="l22" relType="BEFORE" relatedToEventInstance="ei22" />
+APW19980227.0494.tml	ei21	ei22	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l23" relType="BEFORE" relatedToEventInstance="ei24" />
+APW19980227.0494.tml	ei21	ei24	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l24" relType="BEFORE" relatedToEventInstance="ei25" />
+APW19980227.0494.tml	ei21	ei25	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l25" relType="BEFORE" relatedToEventInstance="ei26" />
+APW19980227.0494.tml	ei21	ei26	BEFORE
+
+<TLINK eventInstanceID="ei21" lid="l26" relType="BEFORE" relatedToEventInstance="ei27" />
+APW19980227.0494.tml	ei21	ei27	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l27" relType="BEFORE" relatedToEventInstance="ei24" />
+APW19980227.0494.tml	ei22	ei24	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l28" relType="BEFORE" relatedToEventInstance="ei25" />
+APW19980227.0494.tml	ei22	ei25	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l29" relType="BEFORE" relatedToEventInstance="ei26" />
+APW19980227.0494.tml	ei22	ei26	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l30" relType="BEFORE" relatedToEventInstance="ei27" />
+APW19980227.0494.tml	ei22	ei27	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l31" relType="BEFORE" relatedToEventInstance="ei30" />
+APW19980227.0494.tml	ei22	ei30	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l32" relType="BEFORE" relatedToEventInstance="ei32" />
+APW19980227.0494.tml	ei22	ei32	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l33" relType="BEFORE" relatedToEventInstance="ei33" />
+APW19980227.0494.tml	ei22	ei33	BEFORE
+
+<TLINK eventInstanceID="ei22" lid="l34" relType="BEFORE" relatedToEventInstance="ei34" />
+APW19980227.0494.tml	ei22	ei34	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l35" relType="BEFORE" relatedToEventInstance="ei25" />
+APW19980227.0494.tml	ei24	ei25	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l36" relType="BEFORE" relatedToEventInstance="ei26" />
+APW19980227.0494.tml	ei24	ei26	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l37" relType="BEFORE" relatedToEventInstance="ei27" />
+APW19980227.0494.tml	ei24	ei27	BEFORE
+
+<TLINK eventInstanceID="ei24" lid="l38" relType="AFTER" relatedToEventInstance="ei30" />
+APW19980227.0494.tml	ei24	ei30	AFTER
+
+<TLINK eventInstanceID="ei25" lid="l39" relType="BEFORE" relatedToEventInstance="ei26" />
+APW19980227.0494.tml	ei25	ei26	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l40" relType="BEFORE" relatedToEventInstance="ei27" />
+APW19980227.0494.tml	ei25	ei27	BEFORE
+
+<TLINK eventInstanceID="ei25" lid="l41" relType="AFTER" relatedToEventInstance="ei28" />
+APW19980227.0494.tml	ei25	ei28	AFTER
+
+<TLINK eventInstanceID="ei25" lid="l42" relType="AFTER" relatedToEventInstance="ei30" />
+APW19980227.0494.tml	ei25	ei30	AFTER
+
+<TLINK eventInstanceID="ei26" lid="l43" relType="BEFORE" relatedToEventInstance="ei27" />
+APW19980227.0494.tml	ei26	ei27	BEFORE
+
+<TLINK eventInstanceID="ei26" lid="l44" relType="AFTER" relatedToEventInstance="ei28" />
+APW19980227.0494.tml	ei26	ei28	AFTER
+
+<TLINK eventInstanceID="ei26" lid="l45" relType="AFTER" relatedToEventInstance="ei30" />
+APW19980227.0494.tml	ei26	ei30	AFTER
+
+<TLINK eventInstanceID="ei27" lid="l46" relType="AFTER" relatedToEventInstance="ei28" />
+APW19980227.0494.tml	ei27	ei28	AFTER
+
+<TLINK eventInstanceID="ei27" lid="l47" relType="AFTER" relatedToEventInstance="ei30" />
+APW19980227.0494.tml	ei27	ei30	AFTER
+
+<TLINK eventInstanceID="ei28" lid="l48" relType="INCLUDES" relatedToEventInstance="ei30" />
+APW19980227.0494.tml	ei28	ei30	INCLUDES
+
+<TLINK eventInstanceID="ei28" lid="l49" relType="BEFORE" relatedToEventInstance="ei32" />
+APW19980227.0494.tml	ei28	ei32	BEFORE
+
+<TLINK eventInstanceID="ei28" lid="l50" relType="BEFORE" relatedToEventInstance="ei33" />
+APW19980227.0494.tml	ei28	ei33	BEFORE
+
+<TLINK eventInstanceID="ei28" lid="l51" relType="BEFORE" relatedToEventInstance="ei34" />
+APW19980227.0494.tml	ei28	ei34	BEFORE
+
+<TLINK eventInstanceID="ei28" lid="l52" relType="BEFORE" relatedToEventInstance="ei35" />
+APW19980227.0494.tml	ei28	ei35	BEFORE
+
+<TLINK eventInstanceID="ei28" lid="l53" relType="BEFORE" relatedToEventInstance="ei36" />
+APW19980227.0494.tml	ei28	ei36	BEFORE
+
+<TLINK eventInstanceID="ei28" lid="l54" relType="BEFORE" relatedToEventInstance="ei37" />
+APW19980227.0494.tml	ei28	ei37	BEFORE
+
+<TLINK eventInstanceID="ei30" lid="l55" relType="BEFORE" relatedToEventInstance="ei32" />
+APW19980227.0494.tml	ei30	ei32	BEFORE
+
+<TLINK eventInstanceID="ei30" lid="l56" relType="BEFORE" relatedToEventInstance="ei33" />
+APW19980227.0494.tml	ei30	ei33	BEFORE
+
+<TLINK eventInstanceID="ei30" lid="l57" relType="BEFORE" relatedToEventInstance="ei34" />
+APW19980227.0494.tml	ei30	ei34	BEFORE
+
+<TLINK eventInstanceID="ei30" lid="l58" relType="BEFORE" relatedToEventInstance="ei36" />
+APW19980227.0494.tml	ei30	ei36	BEFORE
+
+<TLINK eventInstanceID="ei32" lid="l59" relType="BEFORE" relatedToEventInstance="ei33" />
+APW19980227.0494.tml	ei32	ei33	BEFORE
+
+<TLINK eventInstanceID="ei32" lid="l60" relType="BEFORE" relatedToEventInstance="ei34" />
+APW19980227.0494.tml	ei32	ei34	BEFORE
+
+<TLINK eventInstanceID="ei32" lid="l61" relType="AFTER" relatedToEventInstance="ei35" />
+APW19980227.0494.tml	ei32	ei35	AFTER
+
+<TLINK eventInstanceID="ei33" lid="l62" relType="BEFORE" relatedToEventInstance="ei34" />
+APW19980227.0494.tml	ei33	ei34	BEFORE
+
+<TLINK eventInstanceID="ei33" lid="l63" relType="AFTER" relatedToEventInstance="ei35" />
+APW19980227.0494.tml	ei33	ei35	AFTER
+
+<TLINK eventInstanceID="ei33" lid="l64" relType="AFTER" relatedToEventInstance="ei37" />
+APW19980227.0494.tml	ei33	ei37	AFTER
+
+<TLINK eventInstanceID="ei34" lid="l65" relType="AFTER" relatedToEventInstance="ei35" />
+APW19980227.0494.tml	ei34	ei35	AFTER
+
+<TLINK eventInstanceID="ei34" lid="l66" relType="AFTER" relatedToEventInstance="ei37" />
+APW19980227.0494.tml	ei34	ei37	AFTER
+
+<TLINK eventInstanceID="ei35" lid="l67" relType="BEFORE" relatedToEventInstance="ei36" />
+APW19980227.0494.tml	ei35	ei36	BEFORE
+
+<TLINK eventInstanceID="ei35" lid="l68" relType="BEFORE" relatedToEventInstance="ei37" />
+APW19980227.0494.tml	ei35	ei37	BEFORE
+
+<TLINK eventInstanceID="ei35" lid="l69" relType="AFTER" relatedToEventInstance="ei39" />
+APW19980227.0494.tml	ei35	ei39	AFTER
+
+<TLINK eventInstanceID="ei36" lid="l70" relType="AFTER" relatedToEventInstance="ei37" />
+APW19980227.0494.tml	ei36	ei37	AFTER
+
+<TLINK eventInstanceID="ei36" lid="l71" relType="AFTER" relatedToEventInstance="ei39" />
+APW19980227.0494.tml	ei36	ei39	AFTER
+
+<TLINK eventInstanceID="ei37" lid="l72" relType="AFTER" relatedToEventInstance="ei39" />
+APW19980227.0494.tml	ei37	ei39	AFTER
+
+<TLINK eventInstanceID="ei39" lid="l73" relType="BEFORE" relatedToEventInstance="ei41" />
+APW19980227.0494.tml	ei39	ei41	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l74" relType="BEFORE" relatedToEventInstance="ei42" />
+APW19980227.0494.tml	ei39	ei42	BEFORE
+
+<TLINK eventInstanceID="ei39" lid="l75" relType="BEFORE" relatedToEventInstance="ei43" />
+APW19980227.0494.tml	ei39	ei43	BEFORE
+
+<TLINK eventInstanceID="ei41" lid="l76" relType="AFTER" relatedToEventInstance="ei42" />
+APW19980227.0494.tml	ei41	ei42	AFTER
+
+<TLINK eventInstanceID="ei41" lid="l77" relType="BEFORE" relatedToEventInstance="ei43" />
+APW19980227.0494.tml	ei41	ei43	BEFORE
+
+<TLINK eventInstanceID="ei41" lid="l78" relType="BEFORE" relatedToEventInstance="ei44" />
+APW19980227.0494.tml	ei41	ei44	BEFORE
+
+<TLINK eventInstanceID="ei42" lid="l79" relType="BEFORE" relatedToEventInstance="ei43" />
+APW19980227.0494.tml	ei42	ei43	BEFORE
+
+<TLINK eventInstanceID="ei42" lid="l80" relType="BEFORE" relatedToEventInstance="ei44" />
+APW19980227.0494.tml	ei42	ei44	BEFORE
+
+<TLINK eventInstanceID="ei43" lid="l81" relType="AFTER" relatedToEventInstance="ei44" />
+APW19980227.0494.tml	ei43	ei44	AFTER
+
+<TLINK eventInstanceID="ei44" lid="l82" relType="IS_INCLUDED" relatedToEventInstance="ei45" />
+APW19980227.0494.tml	ei44	ei45	IS_INCLUDED
+
+<TLINK eventInstanceID="ei44" lid="l83" relType="AFTER" relatedToEventInstance="ei47" />
+APW19980227.0494.tml	ei44	ei47	AFTER
+
+<TLINK eventInstanceID="ei44" lid="l84" relType="BEFORE" relatedToEventInstance="ei48" />
+APW19980227.0494.tml	ei44	ei48	BEFORE
+
+<TLINK eventInstanceID="ei47" lid="l85" relType="BEFORE" relatedToEventInstance="ei48" />
+APW19980227.0494.tml	ei47	ei48	BEFORE
+
+<TLINK eventInstanceID="ei47" lid="l86" relType="AFTER" relatedToEventInstance="ei49" />
+APW19980227.0494.tml	ei47	ei49	AFTER
+
+<TLINK eventInstanceID="ei48" lid="l87" relType="AFTER" relatedToEventInstance="ei49" />
+APW19980227.0494.tml	ei48	ei49	AFTER
+
+<TLINK eventInstanceID="ei49" lid="l88" relType="BEFORE" relatedToEventInstance="ei50" />
+APW19980227.0494.tml	ei49	ei50	BEFORE
+
+<TLINK eventInstanceID="ei49" lid="l89" relType="AFTER" relatedToEventInstance="ei51" />
+APW19980227.0494.tml	ei49	ei51	AFTER
+
+<TLINK eventInstanceID="ei50" lid="l90" relType="AFTER" relatedToEventInstance="ei51" />
+APW19980227.0494.tml	ei50	ei51	AFTER
+
+<TLINK eventInstanceID="ei51" lid="l91" relType="IS_INCLUDED" relatedToEventInstance="ei52" />
+APW19980227.0494.tml	ei51	ei52	IS_INCLUDED
+
+<TLINK eventInstanceID="ei51" lid="l92" relType="BEFORE" relatedToEventInstance="ei55" />
+APW19980227.0494.tml	ei51	ei55	BEFORE
+
+<TLINK eventInstanceID="ei51" lid="l93" relType="BEFORE" relatedToEventInstance="ei56" />
+APW19980227.0494.tml	ei51	ei56	BEFORE
+
+<TLINK eventInstanceID="ei51" lid="l94" relType="BEFORE" relatedToEventInstance="ei57" />
+APW19980227.0494.tml	ei51	ei57	BEFORE
+
+<TLINK eventInstanceID="ei55" lid="l95" relType="BEFORE" relatedToEventInstance="ei56" />
+APW19980227.0494.tml	ei55	ei56	BEFORE
+
+<TLINK eventInstanceID="ei55" lid="l96" relType="AFTER" relatedToEventInstance="ei57" />
+APW19980227.0494.tml	ei55	ei57	AFTER
+
+<TLINK eventInstanceID="ei55" lid="l97" relType="BEFORE" relatedToEventInstance="ei58" />
+APW19980227.0494.tml	ei55	ei58	BEFORE
+
+<TLINK eventInstanceID="ei55" lid="l98" relType="BEFORE" relatedToEventInstance="ei59" />
+APW19980227.0494.tml	ei55	ei59	BEFORE
+
+<TLINK eventInstanceID="ei56" lid="l99" relType="AFTER" relatedToEventInstance="ei57" />
+APW19980227.0494.tml	ei56	ei57	AFTER
+
+<TLINK eventInstanceID="ei56" lid="l100" relType="BEFORE" relatedToEventInstance="ei58" />
+APW19980227.0494.tml	ei56	ei58	BEFORE
+
+<TLINK eventInstanceID="ei57" lid="l101" relType="BEFORE" relatedToEventInstance="ei58" />
+APW19980227.0494.tml	ei57	ei58	BEFORE
+
+<TLINK eventInstanceID="ei57" lid="l102" relType="BEFORE" relatedToEventInstance="ei59" />
+APW19980227.0494.tml	ei57	ei59	BEFORE
+
+<TLINK eventInstanceID="ei62" lid="l103" relType="IS_INCLUDED" relatedToEventInstance="ei63" />
+APW19980227.0494.tml	ei62	ei63	IS_INCLUDED
+
+<TLINK eventInstanceID="ei68" lid="l104" relType="BEFORE" relatedToEventInstance="ei69" />
+APW19980227.0494.tml	ei68	ei69	BEFORE
+
+<TLINK eventInstanceID="ei68" lid="l105" relType="BEFORE" relatedToEventInstance="ei70" />
+APW19980227.0494.tml	ei68	ei70	BEFORE
+
+<TLINK eventInstanceID="ei69" lid="l106" relType="BEFORE" relatedToEventInstance="ei70" />
+APW19980227.0494.tml	ei69	ei70	BEFORE
+
+
+checking precision
+	ei1	ei2	AFTER	
+ei1 ei2 AFTER UNKNOWN
+	ei1	ei3	AFTER	
+ei1 ei3 AFTER UNKNOWN
+	ei1	ei4	AFTER	
+True
+	ei2	ei3	AFTER	
+True
+	ei2	ei4	AFTER	
+True
+	ei3	ei4	AFTER	
+True
+	ei6	ei10	BEFORE	
+ei6 ei10 BEFORE UNKNOWN
+	ei6	ei11	BEFORE	
+ei6 ei11 BEFORE false
+	ei6	ei12	BEFORE	
+ei6 ei12 BEFORE false
+	ei8	ei9	AFTER	
+ei8 ei9 AFTER UNKNOWN
+	ei8	ei10	BEFORE	
+True
+	ei8	ei13	BEFORE	
+True
+	ei9	ei11	BEFORE	
+True
+	ei9	ei12	IS_INCLUDED	
+ei9 ei12 IS_INCLUDED false
+	ei10	ei11	AFTER	
+True
+	ei11	ei12	IS_INCLUDED	
+ei11 ei12 IS_INCLUDED false
+	ei11	ei13	BEFORE	
+ei11 ei13 BEFORE UNKNOWN
+	ei13	ei14	AFTER	
+True
+	ei16	ei17	BEFORE	
+ei16 ei17 BEFORE false
+	ei17	ei20	AFTER	
+ei17 ei20 AFTER UNKNOWN
+	ei21	ei22	BEFORE	
+ei21 ei22 BEFORE UNKNOWN
+	ei21	ei24	BEFORE	
+ei21 ei24 BEFORE UNKNOWN
+	ei21	ei25	BEFORE	
+True
+	ei21	ei26	BEFORE	
+True
+	ei21	ei27	BEFORE	
+True
+	ei22	ei24	BEFORE	
+ei22 ei24 BEFORE UNKNOWN
+	ei22	ei25	BEFORE	
+True
+	ei22	ei26	BEFORE	
+True
+	ei22	ei27	BEFORE	
+True
+	ei22	ei30	BEFORE	
+ei22 ei30 BEFORE UNKNOWN
+	ei22	ei32	BEFORE	
+ei22 ei32 BEFORE UNKNOWN
+	ei22	ei33	BEFORE	
+True
+	ei22	ei34	BEFORE	
+True
+	ei24	ei25	BEFORE	
+True
+	ei24	ei26	BEFORE	
+True
+	ei24	ei27	BEFORE	
+True
+	ei24	ei30	AFTER	
+ei24 ei30 AFTER UNKNOWN
+	ei25	ei26	BEFORE	
+ei25 ei26 BEFORE UNKNOWN
+	ei25	ei27	BEFORE	
+ei25 ei27 BEFORE UNKNOWN
+	ei25	ei28	AFTER	
+True
+	ei26	ei27	BEFORE	
+True
+	ei28	ei30	INCLUDES	
+True
+	ei28	ei32	BEFORE	
+ei28 ei32 BEFORE false
+	ei28	ei33	BEFORE	
+True
+	ei28	ei34	BEFORE	
+True
+	ei28	ei35	BEFORE	
+ei28 ei35 BEFORE false
+	ei28	ei36	BEFORE	
+True
+	ei28	ei37	BEFORE	
+ei28 ei37 BEFORE UNKNOWN
+	ei32	ei33	BEFORE	
+True
+	ei32	ei34	BEFORE	
+True
+	ei32	ei35	AFTER	
+True
+	ei33	ei34	BEFORE	
+ei33 ei34 BEFORE UNKNOWN
+	ei33	ei37	AFTER	
+True
+	ei35	ei36	BEFORE	
+True
+	ei35	ei37	BEFORE	
+True
+	ei35	ei39	AFTER	
+ei35 ei39 AFTER UNKNOWN
+	ei36	ei37	AFTER	
+True
+	ei39	ei41	BEFORE	
+ei39 ei41 BEFORE UNKNOWN
+	ei39	ei42	BEFORE	
+ei39 ei42 BEFORE UNKNOWN
+	ei39	ei43	BEFORE	
+ei39 ei43 BEFORE UNKNOWN
+	ei41	ei42	AFTER	
+True
+	ei41	ei43	BEFORE	
+True
+	ei41	ei44	BEFORE	
+ei41 ei44 BEFORE false
+	ei43	ei44	AFTER	
+True
+	ei44	ei45	IS_INCLUDED	
+ei44 ei45 IS_INCLUDED false
+	ei44	ei47	AFTER	
+ei44 ei47 AFTER UNKNOWN
+	ei44	ei48	BEFORE	
+ei44 ei48 BEFORE UNKNOWN
+	ei47	ei49	AFTER	
+ei47 ei49 AFTER UNKNOWN
+	ei49	ei50	BEFORE	
+True
+	ei49	ei51	AFTER	
+True
+	ei51	ei52	IS_INCLUDED	
+True
+	ei51	ei55	BEFORE	
+True
+	ei51	ei56	BEFORE	
+True
+	ei51	ei57	BEFORE	
+ei51 ei57 BEFORE UNKNOWN
+	ei55	ei56	BEFORE	
+True
+	ei55	ei57	AFTER	
+True
+	ei55	ei58	BEFORE	
+ei55 ei58 BEFORE false
+	ei55	ei59	BEFORE	
+ei55 ei59 BEFORE UNKNOWN
+	ei56	ei58	BEFORE	
+ei56 ei58 BEFORE false
+	ei62	ei63	IS_INCLUDED	
+ei62 ei63 IS_INCLUDED false
+	ei68	ei69	BEFORE	
+True
+	ei68	ei70	BEFORE	
+True
+	ei69	ei70	BEFORE	
+ei69 ei70 BEFORE false
+
+checking recall
+	ei1	ei4	AFTER	
+True
+	ei2	ei3	AFTER	
+True
+	ei2	ei4	AFTER	
+True
+	ei3	ei4	AFTER	
+True
+	ei4	ei6	BEFORE	
+ei4 ei6 BEFORE UNKNOWN
+	ei6	ei8	INCLUDES	
+ei6 ei8 INCLUDES false
+	ei6	ei9	INCLUDES	
+ei6 ei9 INCLUDES false
+	ei6	ei11	INCLUDES	
+ei6 ei11 INCLUDES false
+	ei6	ei12	INCLUDES	
+ei6 ei12 INCLUDES false
+	ei8	ei10	BEFORE	
+True
+	ei8	ei11	BEFORE	
+ei8 ei11 BEFORE UNKNOWN
+	ei8	ei12	BEFORE	
+ei8 ei12 BEFORE false
+	ei8	ei13	BEFORE	
+True
+	ei9	ei10	BEFORE	
+True
+	ei9	ei11	BEFORE	
+True
+	ei9	ei12	BEFORE	
+ei9 ei12 BEFORE false
+	ei9	ei13	BEFORE	
+True
+	ei10	ei11	AFTER	
+True
+	ei10	ei12	AFTER	
+ei10 ei12 AFTER UNKNOWN
+	ei10	ei13	AFTER	
+ei10 ei13 AFTER UNKNOWN
+	ei12	ei13	INCLUDES	
+ei12 ei13 INCLUDES false
+	ei13	ei14	AFTER	
+True
+	ei16	ei17	AFTER	
+ei16 ei17 AFTER false
+	ei20	ei21	BEFORE	
+ei20 ei21 BEFORE UNKNOWN
+	ei21	ei25	BEFORE	
+True
+	ei21	ei26	BEFORE	
+True
+	ei21	ei27	BEFORE	
+True
+	ei22	ei25	BEFORE	
+True
+	ei22	ei26	BEFORE	
+True
+	ei22	ei27	BEFORE	
+True
+	ei22	ei33	BEFORE	
+True
+	ei22	ei34	BEFORE	
+True
+	ei24	ei25	BEFORE	
+True
+	ei24	ei26	BEFORE	
+True
+	ei24	ei27	BEFORE	
+True
+	ei24	ei33	BEFORE	
+ei24 ei33 BEFORE UNKNOWN
+	ei24	ei34	BEFORE	
+ei24 ei34 BEFORE UNKNOWN
+	ei25	ei28	AFTER	
+True
+	ei25	ei30	AFTER	
+True
+	ei25	ei32	AFTER	
+ei25 ei32 AFTER UNKNOWN
+	ei25	ei33	BEFORE	
+ei25 ei33 BEFORE UNKNOWN
+	ei25	ei34	BEFORE	
+ei25 ei34 BEFORE UNKNOWN
+	ei26	ei27	BEFORE	
+True
+	ei26	ei28	AFTER	
+True
+	ei26	ei30	AFTER	
+True
+	ei26	ei32	AFTER	
+ei26 ei32 AFTER UNKNOWN
+	ei26	ei33	BEFORE	
+ei26 ei33 BEFORE UNKNOWN
+	ei26	ei34	BEFORE	
+ei26 ei34 BEFORE UNKNOWN
+	ei28	ei30	INCLUDES	
+True
+	ei28	ei32	INCLUDES	
+ei28 ei32 INCLUDES false
+	ei28	ei36	BEFORE	
+True
+	ei30	ei35	AFTER	
+ei30 ei35 AFTER false
+	ei32	ei35	AFTER	
+True
+	ei33	ei37	AFTER	
+True
+	ei34	ei37	AFTER	
+True
+	ei35	ei37	BEFORE	
+True
+	ei36	ei37	AFTER	
+True
+	ei36	ei39	AFTER	
+True
+	ei41	ei42	AFTER	
+True
+	ei41	ei43	BEFORE	
+True
+	ei41	ei44	AFTER	
+ei41 ei44 AFTER false
+	ei41	ei45	AFTER	
+ei41 ei45 AFTER false
+	ei42	ei44	AFTER	
+ei42 ei44 AFTER false
+	ei42	ei45	AFTER	
+ei42 ei45 AFTER false
+	ei44	ei45	AFTER	
+ei44 ei45 AFTER false
+	ei47	ei48	IS_INCLUDED	
+ei47 ei48 IS_INCLUDED false
+	ei48	ei49	INCLUDES	
+ei48 ei49 INCLUDES false
+	ei49	ei50	BEFORE	
+True
+	ei49	ei51	AFTER	
+True
+	ei50	ei52	AFTER	
+ei50 ei52 AFTER UNKNOWN
+	ei51	ei52	IS_INCLUDED	
+True
+	ei51	ei55	BEFORE	
+True
+	ei51	ei56	BEFORE	
+True
+	ei52	ei55	BEFORE	
+ei52 ei55 BEFORE UNKNOWN
+	ei52	ei56	BEFORE	
+ei52 ei56 BEFORE UNKNOWN
+	ei55	ei56	BEFORE	
+True
+	ei55	ei57	AFTER	
+True
+	ei55	ei58	AFTER	
+ei55 ei58 AFTER false
+	ei56	ei59	AFTER	
+ei56 ei59 AFTER UNKNOWN
+	ei57	ei58	BEFORE	
+True
+	ei57	ei59	BEFORE	
+True
+	ei58	ei62	BEFORE	
+ei58 ei62 BEFORE UNKNOWN
+	ei63	ei69	BEFORE	
+ei63 ei69 BEFORE UNKNOWN
+	ei63	ei70	BEFORE	
+ei63 ei70 BEFORE UNKNOWN
+	ei68	ei69	BEFORE	
+True
+	ei68	ei70	BEFORE	
+True
+	ei69	ei70	INCLUDES	
+ei69 ei70 INCLUDES false
+precision 45 83
+recall 48 87
+0.542168674699 0.551724137931
+0.0702040195465 , 107 , 102 , 111
+output/Awareness/gold-normalized/PRI19980306.2000.1675.tml output/Awareness/global/table6_line3-normalized/PRI19980306.2000.1675.tml
+
+
+Evaluate output/Awareness/gold-normalized/PRI19980306.2000.1675.tml output/Awareness/global/table6_line3-normalized/PRI19980306.2000.1675.tml
+<TLINK eventInstanceID="ei3" lid="l0" relType="AFTER" relatedToEventInstance="ei4" />
+PRI19980306.2000.1675.tml	ei3	ei4	AFTER
+
+<TLINK eventInstanceID="ei4" lid="l1" relType="IS_INCLUDED" relatedToEventInstance="ei8" />
+PRI19980306.2000.1675.tml	ei4	ei8	IS_INCLUDED
+
+<TLINK eventInstanceID="ei4" lid="l2" relType="BEFORE" relatedToEventInstance="ei9" />
+PRI19980306.2000.1675.tml	ei4	ei9	BEFORE
+
+<TLINK eventInstanceID="ei5" lid="l3" relType="INCLUDES" relatedToEventInstance="ei9" />
+PRI19980306.2000.1675.tml	ei5	ei9	INCLUDES
+
+<TLINK eventInstanceID="ei8" lid="l4" relType="BEFORE" relatedToEventInstance="ei13" />
+PRI19980306.2000.1675.tml	ei8	ei13	BEFORE
+
+<TLINK eventInstanceID="ei8" lid="l5" relType="AFTER" relatedToEventInstance="ei16" />
+PRI19980306.2000.1675.tml	ei8	ei16	AFTER
+
+<TLINK eventInstanceID="ei9" lid="l6" relType="AFTER" relatedToEventInstance="ei16" />
+PRI19980306.2000.1675.tml	ei9	ei16	AFTER
+
+<TLINK eventInstanceID="ei11" lid="l7" relType="BEFORE" relatedToEventInstance="ei13" />
+PRI19980306.2000.1675.tml	ei11	ei13	BEFORE
+
+<TLINK eventInstanceID="ei11" lid="l8" relType="AFTER" relatedToEventInstance="ei16" />
+PRI19980306.2000.1675.tml	ei11	ei16	AFTER
+
+<TLINK eventInstanceID="ei11" lid="l9" relType="IS_INCLUDED" relatedToEventInstance="ei17" />
+PRI19980306.2000.1675.tml	ei11	ei17	IS_INCLUDED
+
+<TLINK eventInstanceID="ei11" lid="l10" relType="IS_INCLUDED" relatedToEventInstance="ei19" />
+PRI19980306.2000.1675.tml	ei11	ei19	IS_INCLUDED
+
+<TLINK eventInstanceID="ei13" lid="l11" relType="AFTER" relatedToEventInstance="ei16" />
+PRI19980306.2000.1675.tml	ei13	ei16	AFTER
+
+<TLINK eventInstanceID="ei15" lid="l12" relType="AFTER" relatedToEventInstance="ei16" />
+PRI19980306.2000.1675.tml	ei15	ei16	AFTER
+
+<TLINK eventInstanceID="ei16" lid="l13" relType="BEFORE" relatedToEventInstance="ei19" />
+PRI19980306.2000.1675.tml	ei16	ei19	BEFORE
+
+<TLINK eventInstanceID="ei4" lid="l0" relType="SIMULTANEOUS" relatedToEventInstance="ei5" />
+PRI19980306.2000.1675.tml	ei4	ei5	SIMULTANEOUS
+
+<TLINK eventInstanceID="ei7" lid="l1" relType="BEFORE" relatedToEventInstance="ei9" />
+PRI19980306.2000.1675.tml	ei7	ei9	BEFORE
+
+<TLINK eventInstanceID="ei7" lid="l2" relType="AFTER" relatedToEventInstance="ei13" />
+PRI19980306.2000.1675.tml	ei7	ei13	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l3" relType="AFTER" relatedToEventInstance="ei15" />
+PRI19980306.2000.1675.tml	ei7	ei15	AFTER
+
+<TLINK eventInstanceID="ei7" lid="l4" relType="AFTER" relatedToEventInstance="ei16" />
+PRI19980306.2000.1675.tml	ei7	ei16	AFTER
+
+<TLINK eventInstanceID="ei8" lid="l5" relType="BEFORE" relatedToEventInstance="ei9" />
+PRI19980306.2000.1675.tml	ei8	ei9	BEFORE
+
+<TLINK eventInstanceID="ei9" lid="l6" relType="AFTER" relatedToEventInstance="ei11" />
+PRI19980306.2000.1675.tml	ei9	ei11	AFTER
+
+<TLINK eventInstanceID="ei9" lid="l7" relType="AFTER" relatedToEventInstance="ei13" />
+PRI19980306.2000.1675.tml	ei9	ei13	AFTER
+
+<TLINK eventInstanceID="ei9" lid="l8" relType="AFTER" relatedToEventInstance="ei15" />
+PRI19980306.2000.1675.tml	ei9	ei15	AFTER
+
+<TLINK eventInstanceID="ei9" lid="l9" relType="AFTER" relatedToEventInstance="ei16" />
+PRI19980306.2000.1675.tml	ei9	ei16	AFTER
+
+<TLINK eventInstanceID="ei11" lid="l10" relType="AFTER" relatedToEventInstance="ei15" />
+PRI19980306.2000.1675.tml	ei11	ei15	AFTER
+
+<TLINK eventInstanceID="ei11" lid="l11" relType="AFTER" relatedToEventInstance="ei16" />
+PRI19980306.2000.1675.tml	ei11	ei16	AFTER
+
+<TLINK eventInstanceID="ei13" lid="l12" relType="AFTER" relatedToEventInstance="ei15" />
+PRI19980306.2000.1675.tml	ei13	ei15	AFTER
+
+<TLINK eventInstanceID="ei13" lid="l13" relType="AFTER" relatedToEventInstance="ei16" />
+PRI19980306.2000.1675.tml	ei13	ei16	AFTER
+
+<TLINK eventInstanceID="ei15" lid="l14" relType="AFTER" relatedToEventInstance="ei16" />
+PRI19980306.2000.1675.tml	ei15	ei16	AFTER
+
+<TLINK eventInstanceID="ei15" lid="l15" relType="BEFORE" relatedToEventInstance="ei19" />
+PRI19980306.2000.1675.tml	ei15	ei19	BEFORE
+
+<TLINK eventInstanceID="ei16" lid="l16" relType="BEFORE" relatedToEventInstance="ei17" />
+PRI19980306.2000.1675.tml	ei16	ei17	BEFORE
+
+<TLINK eventInstanceID="ei16" lid="l17" relType="BEFORE" relatedToEventInstance="ei19" />
+PRI19980306.2000.1675.tml	ei16	ei19	BEFORE
+
+<TLINK eventInstanceID="ei17" lid="l18" relType="BEFORE" relatedToEventInstance="ei19" />
+PRI19980306.2000.1675.tml	ei17	ei19	BEFORE
+
+
+checking precision
+	ei4	ei5	SIMULTANEOUS	
+ei4 ei5 SIMULTANEOUS false
+	ei7	ei9	BEFORE	
+ei7 ei9 BEFORE UNKNOWN
+	ei7	ei13	AFTER	
+ei7 ei13 AFTER UNKNOWN
+	ei7	ei15	AFTER	
+ei7 ei15 AFTER UNKNOWN
+	ei7	ei16	AFTER	
+ei7 ei16 AFTER UNKNOWN
+	ei8	ei9	BEFORE	
+ei8 ei9 BEFORE UNKNOWN
+	ei9	ei11	AFTER	
+ei9 ei11 AFTER UNKNOWN
+	ei11	ei15	AFTER	
+ei11 ei15 AFTER UNKNOWN
+	ei11	ei16	AFTER	
+True
+	ei13	ei15	AFTER	
+ei13 ei15 AFTER UNKNOWN
+	ei13	ei16	AFTER	
+True
+	ei15	ei16	AFTER	
+True
+	ei15	ei19	BEFORE	
+ei15 ei19 BEFORE UNKNOWN
+	ei16	ei17	BEFORE	
+ei16 ei17 BEFORE UNKNOWN
+	ei17	ei19	BEFORE	
+ei17 ei19 BEFORE false
+
+checking recall
+	ei3	ei4	AFTER	
+ei3 ei4 AFTER UNKNOWN
+	ei4	ei8	IS_INCLUDED	
+ei4 ei8 IS_INCLUDED false
+	ei4	ei9	BEFORE	
+ei4 ei9 BEFORE UNKNOWN
+	ei5	ei9	INCLUDES	
+ei5 ei9 INCLUDES false
+	ei8	ei13	BEFORE	
+ei8 ei13 BEFORE UNKNOWN
+	ei8	ei16	AFTER	
+ei8 ei16 AFTER UNKNOWN
+	ei11	ei13	BEFORE	
+ei11 ei13 BEFORE UNKNOWN
+	ei11	ei16	AFTER	
+True
+	ei11	ei17	IS_INCLUDED	
+ei11 ei17 IS_INCLUDED false
+	ei11	ei19	IS_INCLUDED	
+ei11 ei19 IS_INCLUDED false
+	ei15	ei16	AFTER	
+True
+	ei16	ei19	BEFORE	
+True
+precision 3 15
+recall 3 12
+0.2 0.25
+0.0107820034027 , 19 , 22 , 20
+=== Temporal Awareness Score ===
+
+Temporal Score	F1	P	R
+		49.6449	50.565	48.7578	
+Overall Temporal Awareness Score (F1 score): 49.6449
+

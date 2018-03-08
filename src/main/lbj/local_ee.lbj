@@ -1,0 +1,253 @@
+package lbjava;
+
+import datastruct.TemporalEventPair;
+import util.constants;
+import util.ParamLBJ;
+import datastruct.Event;
+import java.util.List;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.lang.Object;
+
+discrete SentDist(TemporalEventPair ep) <- 
+{
+    if(ep.event2.getSentId() - ep.event1.getSentId()==0)
+        return "SentDist:Same";
+    else if(ep.event2.getSentId() - ep.event1.getSentId()==1)
+        return "SentDist:One";
+    else
+        return "SentDist:Many";
+}
+real TokenDist(TemporalEventPair ep) <-
+{
+	//sense ep.event2.getSentId() - ep.event1.getSentId();
+	return ep.event2.getTokenId() - ep.event1.getTokenId();
+	//sense ep.event2.getIndex_in_doc() - ep.event1.getIndex_in_doc();
+}
+discrete[] POS(TemporalEventPair ep) <-//this is wrong
+{
+	sense ep.event1.getPos();
+	sense ep.event2.getPos();
+	sense ep.event1.getPos() +":"+ ep.event2.getPos();
+}
+discrete[] POS_corr(TemporalEventPair ep) <-
+{
+    sense "E1_POS:"+ep.event1.getPos();
+    sense "E2_POS:"+ep.event2.getPos();
+    sense "E1_E2_POS:"+ep.event1.getPos() +":"+ ep.event2.getPos();
+}
+discrete% Connectives(TemporalEventPair ep) <-
+{
+    Object[] connectives = ep.connectives_between.toArray();
+    for(int i=0;i<connectives.length;i++){
+        sense "CONNECTIVE_BETWEEN:" + (String)connectives[i];
+    }
+}
+
+discrete% Connectives_full(TemporalEventPair ep) <-
+{
+    Object[] connectives = ep.connectives_before.toArray();
+    for(int i=0;i<connectives.length;i++){
+        sense "CONNECTIVE_BEFORE:" + (String)connectives[i];
+    }
+    Object[] connectives2 = ep.connectives_after.toArray();
+    for(int i=0;i<connectives2.length;i++){
+        sense "CONNECTIVE_AFTER:" + (String)connectives2[i];
+    }
+}
+
+discrete% ModalVerbs(TemporalEventPair ep) <-
+{
+    Object[] modelVerbs = ep.modelverbs_between.toArray();
+    for(int i=0;i<modelVerbs.length;i++){
+        sense "MODALVERB_BETWEEN:" + (String)modelVerbs[i];
+    }
+}
+
+discrete% ModalVerbs_full(TemporalEventPair ep) <-
+{
+    Object[] modelVerbs = ep.modelverbs_before.toArray();
+    for(int i=0;i<modelVerbs.length;i++){
+        sense "MODALVERB_BEFORE:" + (String)modelVerbs[i];
+    }
+    Object[] modelVerbs2 = ep.modelverbs_after.toArray();
+    for(int i=0;i<modelVerbs2.length;i++){
+        sense "MODALVERB_AFTER:" + (String)modelVerbs2[i];
+    }
+}
+
+discrete SameSynSet(TemporalEventPair ep) <-
+{
+    if(ep.sameSynset())
+        return "SAME_SYNSET:YES";
+    else
+        return "SAME_SYNSET:NO";
+}
+discrete SameDerivation(TemporalEventPair ep) <-
+{
+    if(ep.sameDerivation())
+        return "SAME_DERIVATION:YES";
+    else
+        return "SAME_DERIVATION:NO";
+}
+real[] IsBeforeInCorpus(TemporalEventPair ep) <-
+{
+    sense ep.c1/(ep.c1+ep.c2);
+    /*if(ep.is_before_corpus==1)
+        return "IS_BEFORE_IN_CORPUS:YES";
+    else if(ep.is_before_corpus==-1)
+        return "IS_BEFORE_IN_CORPUS:NO";
+    else
+        return "IS_BEFORE_IN_CORPUS:VAGUE";*/
+}
+real[] IsBeforeInCorpus_variation(TemporalEventPair ep) <-
+{
+    sense 1.0d*ep.c1/(ep.c1+ep.c2)*ep.c1/(ep.c1+ep.c2);
+    sense Math.sqrt(1.0d*ep.c1/(ep.c1+ep.c2));
+}
+real[] CorpusStats(TemporalEventPair ep) <-
+{
+    double total = ep.c_i+ep.c_ii+ep.c_e+ep.c_v;
+    sense 1.0d*ep.c_i/total;
+    sense 1.0d*ep.c_ii/total;
+    sense 1.0d*ep.c_e/total;
+    sense 1.0d*ep.c_v/total;
+}
+discrete% PPHead(TemporalEventPair ep)<-
+{
+    sense "E1_PP_HEAD:"+ep.event1.getPp_head();
+    sense "E2_PP_HEAD:"+ep.event2.getPp_head();
+    if(!ep.event1.getPp_head().equals("N/A")){
+        if(ep.event1.getPp_head().equals(ep.event2.getPp_head()))
+            sense "E1E2_SAME_PP_HEAD:YES";
+        else
+            sense "E1E2_SAME_PP_HEAD:NO";
+    }
+}
+discrete[] POS_IN_WIN(TemporalEventPair ep) <-
+{
+    Event e1 = ep.event1;
+    Event e2 = ep.event2;
+    int i=0;
+    for(;i<3;i++){
+        sense "PREV_"+i+"_POS:"+e1.getPrevPos(i);
+        sense "NEXT_"+i+"_POS:"+e1.getNextPos(i);
+    }
+}
+real[] EmbeddingIP(TemporalEventPair ep)<-
+{
+    double r = ep.getEmbeddingIP();
+    sense r;
+    sense r*r;
+    sense Math.sqrt(r);
+}
+real[] Embeddings(TemporalEventPair ep)<-
+{
+    int n=ep.event1.embedding.length;
+    int i=0;
+    for(;i<n;i++){
+        sense ep.event1.embedding[i];
+        sense ep.event2.embedding[i];
+    }
+}
+discrete% GoldProps(TemporalEventPair ep)<-
+{
+    String[] prop1 = ep.event1.getTACP();
+    int i=0;
+    for(;i<prop1.length;i++){
+        sense "E1_"+i+":"+prop1[i];
+    }
+
+    String[] prop2 = ep.event2.getTACP();
+    for(i=0;i<prop2.length;i++){
+        sense "E2_"+i+":"+prop2[i];
+    }
+
+    for(i=0;i<prop1.length;i++){
+        sense "E1_E2_"+i+":"+prop1[i]+":"+prop2[i];
+    }
+}
+discrete% GoldPropsConjunctions(TemporalEventPair ep)<-
+{
+    String[] prop1 = ep.event1.getTACP();
+    int i=0;
+    for(;i<prop1.length;i++){
+        int j=i+1;
+        for(;j<prop1.length;j++){
+            sense "E1_"+i+"_"+j+":"+prop1[i]+":"+prop1[j];
+        }
+    }
+
+    String[] prop2 = ep.event2.getTACP();
+    for(i=0;i<prop2.length;i++){
+        int j=i+1;
+        for(;j<prop2.length;j++){
+            sense "E2_"+i+"_"+j+":"+prop2[i]+":"+prop2[j];
+        }
+    }
+}
+discrete BiasTerm(TemporalEventPair ep) <-
+{
+    return "bias";
+}
+discrete BiasTerm4SVM(TemporalEventPair ep) <-
+{
+    return "bias";
+}
+discrete BiasTerm4Causal(TemporalEventPair ep) <-
+{
+    return "bias";
+}
+discrete Label(TemporalEventPair ep) <-
+{
+	return ep.relation.toStringfull();
+}
+
+discrete local_ee_pp_poswin_conn_corr(TemporalEventPair ep) <-
+learn Label
+using
+    BiasTerm, SentDist, TokenDist, POS_corr, Connectives, ModalVerbs, SameSynSet, PPHead, POS_IN_WIN, Connectives_full, ModalVerbs_full
+    with new SparseNetworkLearner(new SparseAveragedPerceptron(ParamLBJ.eeLearningRate, 0, ParamLBJ.eeThickness))
+end
+
+discrete local_ee(TemporalEventPair ep) <-
+learn Label
+using
+    BiasTerm, SentDist, TokenDist, POS, Connectives, ModalVerbs, SameSynSet
+    with new SparseNetworkLearner(new SparseAveragedPerceptron(ParamLBJ.eeLearningRate, 0, ParamLBJ.eeThickness))
+end
+
+discrete local_ee_pp_poswin_conn_corr1(TemporalEventPair ep) <-
+learn Label
+using
+    BiasTerm, SentDist, TokenDist, POS_corr, Connectives, ModalVerbs, SameSynSet, PPHead, POS_IN_WIN, Connectives_full, ModalVerbs_full, IsBeforeInCorpus
+    with new SparseNetworkLearner(new SparseAveragedPerceptron(ParamLBJ.eeLearningRate, 0, ParamLBJ.eeThickness))
+end
+
+discrete local_ee_corpus(TemporalEventPair ep) <-
+learn Label
+using
+    BiasTerm, SentDist, TokenDist, POS, Connectives, ModalVerbs, SameSynSet, IsBeforeInCorpus
+    with new SparseNetworkLearner(new SparseAveragedPerceptron(ParamLBJ.eeLearningRate, 0, ParamLBJ.eeThickness))
+end
+
+discrete local_ee_pp_poswin_conn_corr2(TemporalEventPair ep) <-
+learn Label
+using
+    BiasTerm, SentDist, TokenDist, POS_corr, Connectives, ModalVerbs, SameSynSet, PPHead, POS_IN_WIN, Connectives_full, ModalVerbs_full, IsBeforeInCorpus, CorpusStats
+    with new SparseNetworkLearner(new SparseAveragedPerceptron(ParamLBJ.eeLearningRate, 0, ParamLBJ.eeThickness))
+end
+
+discrete local_ee_corpus_allLabels(TemporalEventPair ep) <-
+learn Label
+using
+    BiasTerm, SentDist, TokenDist, POS, Connectives, ModalVerbs, SameSynSet, IsBeforeInCorpus, CorpusStats
+    with new SparseNetworkLearner(new SparseAveragedPerceptron(ParamLBJ.eeLearningRate, 0, ParamLBJ.eeThickness))
+end
+
+discrete local_ee_corpus_allLabels_gold(TemporalEventPair ep) <-
+learn Label
+using
+    BiasTerm, SentDist, TokenDist, POS, Connectives, ModalVerbs, SameSynSet, IsBeforeInCorpus, CorpusStats, GoldProps
+    with new SparseNetworkLearner(new SparseAveragedPerceptron(ParamLBJ.eeLearningRate, 0, ParamLBJ.eeThickness))
+end

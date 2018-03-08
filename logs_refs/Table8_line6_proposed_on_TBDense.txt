@@ -1,0 +1,56 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building TemProb-NAACL18 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for edu.illinois.cs.cogcomp:illinois-prepsrl-model:jar:3.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ TemProb-NAACL18 ---
+
+Loading WordNet data and index...
+	# of noun synset: 82116
+	# of verb synset: 13768
+	# of adj synset: 18157
+	# of adv synset: 3622
+	# of noun: 117798
+	# of verb: 11529
+	# of adj: 21479
+	# of adv: 4481
+Done.
+23:52:02 INFO  DepAnnotator:66 - Loading struct-perceptron-auto-20iter.model into temp file: tmp345673.model
+23:52:03 INFO  SLModel:88 - Load trained Models.....
+23:52:04 INFO  SLModel:97 - Load Model complete!
+23:52:04 INFO  LabeledChuLiuEdmondsDecoder:72 - Loading cached PoS-to-dep dictionary from deprels.dict
+Data type: TIMEML
+TimeMLReader created successfully.
+23:52:06 INFO  DepAnnotator:66 - Loading struct-perceptron-auto-20iter.model into temp file: tmp345673.model
+23:52:06 INFO  SLModel:88 - Load trained Models.....
+23:52:08 INFO  SLModel:97 - Load Model complete!
+23:52:08 INFO  LabeledChuLiuEdmondsDecoder:72 - Loading cached PoS-to-dep dictionary from deprels.dict
+Data type: TIMEML
+TimeMLReader created successfully.
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 0 | 3 | 38 | 0.0 | 0.0 | 0.0 |
+| before | 306 | 648 | 520 | 0.4722222222222222 | 0.5884615384615385 | 0.523972602739726 |
+| undef | 435 | 975 | 837 | 0.4461538461538462 | 0.5197132616487455 | 0.48013245033112584 |
+| includes | 15 | 53 | 101 | 0.2830188679245283 | 0.1485148514851485 | 0.1948051948051948 |
+| after | 186 | 378 | 480 | 0.49206349206349204 | 0.3875 | 0.43356643356643354 |
+| included | 58 | 114 | 195 | 0.5087719298245614 | 0.29743589743589743 | 0.37540453074433655 |
+Average F1: 0.3346468686978028
+
+Prec = 565/1196 = 0.47240802675585286
+Rec = 565/1334 = 0.4235382308845577
+F-score = 0.44664031620553357
+
+
+To evaluate. Run this
+
+sh scripts/evaluate_general_dir.sh data/TBDense_gold output/EMNLPAugmentedByNAACL_on_TBDense naacl Awareness/CompareStateoftheArt_AllEventTimex
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 34.784 s
+[INFO] Finished at: 2018-03-07T23:52:09-06:00
+[INFO] Final Memory: 1532M/4427M
+[INFO] ------------------------------------------------------------------------
