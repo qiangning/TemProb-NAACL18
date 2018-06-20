@@ -28,6 +28,7 @@ import java.util.Map;
 
 public class TempDocLoader {
     public static TimeBank TimeBankInstance = null;
+    public static AQUAINT AQUAINTInstance = null;
     public static TBDense TBDenseInstance = null;
     public static boolean reload = false;
     public static ResourceManager rm;
@@ -291,6 +292,14 @@ public class TempDocLoader {
             loadStructs(useNewRelAnn,false);
         }
     }
+
+    public static class AQUAINT extends myDataset{
+        public AQUAINT(boolean useNewRelAnn){
+            loadResourceManagerIfNull();
+            loadDocs(rm.getString("AQUAINTSer"));
+            loadStructs(useNewRelAnn,false);
+        }
+    }
     public static class TBDense extends myDataset{
         public List<TemporalDocument> getAllDocs(int mode){//1: train. 2: dev. 3: test. 4: rest
             List<TemporalDocument> res = new ArrayList<>();
@@ -327,6 +336,13 @@ public class TempDocLoader {
             TimeBankInstance = new TimeBank(useNewRelAnn);
         }
         return TimeBankInstance;
+    }
+    public static AQUAINT getAQUAINTInstance() {return getAQUAINTInstance(false);}
+    public static AQUAINT getAQUAINTInstance(boolean useNewRelAnn) {
+        if (AQUAINTInstance == null || reload) {
+            AQUAINTInstance = new AQUAINT(useNewRelAnn);
+        }
+        return AQUAINTInstance;
     }
     public static TBDense getTBDenseInstance(){return getTBDenseInstance(false);}
     public static TBDense getTBDenseInstance(boolean useNewRelAnn){
