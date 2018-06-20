@@ -1,0 +1,242 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building TemProb-NAACL18 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for edu.illinois.cs.cogcomp:illinois-prepsrl-model:jar:3.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ TemProb-NAACL18 ---
+
+
+***************
+Setup=PurelyOnTBDense, force_update=false
+***************
+
+
+
+Loading WordNet data and index...
+	# of noun synset: 82116
+	# of verb synset: 13768
+	# of adj synset: 18157
+	# of adv synset: 3622
+	# of noun: 117798
+	# of verb: 11529
+	# of adj: 21479
+	# of adv: 4481
+Done.
+Autoselected negSamRate (dist=0) =   0.9985
+Autoselected negSamRate (dist=1) =   0.5394
+#################
+Training on dist=0
+#################
+[CHECK] Calling of myLearnWrapper: #trainingStructs=22, #devStructs=5
+[CHECK] last struct of trainingStructs:
+Doc:APW19980213.1310, #eventPairs=155, #allEventPairs=280
+Stats of allEventPairs:
+    before=   42
+     after=   45
+     equal=    8
+  includes=   18
+  included=   32
+     undef=  135
+[CHECK] last struct of devStructs:
+Doc:ed980111.1130.0089, #eventPairs=24, #allEventPairs=49
+Stats of allEventPairs:
+    before=    3
+     after=    2
+     equal=    2
+  includes=    3
+  included=    8
+     undef=   31
+Model [models/partial_graph_paper/PurelyOnTBDense_dist0.lc] exists. Don't force update.
+Model file read from /home/qning2/Research/TemProb-NAACL18/models/partial_graph_paper/PurelyOnTBDense_dist0.lc
+
+
+#################
+Training on dist=1
+#################
+[CHECK] Calling of myLearnWrapper: #trainingStructs=22, #devStructs=5
+[CHECK] last struct of trainingStructs:
+Doc:APW19980213.1310, #eventPairs=155, #allEventPairs=280
+Stats of allEventPairs:
+    before=   42
+     after=   45
+     equal=    8
+  includes=   18
+  included=   32
+     undef=  135
+[CHECK] last struct of devStructs:
+Doc:ed980111.1130.0089, #eventPairs=24, #allEventPairs=49
+Stats of allEventPairs:
+    before=    3
+     after=    2
+     equal=    2
+  includes=    3
+  included=    8
+     undef=   31
+Model [models/partial_graph_paper/PurelyOnTBDense_dist1.lc] exists. Don't force update.
+Model file read from /home/qning2/Research/TemProb-NAACL18/models/partial_graph_paper/PurelyOnTBDense_dist1.lc
+-------------------
+Evaluating TestSet...
+
+
+#################
+Local evaluation:
+#################
+Sent All:
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 5 | 11 | 32 | 0.45454545454545453 | 0.15625 | 0.2325581395348837 |
+| before | 207 | 433 | 385 | 0.4780600461893764 | 0.5376623376623376 | 0.5061124694376529 |
+| undef | 357 | 639 | 600 | 0.5586854460093896 | 0.595 | 0.5762711864406779 |
+| includes | 2 | 19 | 68 | 0.10526315789473684 | 0.029411764705882353 | 0.04597701149425287 |
+| after | 126 | 294 | 281 | 0.42857142857142855 | 0.4483985765124555 | 0.4382608695652174 |
+| included | 9 | 31 | 61 | 0.2903225806451613 | 0.14754098360655737 | 0.1956521739130435 |
+Average F1: 0.33247197506428805
+
+Prec = 349/788 = 0.44289340101522845
+Rec = 349/827 = 0.42200725513905685
+F-score = 0.43219814241486065
+
+Sent 0:
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 4 | 10 | 16 | 0.4 | 0.25 | 0.3076923076923077 |
+| before | 96 | 186 | 160 | 0.5161290322580645 | 0.6 | 0.5549132947976877 |
+| undef | 82 | 158 | 176 | 0.5189873417721519 | 0.4659090909090909 | 0.4910179640718562 |
+| includes | 2 | 10 | 29 | 0.2 | 0.06896551724137931 | 0.10256410256410257 |
+| after | 53 | 117 | 96 | 0.452991452991453 | 0.5520833333333334 | 0.49765258215962443 |
+| included | 7 | 21 | 25 | 0.3333333333333333 | 0.28 | 0.30434782608695654 |
+Average F1: 0.37636467956208924
+
+Prec = 162/344 = 0.47093023255813954
+Rec = 162/326 = 0.49693251533742333
+F-score = 0.48358208955223886
+
+Sent 1:
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 1 | 1 | 16 | 1.0 | 0.0625 | 0.11764705882352941 |
+| before | 111 | 247 | 225 | 0.4493927125506073 | 0.49333333333333335 | 0.47033898305084754 |
+| undef | 275 | 481 | 424 | 0.5717255717255717 | 0.6485849056603774 | 0.6077348066298344 |
+| includes | 0 | 9 | 39 | 0.0 | 0.0 | 0.0 |
+| after | 73 | 177 | 185 | 0.4124293785310734 | 0.3945945945945946 | 0.4033149171270718 |
+| included | 2 | 10 | 36 | 0.2 | 0.05555555555555555 | 0.08695652173913045 |
+Average F1: 0.2809987145617356
+
+Prec = 187/444 = 0.42117117117117114
+Rec = 187/501 = 0.37325349301397204
+F-score = 0.39576719576719577
+
+Sent >=2:
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+Average F1: NaN
+
+Prec = 0/0 = NaN
+Rec = 0/0 = NaN
+F-score = NaN
+
+Total time/examples: 67 ms/1427 pairs
+Sent All (With no ignored label):
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 5 | 11 | 32 | 0.45454545454545453 | 0.15625 | 0.2325581395348837 |
+| before | 207 | 433 | 385 | 0.4780600461893764 | 0.5376623376623376 | 0.5061124694376529 |
+| undef | 357 | 639 | 600 | 0.5586854460093896 | 0.595 | 0.5762711864406779 |
+| includes | 2 | 19 | 68 | 0.10526315789473684 | 0.029411764705882353 | 0.04597701149425287 |
+| after | 126 | 294 | 281 | 0.42857142857142855 | 0.4483985765124555 | 0.4382608695652174 |
+| included | 9 | 31 | 61 | 0.2903225806451613 | 0.14754098360655737 | 0.1956521739130435 |
+Average F1: 0.33247197506428805
+
+Prec = 706/1427 = 0.49474421864050455
+Rec = 706/1427 = 0.49474421864050455
+F-score = 0.49474421864050455
+
+equal={equal=5, total=11, before=1, undef=4, included=1}
+before={equal=2, total=433, before=207, undef=138, includes=24, after=52, included=10}
+undef={equal=13, total=639, before=117, undef=357, includes=30, after=95, included=27}
+includes={equal=1, total=19, before=7, undef=4, includes=2, after=4, included=1}
+after={equal=10, total=294, before=46, undef=89, includes=10, after=126, included=13}
+included={equal=1, total=31, before=7, undef=8, includes=2, after=4, included=9}
+
+
+#################
+Global evaluation:
+#################
+**********Local**********
+-----Ignore Null-----
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 5 | 11 | 32 | 0.45454545454545453 | 0.15625 | 0.2325581395348837 |
+| before | 207 | 433 | 385 | 0.4780600461893764 | 0.5376623376623376 | 0.5061124694376529 |
+| undef | 357 | 639 | 600 | 0.5586854460093896 | 0.595 | 0.5762711864406779 |
+| includes | 2 | 19 | 68 | 0.10526315789473684 | 0.029411764705882353 | 0.04597701149425287 |
+| after | 126 | 294 | 281 | 0.42857142857142855 | 0.4483985765124555 | 0.4382608695652174 |
+| included | 9 | 31 | 61 | 0.2903225806451613 | 0.14754098360655737 | 0.1956521739130435 |
+Average F1: 0.33247197506428805
+
+Prec = 349/788 = 0.44289340101522845
+Rec = 349/827 = 0.42200725513905685
+F-score = 0.43219814241486065
+
+-----No ignore-----
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 5 | 11 | 32 | 0.45454545454545453 | 0.15625 | 0.2325581395348837 |
+| before | 207 | 433 | 385 | 0.4780600461893764 | 0.5376623376623376 | 0.5061124694376529 |
+| undef | 357 | 639 | 600 | 0.5586854460093896 | 0.595 | 0.5762711864406779 |
+| includes | 2 | 19 | 68 | 0.10526315789473684 | 0.029411764705882353 | 0.04597701149425287 |
+| after | 126 | 294 | 281 | 0.42857142857142855 | 0.4483985765124555 | 0.4382608695652174 |
+| included | 9 | 31 | 61 | 0.2903225806451613 | 0.14754098360655737 | 0.1956521739130435 |
+Average F1: 0.33247197506428805
+
+Prec = 706/1427 = 0.49474421864050455
+Rec = 706/1427 = 0.49474421864050455
+F-score = 0.49474421864050455
+
+**********Global**********
+-----Ignore Null-----
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 1 | 1 | 32 | 1.0 | 0.03125 | 0.06060606060606061 |
+| before | 214 | 436 | 385 | 0.4908256880733945 | 0.5558441558441558 | 0.5213154689403167 |
+| undef | 368 | 666 | 600 | 0.5525525525525525 | 0.6133333333333333 | 0.5813586097946287 |
+| includes | 2 | 23 | 68 | 0.08695652173913043 | 0.029411764705882353 | 0.04395604395604395 |
+| after | 108 | 257 | 281 | 0.42023346303501946 | 0.38434163701067614 | 0.40148698884758366 |
+| included | 11 | 44 | 61 | 0.25 | 0.18032786885245902 | 0.20952380952380953 |
+Average F1: 0.3030411636114072
+
+Prec = 336/761 = 0.44152431011826543
+Rec = 336/827 = 0.4062877871825877
+F-score = 0.42317380352644834
+
+-----No ignore-----
+| Label | Correct prediction | Total prediction | Total gold data | Precision | Recall | F1 score |
+|-------------------------------------------------------------------------------------------------|
+| equal | 1 | 1 | 32 | 1.0 | 0.03125 | 0.06060606060606061 |
+| before | 214 | 436 | 385 | 0.4908256880733945 | 0.5558441558441558 | 0.5213154689403167 |
+| undef | 368 | 666 | 600 | 0.5525525525525525 | 0.6133333333333333 | 0.5813586097946287 |
+| includes | 2 | 23 | 68 | 0.08695652173913043 | 0.029411764705882353 | 0.04395604395604395 |
+| after | 108 | 257 | 281 | 0.42023346303501946 | 0.38434163701067614 | 0.40148698884758366 |
+| included | 11 | 44 | 61 | 0.25 | 0.18032786885245902 | 0.20952380952380953 |
+Average F1: 0.3030411636114072
+
+Prec = 704/1427 = 0.4933426769446391
+Rec = 704/1427 = 0.4933426769446391
+F-score = 0.4933426769446391
+
+Total Time: 1
+
+
+#################
+Awareness: Run this
+#################
+sh scripts/evaluate_general_dir.sh output/PartialPaper//PurelyOnTBDense/gold output/PartialPaper//PurelyOnTBDense/global PurelyOnTBDense_aware PartialPaper/Awareness
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 11.238 s
+[INFO] Finished at: 2018-06-20T13:04:07-05:00
+[INFO] Final Memory: 180M/704M
+[INFO] ------------------------------------------------------------------------
