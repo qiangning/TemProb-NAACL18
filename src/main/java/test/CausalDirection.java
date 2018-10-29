@@ -35,6 +35,7 @@ public class CausalDirection {
         reader.createTextAnnotation();
         List<TemporalDocument> testdocs = reader.getDataset().getDocuments();
         //List<TemporalDocument> testdocs = TempEval3Reader.deserialize("serialized_data/joint_causal/quang_gold_temporal");
+        CEA_output.goldfile = "data/Quang/keys/eval.keys";
         HashMap<String,HashMap<myPair,Double>> allGold = CEA_output.ReadGoldGivenDocs(testdocs);
         for(TemporalDocument doc:testdocs){
             HashMap<myPair,Double> gold = allGold.get(doc.getDocID());
