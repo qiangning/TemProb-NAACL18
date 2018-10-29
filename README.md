@@ -29,6 +29,7 @@ mkdir logs/Awareness/CompareStateoftheArt_PartialTBDense
 mkdir logs/eval_corpus_prior
 sh scripts/RunThis_All.sh > RunThis_All_log.txt
 ```
+Note: Since Github is limiting the bandwidth for large files (our `data/TemProb.txt` is a large file), it's very likely that you will see an error saying that `TemProb.txt` fails to be downloaded. In that case, please go to [here](http://cogcomp.org/page/publication_view/830) and find the backup link to download it.
 
 Again, if no errors are encountered, you should now have all the tables reported in the paper. Take a look at `scripts/RunThis_All.sh` and it should be rather easy to understand. For example,
 - Table 3: `sh scripts/eval_corpus_prior_batch_table3.sh`
