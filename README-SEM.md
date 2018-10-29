@@ -16,6 +16,7 @@ All the following commands should be run from the root dir of the project, i.e.,
 ```
 git clone git@github.com:qiangning/TemProb-NAACL18.git
 cd TemProb-NAACL18
+tar xf data/TemProb.txt.tar.gz -C data
 sh scripts/mvn_install.sh
 mvn compile
 ```
