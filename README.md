@@ -8,7 +8,7 @@
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$GUROBI_HOME/lib
   export GRB_LICENSE_FILE=$GUROBI_HOME/gurobi.lic
   ```
-  Please contact the author (qning2@illinois.edu) if you cannot find the official package for version 6.5.2. **Note that if you only need the system output files, you can move forward without gurobi.**
+  Please contact the author (qiangning1990@gmail.com) if you cannot find the official package for version 6.5.2. **Note that if you only need the system output files, you can move forward without gurobi.**
 
 # Reproduce NAACL'18 Results
 All the following commands should be run from the root dir of the project, i.e., `TemProb-NAACL18/`.
